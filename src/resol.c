@@ -55,18 +55,6 @@ E determinant_naif(Matrix m)
     }
 }
 
-void multLigne(Matrix m, Matrix b, int i, E k)
-{
-    /* Matrice b. */
-    setElt(b, i, 1, getElt(b, i, 0) * k);
-
-    /* Matrice m. */
-    for (int j = 1; j <= nbColonnes(m); j++)
-        setElt(m, i, j, getElt(m, i, j) * k);
-
-    return;
-}
-
 void permutLigne(Matrix m, int i, int j)
 {
     for (int k = 1; k <= nbColonnes(m); k++)
@@ -89,12 +77,6 @@ void permutLigneSysteme(Matrix m, Matrix b, int i, int j)
     permutLigne(m, i, j);
 
     return;
-}
-
-void addMultLigne(Matrix m, int i, int j, E k)
-{
-    for (int l = 1; l <= nbColonnes(m); l++)
-        setElt(m, i, l, getElt(m, i, l) + getElt(m, j, l) * k);
 }
 
 void addMultLigneSysteme(Matrix m, Matrix b, int i, int j, E k)
@@ -184,4 +166,22 @@ void gauss(Matrix m, Matrix b, Matrix x)
 {
     triangulaireSysteme(m, b);
     remontee(m, b, x);
+}
+
+void multLigne(Matrix m, Matrix b, int i, E k)
+{
+    /* Matrice b. */
+    setElt(b, i, 1, getElt(b, i, 0) * k);
+
+    /* Matrice m. */
+    for (int j = 1; j <= nbColonnes(m); j++)
+        setElt(m, i, j, getElt(m, i, j) * k);
+
+    return;
+}
+
+void addMultLigne(Matrix m, int i, int j, E k)
+{
+    for (int l = 1; l <= nbColonnes(m); l++)
+        setElt(m, i, l, getElt(m, i, l) + getElt(m, j, l) * k);
 }

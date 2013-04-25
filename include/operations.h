@@ -31,11 +31,39 @@ Matrix addition(Matrix m1, Matrix m2);
 Matrix multiplication(Matrix m1, Matrix m2);
 
 /**
+ * \brief Soustraction de matrices
+ * \relatesalso matrix
+ * \param m1 matrice 1
+ * \param m2 matrice 2
+ * \pre nbColonnes(m1) == nbLignes(m2)
+ * \return pointeur vers la différence
+ */
+Matrix soustraction(Matrix m1, Matrix m2);
+
+/**
+ * \brief Exponentiation d'une matrice
+ * \relatesalso matrix
+ * \param m matrice
+ * \param n exposant
+ * \return m^n
+ */
+Matrix exponentiation(Matrix m, int n);
+
+/**
  * \brief Transposition d'une matrice
  * \relatesalso matrix
  * \param m
  * \return pointeur vers la transposée
  */
 Matrix transpose(Matrix m);
+
+/**
+ * \brief Multiplication d'une matrice par un scalaire
+ * \relatesalso matrix
+ * \param m1 matrice 1
+ * \param k scalaire
+ * \return pointeur vers le produit
+ */
+Matrix multiplierScalaire(Matrix m, E k)
 
 #endif /* __OPERATIONS_H */

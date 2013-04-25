@@ -31,16 +31,6 @@ Matrix sousMatrice(Matrix m, int i, int j);
 E determinant_naif(Matrix m);
 
 /**
- * \brief Multiplier la ligne i d'un système par un facteur k.
- * \param m Matrice.
- * \param b Matrice colonne.
- * \param i Indice de la ligne.
- * \param k Facteur.
- * \pre nbLignes(m) == nbLignes(b) && nbColonnes(m) == 1.
- */
-void multLigne(Matrix m, Matrix b, int i, E k);
-
-/**
  * \brief Permuter les lignes i et j d'un système.
  * \param m Matrice.
  * \param i Indice de la première ligne.
@@ -58,15 +48,6 @@ void permutLigne(Matrix m, int i, int j);
  * \pre nbLignes(m) == nbLignes(b) && nbColonnes(m) == 1.
  */
 void permutLigneSysteme(Matrix m, Matrix b, int i, int j);
-
-/**
- * \brief Additionner à la ligne i la ligne j multipliée par k.
- * \param m Matrice.
- * \param i Indice de la première ligne.
- * \param j Indice de la deuxième ligne.
- * \param k Facteur.
- */
-void addMultLigne(Matrix m, int i, int j, E k);
 
 /**
  * \brief Additionner à la ligne i la ligne j multipliée par k.
@@ -136,5 +117,24 @@ void remontee(Matrix m, Matrix b, Matrix x);
  * \pre nbLignes(m) == nbLignes(b) == nbLignes(x) && nbColonnes(b) == nbColonnes(x) == 1
  */
 void gauss(Matrix m, Matrix b, Matrix x);
+
+/**
+ * \brief Multiplier la ligne i d'un système par un facteur k.
+ * \param m Matrice.
+ * \param b Matrice colonne.
+ * \param i Indice de la ligne.
+ * \param k Facteur.
+ * \pre nbLignes(m) == nbLignes(b) && nbColonnes(m) == 1.
+ */
+void multLigne(Matrix m, Matrix b, int i, E k);
+
+/**
+ * \brief Additionner à la ligne i la ligne j multipliée par k.
+ * \param m Matrice.
+ * \param i Indice de la première ligne.
+ * \param j Indice de la deuxième ligne.
+ * \param k Facteur.
+ */
+void addMultLigne(Matrix m, int i, int j, E k);
 
 #endif /* __RESOL_H */
