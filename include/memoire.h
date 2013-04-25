@@ -11,30 +11,46 @@
 #include "base.h"
 #include "matrix.h"
 
-enum var_t
+typedef enum donnee_t
 {
     VAR_FLOTTANT,
     VAR_MATRIX,
-};
+} donnee_t;
 
-struct var
+typedef struct donnee
 {
     char * nom;
     union
     {
         E reka;
-        Matrix m;
+        Matrix matrice;
     } u_var;
-    enum var_t type;
-};
+    donnee_t type;
+} Donnee;
 
 typedef struct
 {
-    struct var * vartab;
+    Donnee * donnees;
     Nat taille;
     Nat position;
 } Variables;
 
+Bool estE(const Donnee * d);
+
+Bool estMatrice(const Donnee * d);
+
+E eDonnee(const Donnee * d);
+
+Matrix matriceDonnee(const Donnee * d);
+
 Variables * initVariables(Nat taille);
+
+Donnee * obtenirDonnee(const char * nomVariable);
+
+Variables * ajouterE(Variables * v, const char * nomVariable, E e);
+
+Variables * ajouterMatrice(Variables * v, const char * nomVariable, Matrix m);
+
+Variables * supprimerVariable(Variables * v, const char * nomVariable);
 
 #endif /* __MEMOIRE_H */
