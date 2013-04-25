@@ -12,6 +12,7 @@ vpath %.o obj/
 main : main.o matrix.o operations.o resol.o | bin
 	$(CC) $(CFLAGS) -o $(BPATH)main $(OPATH)main.o $(OPATH)matrix.o $(OPATH)operations.o $(OPATH)resol.o
 
+memoire.o : memoire.c memoire.h matrix.h
 resol.o : resol.c resol.h matrix.h operations.h
 matrix.o : matrix.c matrix.h
 operations.o : operations.c operations.h matrix.h
