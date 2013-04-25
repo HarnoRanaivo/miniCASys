@@ -64,6 +64,6 @@ Matrix transpose(Matrix m);
  * \param k scalaire
  * \return pointeur vers le produit
  */
-Matrix multiplierScalaire(Matrix m, E k)
+Matrix multiplierScalaire(Matrix m, E k);
 
 #endif /* __OPERATIONS_H */
