@@ -17,7 +17,7 @@ typedef enum donnee_t
     VAR_MATRIX,
 } donnee_t;
 
-typedef struct Variables
+typedef struct Donnee
 {
     char * nom;
     union
@@ -44,6 +44,8 @@ E eDonnee(const Donnee * d);
 Matrix * matriceDonnee(const Donnee * d);
 
 Variables * initVariables(Nat taille);
+
+Bool existeVariable(const Variables * v, const char * nomVariable);
 
 Donnee * obtenirDonnee(const Variables * v, const char * nomVariable);
 
