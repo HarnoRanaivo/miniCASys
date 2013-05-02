@@ -5,9 +5,9 @@
  */
 #include "matrix.h"
 
-Matrix newMatrix(int nb_rows, int nb_columns)
+Matrix * newMatrix(int nb_rows, int nb_columns)
 {
-    Matrix m = malloc(sizeof *m);
+    Matrix * m = malloc(sizeof *m);
 
     if (m != NULL)
     {
@@ -20,28 +20,38 @@ Matrix newMatrix(int nb_rows, int nb_columns)
             free(m);
             m = NULL;
         }
+        else
+            perror("malloc");
     }
+    else
+        perror("malloc");
 
     return m;
 }
 
-E getElt(Matrix m, int row, int column)
+E getElt(const Matrix * m, int row, int column)
 {
     return *(m->mat + ((row - 1) * nbColonnes(m)) + (column - 1));
 }
 
-void setElt(Matrix m, int row, int column, E val)
+void setElt(Matrix * m, int row, int column, E val)
 {
     *(m->mat + ((row - 1) * nbColonnes(m)) + (column - 1)) = val;
 }
 
-void deleteMatrix(Matrix m)
+Matrix * deleteMatrix(Matrix * m)
 {
-    free(m->mat);
-    free(m);
+    if (m != NULL)
+    {
+        if (m->mat != NULL)
+            free(m->mat);
+        free(m);
+    }
+
+    return NULL;
 }
 
-void displayMatrix(Matrix m)
+void displayMatrix(const Matrix * m)
 {
     for (int i = 1; i <= nbLignes(m);i++)
     {
@@ -52,9 +62,9 @@ void displayMatrix(Matrix m)
 
 }
 
-Matrix identite(int size)
+Matrix * identite(int size)
 {
-    Matrix m = newMatrix(size, size);
+    Matrix * m = newMatrix(size, size);
 
     if (m != NULL)
     {
@@ -69,8 +79,9 @@ Matrix identite(int size)
     return m;
 }
 
-Matrix aleatoire(Matrix m, float min, float max)
+Matrix * aleatoire(Matrix * m, float min, float max)
 {
+    /* Au cas-où on oublierait de le faire en début de programme. */
     srand48(time(NULL));
 
     for (int i = 1; i <= nbLignes(m); i++)
