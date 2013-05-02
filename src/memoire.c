@@ -16,7 +16,7 @@ Donnee * nouveauE(const char * nom, E e)
     }
     else
         perror("malloc");
-    
+
     return d;
 }
 
@@ -54,6 +54,15 @@ char * nomDonnee(const Donnee * d)
 E eDonnee(const Donnee * d)
 {
     return d->u_var.flottant;
+}
+
+Donnee * libererDonnee(Donnee * d)
+{
+    if (estMatrice(d))
+        deleteMatrix(d->u_var.matrice);
+    free(d);
+
+    return NULL;
 }
 
 Matrix * matriceDonnee(const Donnee * d)
@@ -191,3 +200,10 @@ Variables * supprimerVariable(Variables * v, const char * nomVariable)
     return v;
 }
 
+Variables * libererVariables(Variables * v)
+{
+    for (int i = 0; i < v->position; i++)
+        libererDonnee(v->donnees[i]);
+
+    return NULL;
+}

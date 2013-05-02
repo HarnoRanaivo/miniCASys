@@ -47,6 +47,8 @@ Bool estMatrice(const Donnee * d);
 
 E eDonnee(const Donnee * d);
 
+Donnee * libererDonnee(Donnee * d);
+
 Matrix * matriceDonnee(const Donnee * d);
 
 Variables * initVariables(void);
@@ -62,5 +64,7 @@ Variables * ajouterE(Variables * v, const char * nomVariable, E e);
 Variables * ajouterMatrice(Variables * v, const char * nomVariable, const Matrix * m);
 
 Variables * supprimerVariable(Variables * v, const char * nomVariable);
+
+Variables * libererVariables(Variables * v);
 
 #endif /* __MEMOIRE_H */
