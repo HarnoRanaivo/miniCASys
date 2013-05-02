@@ -1,6 +1,6 @@
 /**
  * \file memoire.h
- * \brief Gestion des variables utilisateur
+ * \brief Gestion des variables utilisateur (header)
  */
 #ifndef __MEMOIRE_H
 #define __MEMOIRE_H
@@ -11,29 +11,35 @@
 #include "base.h"
 #include "matrix.h"
 
+#define VAR_TAILLE 50
+
 typedef enum donnee_t
 {
     VAR_FLOTTANT,
-    VAR_MATRIX,
+    VAR_MATRICE,
 } donnee_t;
 
 typedef struct Donnee
 {
-    char * nom;
+    const char * nom;
     union
     {
-        E reka;
-        Matrix matrice;
+        E flottant;
+        Matrix * matrice;
     } u_var;
     donnee_t type;
 } Donnee;
 
 typedef struct Variables
 {
-    Donnee * donnees;
+    Donnee ** donnees;
     Nat taille;
     Nat position;
 } Variables;
+
+Donnee * nouveauE(const char * nom, E e);
+
+Donnee * nouvelleMatrice(const char * nom, const Matrix * m);
 
 Bool estE(const Donnee * d);
 
@@ -43,7 +49,9 @@ E eDonnee(const Donnee * d);
 
 Matrix * matriceDonnee(const Donnee * d);
 
-Variables * initVariables(Nat taille);
+Variables * initVariables(void);
+
+Variables * agrandirVariables(Variables * v);
 
 Bool existeVariable(const Variables * v, const char * nomVariable);
 
@@ -51,7 +59,7 @@ Donnee * obtenirDonnee(const Variables * v, const char * nomVariable);
 
 Variables * ajouterE(Variables * v, const char * nomVariable, E e);
 
-Variables * ajouterMatrice(Variables * v, const char * nomVariable, Matrix m);
+Variables * ajouterMatrice(Variables * v, const char * nomVariable, const Matrix * m);
 
 Variables * supprimerVariable(Variables * v, const char * nomVariable);
 
