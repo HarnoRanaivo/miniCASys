@@ -1,8 +1,13 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file base.h
  * \brief Base (header)
  * \author Harenome RAZANAJATO
- * \version 1.2
+ * \version 1.4
  */
 
 #ifndef __BASE_H
@@ -10,57 +15,63 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
  * \enum Bool
  * \brief Simulation des booléens.
  */
-/**
- * \typedef Bool
- * \brief Simulation des booléens.
- */
-typedef enum
+enum Bool
 {
     FAUX,   /**<- Faux. */
     VRAI    /**<- Vrai. */
-} Bool;
+};
 
 /**
- * \typedef Nat
+ * \brief Simulation des booléens.
+ */
+typedef enum Bool Bool;
+
+/**
  * \brief Entiers naturels.
  */
 typedef unsigned int Nat;
+
 /**
- * \typedef Ent
  * \brief Entiers relatifs.
  */
 typedef int Ent;
+
 /**
- * \typedef Reel
  * \brief Nombres réels.
  */
 typedef float Reel;
+
 /**
- * \typedef Rat
  * \brief Nombres rationnels.
  */
 typedef float Rat;
+
 /**
- * \typedef Car
  * \brief Caractères.
  */
 typedef char Car;
-/**
- * \typedef Chaine
- * \brief Chaîne de caractères
- */
-typedef Car Chaine;
+
 /* Simplement pour différencier un Caractère d'une Chaîne.
  * Pas de pointeur dans le typedef : pouvoir utiliser le mot-clé const correctement.
  */
+/**
+ * \brief Chaîne de caractères
+ */
+typedef Car Chaine;
 
 /**
- * \def OP(T)
+ * \typedef E
+ */
+typedef float E;
+
+/**
  * \brief Opérations de base pour un type donné.
  * \param T Type.
  */
@@ -80,35 +91,80 @@ OP(Nat)
 OP(Ent)
 OP(Reel)
 OP(Rat)
+OP(E)
 
 #undef OP
 
 /**
- * \def MALLOC(P)
  * \brief Allouer de la mémoire.
  * \param P Pointeur.
  */
 #define MALLOC(P) malloc(sizeof *(P))
+
 /**
- * \def MALLOCN(P, N)
  * \brief Allouer un tableau de taille N.
  * \param P Pointeur.
  * \param N Taille du tableau.
  */
 #define MALLOCN(P, N) malloc((N) * sizeof *(P))
+
 /**
- * \def CALLOC(P, N)
  * \brief Allouer un tableau de taille N et l'initialiser à 0.
  * \param P Pointeur.
  * \param N Taille du tableau.
  */
 #define CALLOC(P, N) calloc((N), sizeof *(P))
+
 /**
- * \def REALLOC(P, N)
  * \brief Réallouer un tableau.
  * \param P Pointeur.
  * \param N Nouvelle taille du tableau.
  */
 #define REALLOC(P, N) realloc((P), (N) * sizeof *(P))
+
+/**
+ * \brief Recherche d'un mot dans un tableau de chaînes de caractères valide.
+ * \param mot Mot.
+ * \param tableau Tableau.
+ * \pre \a tableau doit être terminé par NULL.
+ * \return #VRAI si le mot se trouve dans le tableau, #FAUX sinon.
+ */
+static inline Bool rechercherMot(const char * mot, const char * const * tableau)
+{
+    for (int i = 0; tableau[i] != NULL; i++)
+        if (strcmp(mot, tableau[i]) == 0) return VRAI;
+
+    return FAUX;
+}
+
+/**
+ * \brief Compter le nombre de mots dans une chaîne de caractères.
+ * \param chaine Chaîne de caractères.
+ * \pre \a chaine est une chaîne de caractères valide terminée par \c '\0'.
+ * \return Nombre de mots.
+ */
+static inline int compterMots(const char * chaine)
+{
+    int n = 0;
+
+    for (const char * s = chaine; s != NULL; s = strchr(s, ' '))
+    {
+        n++;
+        s++;
+    }
+
+    return n;
+}
+
+/**
+ * \brief Changer la casse en minuscules d'une chaine de caractères.
+ * \param chaine Chaîne de caractères.
+ * \pre \a chaine est une chaîne de caractères valide terminée par \c '\0'.
+ */
+static inline void chaineEnMinuscules(char * chaine)
+{
+    for (int i = 0; chaine[i] != '\0'; i++)
+        chaine[i] = tolower(chaine[i]);
+}
 
 #endif /* __BASE_H */
