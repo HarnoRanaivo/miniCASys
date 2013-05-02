@@ -18,7 +18,7 @@
  * \pre nbColonnes(m1) == nbColonnes(m2) && nbLignes(m1) == nbLignes(m2)
  * \return pointeur vers la somme
  */
-Matrix addition(Matrix m1, Matrix m2);
+Matrix * addition(const Matrix * m1, const Matrix * m2);
 
 /**
  * \brief Multiplication de matrices
@@ -28,7 +28,7 @@ Matrix addition(Matrix m1, Matrix m2);
  * \pre nbColonnes(m1) == nbLignes(m2)
  * \return pointeur vers le produit
  */
-Matrix multiplication(Matrix m1, Matrix m2);
+Matrix * multiplication(const Matrix * m1, const Matrix * m2);
 
 /**
  * \brief Soustraction de matrices
@@ -38,7 +38,7 @@ Matrix multiplication(Matrix m1, Matrix m2);
  * \pre nbColonnes(m1) == nbLignes(m2)
  * \return pointeur vers la différence
  */
-Matrix soustraction(Matrix m1, Matrix m2);
+Matrix * soustraction(const Matrix * m1, const Matrix * m2);
 
 /**
  * \brief Exponentiation d'une matrice
@@ -47,7 +47,7 @@ Matrix soustraction(Matrix m1, Matrix m2);
  * \param n exposant
  * \return m^n
  */
-Matrix exponentiation(Matrix m, int n);
+Matrix * exponentiation(const Matrix * m, int n);
 
 /**
  * \brief Transposition d'une matrice
@@ -55,7 +55,7 @@ Matrix exponentiation(Matrix m, int n);
  * \param m
  * \return pointeur vers la transposée
  */
-Matrix transpose(Matrix m);
+Matrix * transpose(const Matrix * m);
 
 /**
  * \brief Multiplication d'une matrice par un scalaire
@@ -64,6 +64,6 @@ Matrix transpose(Matrix m);
  * \param k scalaire
  * \return pointeur vers le produit
  */
-Matrix multiplierScalaire(Matrix m, E k);
+Matrix * multiplierScalaire(const Matrix * m, E k);
 
 #endif /* __OPERATIONS_H */
