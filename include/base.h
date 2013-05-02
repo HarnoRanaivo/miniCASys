@@ -7,7 +7,7 @@
  * \file base.h
  * \brief Base (header)
  * \author Harenome RAZANAJATO
- * \version 1.4
+ * \version 1.5
  */
 
 #ifndef __BASE_H
@@ -121,6 +121,24 @@ OP(E)
  * \param N Nouvelle taille du tableau.
  */
 #define REALLOC(P, N) realloc((P), (N) * sizeof *(P))
+
+/**
+ * \brief Copie d'une chaîne de caractères.
+ * \param chaine Chaîne à copier.
+ * \pre \a chaine est une chaîne de caractères valide.
+ * \return copie de la chaîne.
+ */
+static inline char * copierChaine(const char * chaine)
+{
+    char * copie = MALLOCN(copie, strlen(chaine) + 1);
+
+    if (copie != NULL)
+        copie = strcpy(copie, chaine);
+    else
+        perror("malloc");
+
+    return copie;
+}
 
 /**
  * \brief Recherche d'un mot dans un tableau de chaînes de caractères valide.
