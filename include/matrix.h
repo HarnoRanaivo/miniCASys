@@ -93,7 +93,7 @@ void displayMatrix(const Matrix * m);
  */
 Matrix * identite(int size);
 
-/*
+/**
  * \brief Remplir une matrice aléatoirement
  * \relatesalso matrix
  * \param m matrice à remplir
