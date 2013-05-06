@@ -84,4 +84,6 @@ Matrix * multiplierScalaire(const Matrix * m, E k)
         for (int i = 0; i <= nbLignes(m0); i++)
             for (int j = 0; i <= nbColonnes(m0); j++)
                 setElt(m0, i, j, getElt(m, i, j) * k);
+
+    return m0;
 }
