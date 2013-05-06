@@ -126,3 +126,71 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
 
     return m;
 }
+
+int preparerLigneCommmande(char * chaine, char * decomposition[4])
+{
+    int parties = 1;
+    char * parcours;
+
+    for (int i = 0; i < 4; i++)
+        decomposition[i] = NULL;
+
+    /* partie avant le ':' */
+    decomposition[0] = chaine;
+
+    /* Partie après le ':' */
+    if ((parcours = strchr(chaine, ':')) != NULL)
+    {
+        *parcours = '\0';
+        parcours += 1;
+        parties++;
+        decomposition[1] = parcours;
+
+        /* Arguments de la commande, s'il y en a */
+        if ((parcours = strchr(parcours, '(')) !=  NULL)
+        {
+            *parcours = '\0';
+            parcours += 1;
+            parties++;
+            decomposition[2] = parcours;
+
+            /* Éléments superflus. */
+            if ((parcours = strchr(parcours, ')')) != NULL)
+            {
+                *parcours = '\0';
+                parcours += 1;
+                char reste[32];
+
+                /* %s ignore les espaces...si la fin ne contient que des
+                 * espaces, sscanf ratera...
+                 */
+                if (sscanf(parcours, "%31s", reste) == 1)
+                {
+                    parties++;
+                    decomposition[3] = parcours;
+                }
+            }
+            else
+                return -parties;
+        }
+        else
+            decomposition[2] = NULL;
+    }
+    else
+        decomposition[1] = NULL;
+
+    /* Vérification qu'il n'y a bien qu'un seul mot dans
+     * les 2 premières parties.
+     */
+    for (int i = 0; i < 2; i ++)
+    {
+        char buffer[64];
+
+        if (decomposition[i] != NULL
+            && sscanf(decomposition[i], "%s %s", buffer, buffer) == 2
+           )
+            return -parties;
+    }
+
+    return parties;
+}
