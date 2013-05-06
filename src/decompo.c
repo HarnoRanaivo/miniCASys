@@ -21,35 +21,39 @@ LUM* decomposition(Matrix *m)
 	raiponce[0] = newMatrix(n,n); // L
 	raiponce[1] = newMatrix(n,n); // U
 	
-	setElt(raiponce[0],1,1,getElt(m,1,1));
+	setElt(raiponce[1],1,1,getElt(m,1,1));
+	
 	
 	for (int j = 2 ; j<=n ; j++)
 	{
-		setElt(raiponce[0],1,j,getElt(m,1,j));
-		setElt(raiponce[1],j,1,getElt(m,j,1)/getElt(m,1,1));
+		setElt(raiponce[1],1,j,getElt(m,1,j));
+		setElt(raiponce[0],j,1,getElt(m,j,1)/getElt(m,1,1));
 	}
 	
 	for (int i = 2 ; i<n ; i++)
 	{
-		for (int k = 1 ; k<=i ; k++)
+		for (int k = 1 ; k<i ; k++)
 		{
-			somme += getElt(raiponce[1],i,k)*getElt(raiponce[0],k,i);
+			somme += getElt(raiponce[0],i,k)*getElt(raiponce[1],k,i);
 		}
 		
-		setElt(raiponce[0],i,i,getElt(m,i,i)-somme);
+		setElt(raiponce[1],i,i,getElt(m,i,i)-somme);
 		somme=0.;
 		
 		for (int j = i+1 ; j<=n ; j++)
 		{
-			for (int k = 1 ; k<=i ; k++)
+			for (int k = 1 ; k<i ; k++)
 			{
 				somme += getElt(raiponce[0],i,k)*getElt(raiponce[1],k,j);
 				somme2 += getElt(raiponce[0],j,k)*getElt(raiponce[1],k,j);
 			}
 			
 			setElt(raiponce[1],i,j,getElt(m,i,j)-somme);
-			setElt(raiponce[0],j,i,1/getElt(raiponce[1],i,i)*(getElt(m,j,i)-somme2));
+			setElt(raiponce[0],j,i,1./getElt(raiponce[1],i,i)*(getElt(m,j,i)-somme2));
 		}
+		
+		somme=0.;
+		somme2=0.;
 	}
 	
 	for (int k = 1 ; k<n ; k++)
