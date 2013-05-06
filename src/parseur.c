@@ -125,6 +125,44 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
     return m;
 }
 
+int preparerCommande(char * chaine, char * decomposition[2])
+{
+    int parties = 0;
+    char * parcours = chaine;
+
+    /* Arguments de la commande, s'il y en a */
+    if ((parcours = strchr(parcours, '(')) !=  NULL)
+    {
+        *parcours = '\0';
+        parcours += 1;
+        parties++;
+        decomposition[0] = parcours;
+
+        /* Éléments superflus. */
+        if ((parcours = strchr(parcours, ')')) != NULL)
+        {
+            *parcours = '\0';
+            parcours += 1;
+            char reste[32];
+
+            /* %s ignore les espaces...si la fin ne contient que des
+                * espaces, sscanf ratera...
+                */
+            if (sscanf(parcours, "%31s", reste) == 1)
+            {
+                parties++;
+                decomposition[1] = parcours;
+            }
+        }
+        else
+            return -parties;
+    }
+    else
+        decomposition[0] = NULL;
+
+    return parties;
+}
+
 int preparerLigneCommmande(char * chaine, char * decomposition[4])
 {
     int parties = 1;
@@ -143,36 +181,7 @@ int preparerLigneCommmande(char * chaine, char * decomposition[4])
         parcours += 1;
         parties++;
         decomposition[1] = parcours;
-
-        /* Arguments de la commande, s'il y en a */
-        if ((parcours = strchr(parcours, '(')) !=  NULL)
-        {
-            *parcours = '\0';
-            parcours += 1;
-            parties++;
-            decomposition[2] = parcours;
-
-            /* Éléments superflus. */
-            if ((parcours = strchr(parcours, ')')) != NULL)
-            {
-                *parcours = '\0';
-                parcours += 1;
-                char reste[32];
-
-                /* %s ignore les espaces...si la fin ne contient que des
-                 * espaces, sscanf ratera...
-                 */
-                if (sscanf(parcours, "%31s", reste) == 1)
-                {
-                    parties++;
-                    decomposition[3] = parcours;
-                }
-            }
-            else
-                return -parties;
-        }
-        else
-            decomposition[2] = NULL;
+        parties += preparerCommande(parcours, decomposition + 2);
     }
     else
         decomposition[1] = NULL;
@@ -183,7 +192,7 @@ int preparerLigneCommmande(char * chaine, char * decomposition[4])
     for (int i = 0; i < 2; i ++)
     {
         char buffer[64];
-
+        
         if (decomposition[i] != NULL
             && sscanf(decomposition[i], "%s %s", buffer, buffer) == 2
            )

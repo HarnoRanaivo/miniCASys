@@ -71,4 +71,6 @@ Matrix * recupererMatrice(char * chaine, const Variables * v);
  */
 int preparerLigneCommmande(char * chaine, char * decomposition[4]);
 
+int preparerCommande(char * chaine, char * decomposition[2]);
+
 #endif /* __PARSEUR_H */

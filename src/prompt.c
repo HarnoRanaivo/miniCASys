@@ -320,6 +320,8 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
             break;
 
         case CM_TSP :
+
+        case CM_INV :
             if (sscanf(arguments, " %63[^,]", buffer1) == 1)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
@@ -329,11 +331,8 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 else if (!estMatrice(d1))
                     printf("%s n'est pas une matrice.\n", buffer1);
                 else
-                    m = transpose(matriceDonnee(d1));
+                    m = c == CM_TSP ? transpose(matriceDonnee(d1)) : transpose(matriceDonnee(d1));
             }
-            break;
-
-        case CM_INV :
             break;
 
         default :
@@ -372,139 +371,167 @@ void afficherPrompt(void)
 
         if (succes == 1)
         {
-            Commande c = CM_INCONNU;
-            Donnee * d = NULL;
-            char * parties[4];
-            int ok = preparerLigneCommmande(buffer, parties);
+            char commande[64] = { '\0' };
 
-            switch (ok)
+            char * copie = copierChaine(buffer);
+            char * morceaux[2];
+            int sousparties = preparerCommande(copie, morceaux);
+
+            if (sousparties == 1 && strchr(buffer, ':') == NULL)
             {
-                case 1 :
-                    supprimerEspaces(parties[0]);
-                    d = obtenirDonnee(v, parties[0]);
-                    if (d != NULL)
-                        afficherDonnee(d);
-                    else
+                Commande c = CM_INCONNU;
+                Donnee *d;
+                supprimerEspaces(copie);
+                c = rechercherCommande(copie);
+                if (c == CM_LU)
+                {
+                    char variable[32] = { '\0' };
+                    if (sscanf(morceaux[0], "%31s", variable) == 1
+                        && (d = obtenirDonnee(v, variable)) != NULL
+                        && estMatrice(d)
+                        )
                     {
-                        c = rechercherCommande(parties[0]);
-                        if (c == CM_INCONNU)
-                            printf("Commande inconnue ou variable non affectée.\n");
-                        else if (c == CM_SPD)
-                            printf("SPEEDTEST\n");
-                        else if (c != CM_QUIT)
-                            printf("Mauvaise utilisation de %s.\n", parties[0]);
+                        LUM * lu = decomposition(matriceDonnee(d));
+                        v = ajouterMatrice(v, "L", copieMatrice(lu[0]));
+                        v = ajouterMatrice(v, "U", copieMatrice(lu[1]));
+                        afficheLU(lu);
+                        libererLU(lu);
                     }
-                    break;
-
-                case 2 :
-                    supprimerEspaces(parties[0]);
-                    c = rechercherCommande(parties[0]);
-                    if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
-                        printf("%s : mot-clé réservé.\n", parties[0]);
-                    else
-                    {
-                        E valeur;
-                        Donnee * d;
-                        if (sscanf(parties[1], "%f\n", &valeur) == 1)
-                        {
-                            char variable[32];
-                            if (sscanf(parties[0], "%31s", variable) == 1)
-                            {
-                                v = ajouterE(v, variable, valeur);
-                                printf("\t%f\n", valeur);
-                            }
-                        }
-                        else if ((d = obtenirDonnee(v, parties[1])) != NULL)
-                        {
-                            char variable[32];
-                            if (sscanf(parties[0], "%31s", variable) == 1)
-                            {
-                                if (estE(d))
-                                {
-                                    v = ajouterE(v, variable, eDonnee(d));
-                                    printf("\t%f\n", eDonnee(d));
-                                }
-                                else
-                                {
-                                    v = ajouterMatrice(v, variable, copieMatrice(matriceDonnee(d)));
-                                    displayMatrix(matriceDonnee(d));
-                                }
-                            }
-                        }
-                        else
-                            printf("%s : Incorrect.\n", parties[1]);
-                    }
-
-                    break;
-
-                case 3 :
-                    supprimerEspaces(parties[0]);
-                    c = rechercherCommande(parties[0]);
-                    if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
-                        printf("%s : mot-clé réservé.\n", parties[0]);
-                    else
-                    {
-                        c = rechercherCommande(parties[1]);
-                        if (c == CM_SPD || c == CM_QUIT)
-                            printf("Incorrect.\n");
-                        else if (c == CM_DET || c == CM_RK || c == CM_LU)
-                        {
-                            char buffer[32];
-                            if (sscanf(parties[2], " %63[^,]", buffer) == 1)
-                            {
-                                const Donnee * d1 = obtenirDonnee(v, buffer);
-
-                                if (d1 == NULL)
-                                    printf("%s n'existe pas.\n", buffer);
-                                else if (!estMatrice(d1))
-                                    printf("%s n'est pas une matrice.\n", buffer);
-                                else if (c == CM_DET)
-                                {
-                                    Matrix * m0 = copieMatrice(matriceDonnee(d1));
-                                    E det = determinant_opt(m0);
-                                    deleteMatrix(m0);
-                                    v = ajouterE(v, parties[0], det);
-                                    printf("\t%f\n", det);
-                                }
-                                else if (c == CM_RK)
-                                {
-                                    int rk;
-                                    Matrix * m0 = copieMatrice(matriceDonnee(d1));
-                                    triangulaireDet(m0);
-                                    displayMatrix(m0);
-                                    rk = rang(m0);
-                                    v = ajouterE(v, parties[0], rk);
-                                    printf("\t%d\n", rk);
-                                    deleteMatrix(m0);
-                                }
-                                else if (c == CM_LU)
-                                {
-                                    LUM * lu = decomposition(matriceDonnee(d1));
-                                    v = ajouterMatrice(v, "L", copieMatrice(lu[0]));
-                                    v = ajouterMatrice(v, "U", copieMatrice(lu[1]));
-                                    afficheLU(lu);
-                                    libererLU(lu);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Matrix * m = traiterCommande(c, parties[2], v);
-                            v = ajouterMatrice(v, parties[0], m);
-                            if (m != NULL) displayMatrix(m);
-                        }
-                    }
-                    break;
-
-                case 4 :
-
-                default :
-                    printf("Syntaxe non valide.\n");
+                }
             }
-
-            if (c == CM_QUIT && verifier("de vouloir quitter le programme ") == VRAI)
+            else if (sscanf(buffer, "%63s", commande) == 1
+                && rechercherCommande(commande) == CM_SPD)
             {
-                continuer = FAUX;
+                printf("SPEED\n");
+            }
+            else
+            {
+                Commande c = CM_INCONNU;
+                Donnee * d = NULL;
+                char * parties[4];
+                int ok = preparerLigneCommmande(buffer, parties);
+
+                switch (ok)
+                {
+                    case 1 :
+                        supprimerEspaces(parties[0]);
+                        d = obtenirDonnee(v, parties[0]);
+                        if (d != NULL)
+                            afficherDonnee(d);
+                        else
+                        {
+                            c = rechercherCommande(parties[0]);
+                            if (c == CM_INCONNU)
+                                printf("Commande inconnue ou variable non affectée.\n");
+                            else if (c == CM_SPD)
+                                printf("SPEEDTEST\n");
+                            else if (c != CM_QUIT)
+                                printf("Mauvaise utilisation de %s.\n", parties[0]);
+                        }
+                        break;
+
+                    case 2 :
+                        supprimerEspaces(parties[0]);
+                        c = rechercherCommande(parties[0]);
+                        if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
+                            printf("%s : mot-clé réservé.\n", parties[0]);
+                        else
+                        {
+                            E valeur;
+                            Donnee * d;
+                            if (sscanf(parties[1], "%f\n", &valeur) == 1)
+                            {
+                                char variable[32];
+                                if (sscanf(parties[0], "%31s", variable) == 1)
+                                {
+                                    v = ajouterE(v, variable, valeur);
+                                    printf("\t%f\n", valeur);
+                                }
+                            }
+                            else if ((d = obtenirDonnee(v, parties[1])) != NULL)
+                            {
+                                char variable[32];
+                                if (sscanf(parties[0], "%31s", variable) == 1)
+                                {
+                                    if (estE(d))
+                                    {
+                                        v = ajouterE(v, variable, eDonnee(d));
+                                        printf("\t%f\n", eDonnee(d));
+                                    }
+                                    else
+                                    {
+                                        v = ajouterMatrice(v, variable, copieMatrice(matriceDonnee(d)));
+                                        displayMatrix(matriceDonnee(d));
+                                    }
+                                }
+                            }
+                            else
+                                printf("%s : Incorrect.\n", parties[1]);
+                        }
+
+                        break;
+
+                    case 3 :
+                        supprimerEspaces(parties[0]);
+                        c = rechercherCommande(parties[0]);
+                        if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
+                            printf("%s : mot-clé réservé.\n", parties[0]);
+                        else
+                        {
+                            c = rechercherCommande(parties[1]);
+                            if (c == CM_SPD || c == CM_QUIT)
+                                printf("Incorrect.\n");
+                            else if (c == CM_DET || c == CM_RK)
+                            {
+                                char buffer[32];
+                                if (sscanf(parties[2], " %63[^,]", buffer) == 1)
+                                {
+                                    const Donnee * d1 = obtenirDonnee(v, buffer);
+
+                                    if (d1 == NULL)
+                                        printf("%s n'existe pas.\n", buffer);
+                                    else if (!estMatrice(d1))
+                                        printf("%s n'est pas une matrice.\n", buffer);
+                                    else if (c == CM_DET)
+                                    {
+                                        Matrix * m0 = copieMatrice(matriceDonnee(d1));
+                                        E det = determinant_opt(m0);
+                                        deleteMatrix(m0);
+                                        v = ajouterE(v, parties[0], det);
+                                        printf("\t%f\n", det);
+                                    }
+                                    else if (c == CM_RK)
+                                    {
+                                        int rk;
+                                        Matrix * m0 = copieMatrice(matriceDonnee(d1));
+                                        triangulaireDet(m0);
+                                        displayMatrix(m0);
+                                        rk = rang(m0);
+                                        v = ajouterE(v, parties[0], rk);
+                                        printf("\t%d\n", rk);
+                                        deleteMatrix(m0);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Matrix * m = traiterCommande(c, parties[2], v);
+                                v = ajouterMatrice(v, parties[0], m);
+                                if (m != NULL) displayMatrix(m);
+                            }
+                        }
+                        break;
+
+                    case 4 :
+
+                    default :
+                        printf("Syntaxe non valide.\n");
+                }
+
+                if (c == CM_QUIT && verifier("de vouloir quitter le programme ") == VRAI)
+                {
+                    continuer = FAUX;
+                }
             }
         }
     }
