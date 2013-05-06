@@ -213,6 +213,9 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
         case CM_MULM :
 
         case CM_SOL :
+            /* Partie commune aux quatres commandes CM_ADD, CM_SUB, CM_MULM,
+             * CM_SOL.
+             */
             if (sscanf(arguments, " %63[^,]%*[,]%63s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
@@ -236,6 +239,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                     const Matrix * m1 = matriceDonnee(d1);
                     const Matrix * m2 = matriceDonnee(d2);
 
+                    /* Partie spécifique. */
                     if (c == CM_ADD || c == CM_SUB)
                     {
                         if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m1) == nbColonnes(m2))
@@ -256,12 +260,9 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                         {
                             Matrix * m0 = copieMatrice(m1);
                             Matrix * b0 = copieMatrice(m2);
-                            /* displayMatrix(m0); */
-                            /* displayMatrix(b0); */
                             Matrix * solution = newMatrix(nbLignes(m1), 1);
 
                             gauss(m0, b0, solution);
-                            /* gauss((Matrix *)m1, (Matrix *) m2, solution); */
                             deleteMatrix(m0);
                             deleteMatrix(b0);
 
