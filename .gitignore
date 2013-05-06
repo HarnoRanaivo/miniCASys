@@ -1,7 +1,7 @@
 # Object files
 *.o
 
-# folders
+# Folders
 doc/
 bin/
 obj/
@@ -24,3 +24,6 @@ lib/
 
 # Vim
 *.swp
+
+# Tags
+tags
