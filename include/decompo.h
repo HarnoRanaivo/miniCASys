@@ -66,6 +66,29 @@ void afficheLU(LUM* lum);
  */
 void libererLU(LUM* lum);
 
-Matrix * inverseL (Matrix * l);
+/**
+ * \brief Récupère l'inverse de L dans une décomposition en LU.
+ * \param lum (Matrix L et Matrix U)
+ * \relatesalso LUM
+ * \return inverse de L.
+ */
+Matrix * inverseL (LUM * l);
+
+/**
+ * \brief Récupère l'inverse de U dans une décomposition en LU.
+ * \param lum (Matrix L et Matrix U)
+ * \relatesalso LUM
+ * \return inverse de U.
+ */
+Matrix * inverseU (LUM * l);
+
+/**
+ * \brief Inverse une matrice carrée à l'aide de sa décompositions en LU.
+ * \param m (Matrix)
+ * \relatesalso Matrix
+ * \pre nbLignes(m) == nbColonnes(m)
+ * \return inverse de m.
+ */
+Matrix * inverseM (Matrix * m);
 
 #endif /* __DECOMPO_H */
