@@ -333,7 +333,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 else if (!estMatrice(d1))
                     printf("%s n'est pas une matrice.\n", buffer1);
                 else
-                    m = c == CM_TSP ? transpose(matriceDonnee(d1)) : transpose(matriceDonnee(d1));
+                    m = c == CM_TSP ? transpose(matriceDonnee(d1)) : inverseM(matriceDonnee(d1));
             }
             break;
 
