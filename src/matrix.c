@@ -59,10 +59,10 @@ void displayMatrix(const Matrix * m)
 {
     for (int i = 1; i <= nbLignes(m);i++)
     {
-        printf("[");
-        for (int j = 1; j <= nbColonnes(m); j++)
-            printf("\t%f", getElt(m, i, j));
-        printf("\t]\n");
+        printf("\t[ ");
+        for (int j = 1; j < nbColonnes(m); j++)
+            printf("%f\t", getElt(m, i, j));
+        printf("%f ]\n", getElt(m, i, nbColonnes(m)));
     }
 
 }
