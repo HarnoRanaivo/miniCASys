@@ -256,7 +256,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                         {
                             Matrix * m0 = copieMatrice(m1);
                             Matrix * b0 = copieMatrice(m2);
-                            Matrix * solution = newMatrix(1, nbLignes(m1));
+                            Matrix * solution = newMatrix(nbLignes(m1), 1);
 
                             gauss(m0, b0, solution);
                             deleteMatrix(m0);
@@ -275,24 +275,19 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
             if (sscanf(arguments, " %63[^,]%*[,]%f", buffer1, &buffer3) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
-                const Donnee * d2 = obtenirDonnee(v, buffer2);
-                if (d1 == NULL || d2 == NULL)
+                if (d1 == NULL)
                 {
-                    if (d1 == NULL)
-                        printf("%s n'existe pas.\n", buffer1);
-                    if (d2 == NULL)
-                        printf("%s n'existe pas.\n", buffer2);
+                    printf("%s n'existe pas.\n", buffer1);
                 }
-                else if (!estMatrice(d1) || !estE(d2))
+                else if (!estMatrice(d1))
                 {
-                    if (!estMatrice(d1))
-                        printf("%s n'est pas une matrice.\n", buffer1);
-                    if (!estE(d2))
-                        printf("%s, n'est pas un scalaire.\n", buffer2);
+                    printf("%s n'est pas une matrice.\n", buffer1);
                 }
                 else
-                    m = multiplierScalaire(matriceDonnee(d1), eDonnee(d2));
+                    m = multiplierScalaire(matriceDonnee(d1), buffer3);
             }
+            else
+                printf("???\n");
             break;
 
         case CM_EXP :
@@ -362,7 +357,7 @@ void afficherPrompt(void)
         fflush(stdout);
 
         /* Lecture des entrées de l'utilisateur. */
-        succes = scanf("%511[^\n]%*[^\n]", buffer);
+        succes = scanf(" %511[^\n]%*[^\n]", buffer);
         getchar();
 
         if (succes == 1)
@@ -403,7 +398,10 @@ void afficherPrompt(void)
                         {
                             char variable[32];
                             if (sscanf(parties[0], "%31s", variable) == 1)
+                            {
                                 v = ajouterE(v, variable, valeur);
+                                printf("\t%f\n", valeur);
+                            }
                         }
                         else
                             printf("%s : Incorrect.\n", parties[1]);
