@@ -29,6 +29,8 @@ int main(int argc, char ** argv)
 {
     afficherPrompt();
 
+    /* speedtest(CM_ADD, 1, 30, 1); */
+
 	/* Matrix * m = newMatrix(3,3); */
 	/* setElt(m,1,1,1.); */
 	/* setElt(m,1,2,2.); */

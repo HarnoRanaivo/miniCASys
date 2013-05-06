@@ -16,6 +16,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <sysexits.h>
+#include <time.h>
+#include <sys/time.h>
 
 #include "base.h"
 #include "matrix.h"
@@ -24,6 +26,9 @@
 #include "operations.h"
 #include "resol.h"
 #include "decompo.h"
+
+#define ALEA_MIN 1.
+#define ALEA_MAX 10.
 
 /**
  * \enum Commande
@@ -90,5 +95,7 @@ Bool verifier(const char * chaine);
  * \brief Afficher un prompt et gérer les entrées de l'utilisateur.
  */
 void afficherPrompt(void);
+
+void speedtest(Commande c, int min, int max, int pas);
 
 #endif /* __PROMPT_H */

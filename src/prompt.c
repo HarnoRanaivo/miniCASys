@@ -342,6 +342,45 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
     return m;
 }
 
+Bool lancerSpeedtest(const char * buffer, const char * commande)
+{
+    Bool continuer = VRAI;
+    char fonction[32] = { '\0' };
+    int min, max, pas, sec;
+
+    if (sscanf(buffer, "%*s %31s %d %d %d %d", fonction, &min, &max, &pas, &sec) == 5)
+    {
+        struct timeval tv1, tv2;
+        unsigned long long temps;
+
+        Commande c = rechercherCommande(fonction);
+        if ((c == CM_ADD || c == CM_SUB || c == CM_MULM)
+            && min > 0 && min <= max && pas > 0
+           )
+        {
+            gettimeofday(&tv1, NULL);
+            speedtest(c, min, max, pas);
+            gettimeofday(&tv2, NULL);
+
+            temps = (tv2.tv_sec - tv1.tv_sec);
+            if (temps > sec)
+                continuer = FAUX;
+        }
+    }
+    else if (sscanf(buffer, "%*s %31s %d %d %d", fonction, &min, &max, &pas) == 4)
+    {
+        Commande c = rechercherCommande(fonction);
+        if ((c == CM_ADD || c == CM_SUB || c == CM_MULM)
+            && min > 0 && min <= max && pas > 0
+           )
+            speedtest(c, min, max, pas);
+    }
+    else
+        printf("%s : Arguments invalides.\n", commande);
+
+    return continuer;
+}
+
 void afficherPrompt(void)
 {
     Variables * v = initVariables();
@@ -402,7 +441,7 @@ void afficherPrompt(void)
             else if (sscanf(buffer, "%63s", commande) == 1
                 && rechercherCommande(commande) == CM_SPD)
             {
-                printf("SPEED\n");
+                continuer = lancerSpeedtest(buffer, commande);
             }
             else
             {
@@ -533,9 +572,85 @@ void afficherPrompt(void)
                     continuer = FAUX;
                 }
             }
+            
+            free(copie);
         }
     }
     while (continuer);
 
     v = libererVariables(v);
+}
+
+void speedtest(Commande c, int min, int max, int pas)
+{
+    static const char * fichier = "/tmp/minicas";
+    Bool erreur = FAUX;
+
+    Matrix * (*fun) (const Matrix *, const Matrix *);
+
+    switch (c)
+    {
+        case CM_ADD :
+            fun = addition;
+            break;
+        case CM_SUB :
+            fun = soustraction;
+            break;
+        case CM_MULM :
+            fun = multiplication;
+            break;
+
+        default :
+            break;
+    }
+
+    FILE * const output = fopen(fichier, "w");
+    if (output == NULL)
+    {
+        perror("fopen");
+        erreur = VRAI;
+    }
+
+    if (erreur != VRAI)
+    for (int i = min; i <= max; i += pas)
+    {
+        struct timeval tv1, tv2;
+        unsigned long long temps;
+
+        Matrix * m1 = aleatoire(newMatrix(i, i), ALEA_MIN, ALEA_MAX);
+        Matrix * m2 = aleatoire(newMatrix(i, i), ALEA_MIN, ALEA_MAX);
+
+        gettimeofday(&tv1, NULL);
+        Matrix * m3 = fun(m1, m2);
+        gettimeofday(&tv2, NULL);
+
+        temps = ((tv2.tv_sec * 1000000 + tv2.tv_usec) - (tv1.tv_sec * 1000000 + tv1.tv_usec));
+
+        fprintf(output, "%d %llu\n", i, temps);
+        fflush(output);
+
+        m1 = deleteMatrix(m1);
+        m2 = deleteMatrix(m2);
+        m3 = deleteMatrix(m3);
+    }
+
+    fclose(output);
+    
+    FILE * const gnuplot = popen("gnuplot -persistent", "w");
+    if (gnuplot == NULL || gnuplot == (FILE *)-1)
+    {
+        perror("popen");
+        erreur = VRAI;
+    }
+
+    fprintf(gnuplot,
+            "set style data histogram\n"
+            "set style fill solid border\n"
+            "set xlabel \"Taille\"\n"
+            "set ylabel \"Temps (µsecondes)\"\n"
+            "plot '%s' u 2:xtic(1) ti \"\"\n",
+            fichier);
+    fflush(gnuplot);
+    fclose(gnuplot);
+
 }

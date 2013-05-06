@@ -52,10 +52,10 @@ Matrix * multiplication(const Matrix * m1, const Matrix * m2)
 
 Matrix * exponentiation(const Matrix * m, int n)
 {
-    Matrix * mp = (Matrix *)m;
-    Matrix * ms;
+    Matrix * mp = identite(nbLignes(m));
+    Matrix * ms = mp;
 
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         ms = multiplication(mp, m);
         if (mp != m)
