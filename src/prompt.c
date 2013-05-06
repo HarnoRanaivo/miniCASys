@@ -213,6 +213,9 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
         case CM_MULM :
 
         case CM_SOL :
+            /* Partie commune aux quatres commandes CM_ADD, CM_SUB, CM_MULM,
+             * CM_SOL.
+             */
             if (sscanf(arguments, " %63[^,]%*[,]%63s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
@@ -236,6 +239,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                     const Matrix * m1 = matriceDonnee(d1);
                     const Matrix * m2 = matriceDonnee(d2);
 
+                    /* Partie spécifique. */
                     if (c == CM_ADD || c == CM_SUB)
                     {
                         if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m1) == nbColonnes(m2))
@@ -427,7 +431,7 @@ void afficherPrompt(void)
                                     printf("%s n'existe pas.\n", buffer);
                                 else if (!estMatrice(d1))
                                     printf("%s n'est pas une matrice.\n", buffer);
-                                else if (c == CM_SPD)
+                                else if (c == CM_DET)
                                 {
                                     Matrix * m0 = copieMatrice(matriceDonnee(d1));
                                     E det = determinant_opt(m0);
