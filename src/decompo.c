@@ -18,57 +18,62 @@ LUM* decomposition(Matrix *m)
 	E somme2=0.;
 	LUM* raiponce = MALLOCN(raiponce, 2);
 	
-	Matrix * l = newMatrix(n,n); // L
-	Matrix * u = newMatrix(n,n); // U
-	
-	setElt(u,1,1,getElt(m,1,1));
-	
-	
-	for (int j = 2 ; j<=n ; j++)
-	{
-		setElt(u,1,j,getElt(m,1,j));
-		setElt(l,j,1,getElt(m,j,1)/getElt(m,1,1));
-	}
-	
-	for (int i = 2 ; i<n ; i++)
-	{
-		for (int k = 1 ; k<i ; k++)
-		{
-			somme += getElt(l,i,k)*getElt(u,k,i);
-		}
-		
-		setElt(u,i,i,getElt(m,i,i)-somme);
-		somme=0.;
-		
-		for (int j = i+1 ; j<=n ; j++)
-		{
-			for (int k = 1 ; k<i ; k++)
-			{
-				somme += getElt(l,i,k)*getElt(u,k,j);
-				somme2 += getElt(l,j,k)*getElt(u,k,i);
-			}
-			
-			setElt(u,i,j,getElt(m,i,j)-somme);
-			setElt(l,j,i,1./getElt(u,i,i)*(getElt(m,j,i)-somme2));
-		}
-		
-		somme=0.;
-		somme2=0.;
-	}
-	
-	for (int k = 1 ; k<n ; k++)
-	{
-		somme += getElt(l,n,k)*getElt(u,k,n);
-	}
-	
-	setElt(u,n,n,getElt(m,n,n)-somme);
+	if (raiponce != NULL)
+    {
+        Matrix * l = newMatrix(n,n); // L
+        Matrix * u = newMatrix(n,n); // U
 
-	for (int i = 1; i <= n; i++)
-	    setElt(l,i,i,1.);
+        setElt(u,1,1,getElt(m,1,1));
 
-	raiponce[0]= l;
-	raiponce[1] = u;
-	
+
+        for (int j = 2 ; j<=n ; j++)
+        {
+            setElt(u,1,j,getElt(m,1,j));
+            setElt(l,j,1,getElt(m,j,1)/getElt(m,1,1));
+        }
+
+        for (int i = 2 ; i<n ; i++)
+        {
+            for (int k = 1 ; k<i ; k++)
+            {
+                somme += getElt(l,i,k)*getElt(u,k,i);
+            }
+
+            setElt(u,i,i,getElt(m,i,i)-somme);
+            somme=0.;
+
+            for (int j = i+1 ; j<=n ; j++)
+            {
+                for (int k = 1 ; k<i ; k++)
+                {
+                    somme += getElt(l,i,k)*getElt(u,k,j);
+                    somme2 += getElt(l,j,k)*getElt(u,k,i);
+                }
+
+                setElt(u,i,j,getElt(m,i,j)-somme);
+                setElt(l,j,i,1./getElt(u,i,i)*(getElt(m,j,i)-somme2));
+            }
+
+            somme=0.;
+            somme2=0.;
+        }
+
+        for (int k = 1 ; k<n ; k++)
+        {
+            somme += getElt(l,n,k)*getElt(u,k,n);
+        }
+
+        setElt(u,n,n,getElt(m,n,n)-somme);
+
+        for (int i = 1; i <= n; i++)
+            setElt(l,i,i,1.);
+
+        raiponce[0]= l;
+        raiponce[1] = u;
+    }
+    else
+        perror("malloc");
+		
 	return raiponce;
 }
 
