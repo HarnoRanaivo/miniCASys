@@ -167,7 +167,7 @@ void remontee(Matrix * m, Matrix * b, Matrix * x)
     {
         setElt(x, i, 1, getElt(b, i, 1));
 
-        for (int j = i+1; j <= n; i++)
+        for (int j = i+1; j <= n; j++)
             setElt(x, i, 1, getElt(x, i, 1) - getElt(m, i, j) * getElt(x, j, 1));
         setElt(x, i, 1, getElt(x, i, 1) / getElt(m, i, i));
 
