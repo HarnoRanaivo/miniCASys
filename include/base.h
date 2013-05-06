@@ -190,4 +190,11 @@ static inline void chaineEnMinuscules(char * chaine)
         chaine[i] = tolower(chaine[i]);
 }
 
+static inline void supprimerEspaces(char * chaine)
+{
+    for (int i = 0; chaine[i] != '\0'; i++)
+        if (isspace(chaine[i]))
+            chaine[i] = '\0';
+}
+
 #endif /* __BASE_H */

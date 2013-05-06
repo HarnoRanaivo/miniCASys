@@ -21,6 +21,8 @@
 #include "matrix.h"
 #include "memoire.h"
 #include "parseur.h"
+#include "operations.h"
+#include "resol.h"
 
 /**
  * \enum Commande

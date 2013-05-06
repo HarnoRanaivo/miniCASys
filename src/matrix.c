@@ -29,7 +29,8 @@ Matrix * newMatrix(int nb_rows, int nb_columns)
 }
 
 E getElt(const Matrix * m, int row, int column)
-{ return *(m->mat + ((row - 1) * nbColonnes(m)) + (column - 1));
+{
+    return *(m->mat + ((row - 1) * nbColonnes(m)) + (column - 1));
 }
 
 void setElt(Matrix * m, int row, int column, E val)
@@ -88,4 +89,15 @@ Matrix * aleatoire(Matrix * m, float min, float max)
             setElt(m, i, j, min + (drand48() * (max - min)));
 
     return m;
+}
+
+Matrix * copieMatrice(const Matrix * m)
+{
+    Matrix * m0 = newMatrix(nbLignes(m), nbColonnes(m));
+
+    for (int i = 1; i <= nbLignes(m); i++)
+        for (int j = 1; j <= nbColonnes(m); j++)
+            setElt(m0, i, j, getElt(m, i, j));
+
+    return m0;
 }

@@ -50,10 +50,11 @@ Matrix * exponentiation(const Matrix * m, int n)
     Matrix * mp = (Matrix *)m;
     Matrix * ms;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         ms = multiplication(mp, m);
-        mp = deleteMatrix(mp);
+        if (mp != m)
+            mp = deleteMatrix(mp);
 
         if (ms != NULL)
             mp = ms;
