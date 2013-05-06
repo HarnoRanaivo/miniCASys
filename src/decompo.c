@@ -105,3 +105,26 @@ void libererLU(LUM* lum)
 	free(lum);
 	return;
 }
+
+Matrix * inverseL (Matrix * l)
+{
+	int n = nbLignes(l);
+	Matrix * lprime = copieMatrice(l);
+	Matrix * solve = identite(n);
+	
+	for (int i = 2 ; i<=n ; i++)
+	{
+		for (int j = 1 ; j<i ; j++)
+		{
+			if (getElt(lprime,i,j) != 0)
+			{
+				int multiple = -1.*getElt(lprime,i,j);
+				lprime = addMultLigne(lprime, i, j, multiple);
+				solve = addMultLigne(solve,i,j,multiple);
+			}
+		}
+	}
+	
+	return solve;
+}
+				

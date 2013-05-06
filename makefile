@@ -16,7 +16,7 @@ parseur.o : parseur.c parseur.h base.h memoire.h
 prompt.o : prompt.c prompt.h base.h matrix.h memoire.h parseur.h operations.h resol.h
 memoire.o : memoire.c memoire.h base.h matrix.h
 resol.o : resol.c resol.h matrix.h operations.h
-decompo.o : decompo.c decompo.h matrix.h operations.h
+decompo.o : decompo.c decompo.h matrix.h operations.h resol.h
 matrix.o : matrix.c matrix.h
 operations.o : operations.c operations.h matrix.h
 main.o : main.c matrix.h operations.h resol.h decompo.h

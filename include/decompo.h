@@ -17,6 +17,7 @@
 #include "base.h"
 #include "matrix.h"
 #include "operations.h"
+#include "resol.h"
 
 /**
  * \typedef LUM
@@ -49,6 +50,12 @@ void afficheL(LUM* lum);
  */
 void afficheU(LUM* lum);
 
+/**
+ * \brief Affichage des matrices L et U d'une décomposition en LU.
+ * \param lum (Matrix L et Matrix U)
+ * \relatesalso LUM
+ * \return \b void
+ */
 void afficheLU(LUM* lum);
 
 /**
@@ -58,5 +65,7 @@ void afficheLU(LUM* lum);
  * \return \b void
  */
 void libererLU(LUM* lum);
+
+Matrix * inverseL (Matrix * l);
 
 #endif /* __DECOMPO_H */

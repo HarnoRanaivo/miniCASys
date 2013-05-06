@@ -27,20 +27,20 @@
  */
 int main(int argc, char ** argv)
 {
-    afficherPrompt();
+    //~ afficherPrompt();
 
-	/* Matrix * m = newMatrix(3,3); */
-	/* setElt(m,1,1,1.); */
-	/* setElt(m,1,2,2.); */
-	/* setElt(m,1,3,1.); */
-	/* setElt(m,2,1,4.); */
-	/* setElt(m,2,2,2.); */
-	/* setElt(m,2,3,6.); */
-	/* setElt(m,3,1,2.); */
-	/* setElt(m,3,2,3.); */
-	/* setElt(m,3,3,1.); */
-	/* displayMatrix(m); */
-	/* printf("\n\n"); */
+	Matrix * m = newMatrix(3,3);
+	setElt(m,1,1,1.);
+	setElt(m,1,2,2.);
+	setElt(m,1,3,1.);
+	setElt(m,2,1,4.);
+	setElt(m,2,2,2.);
+	setElt(m,2,3,6.);
+	setElt(m,3,1,2.);
+	setElt(m,3,2,3.); 
+	setElt(m,3,3,1.);
+	displayMatrix(m);
+	printf("\n\n");
 
 	/* /1* setElt(m,1,1,4.); *1/ */
 	/* /1* setElt(m,1,2,-9.); *1/ */
@@ -52,18 +52,17 @@ int main(int argc, char ** argv)
 	/* /1* setElt(m,3,2,2.); *1/ */
 	/* /1* setElt(m,3,3,2.); *1/ */
 
-	/* LUM* test = decomposition(m); */
-	/* afficheL(test); */
-	/* printf("\n\n"); */
-	/* afficheU(test); */
-	/* printf("\n"); */
+	LUM* test = decomposition(m);
+	afficheL(test);
+	printf("\n\n");
+	afficheU(test);
+	printf("\n");
 
-	/* Matrix * mprime; */
-	/* mprime=multiplication(test[0],test[1]); */
-	/* printf("\n\n"); */
-	/* displayMatrix(mprime); */
-	/* printf("\n"); */
-	/* libererLU(test); */
+	Matrix * mprime = inverseL(test[0]);
+	printf("\n\n");
+	displayMatrix(mprime);
+	printf("\n");
+	libererLU(test);
 
     return 0;
 }
