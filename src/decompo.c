@@ -11,7 +11,7 @@ LUM* decomposition(Matrix *m)
 	int n = nbLignes(m);
 	E somme=0.;
 	E somme2=0.;
-	LUM* raiponce = MALLOCN(LUM, 2);
+	LUM* raiponce = MALLOCN(raiponce, 2);
 	
 	raiponce[0] = newMatrix(n,n); // L
 	raiponce[1] = newMatrix(n,n); // U
