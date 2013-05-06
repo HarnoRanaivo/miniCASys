@@ -313,7 +313,9 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 else if (!estMatrice(d1))
                         printf("%s n'est pas une matrice.\n", buffer1);
                 else if (buffer4 < 0)
-                    printf("...\n");
+                    printf("L'exposant doit être positif.\n");
+                else if (nbLignes(matriceDonnee(d1)) != nbColonnes(matriceDonnee(d1)))
+                    printf("La matrice n'est pas carrée.\n");
                 else
                     m = exponentiation(matriceDonnee(d1), buffer4);
             }
@@ -340,6 +342,197 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
     }
 
     return m;
+}
+
+static Variables * lancerDecomposition(Variables * v, char * copie, char * morceaux[2])
+{
+    Commande c = CM_INCONNU;
+    Donnee *d;
+    supprimerEspaces(copie);
+    c = rechercherCommande(copie);
+
+    if (c == CM_LU)
+    {
+        char variable[32] = { '\0' };
+        if (sscanf(morceaux[0], "%31s", variable) == 1
+            && (d = obtenirDonnee(v, variable)) != NULL
+            && estMatrice(d)
+            )
+        {
+            LUM * lu = decomposition(matriceDonnee(d));
+            v = ajouterMatrice(v, "L", copieMatrice(lu[0]));
+            v = ajouterMatrice(v, "U", copieMatrice(lu[1]));
+            afficheLU(lu);
+            libererLU(lu);
+        }
+    }
+    else if (c != CM_INCONNU)
+        printf("%s : Mauvaise utilisation.\n", copie);
+    else
+        printf("%s : Commande inconnue.\n", copie);
+
+    return v;
+}
+
+static Bool lancerSpeedtest(const char * buffer, const char * commande)
+{
+    Bool continuer = VRAI;
+    char fonction[32] = { '\0' };
+    int min, max, pas, sec;
+
+    if (sscanf(buffer, "%*s %31s %d %d %d %d", fonction, &min, &max, &pas, &sec) == 5)
+    {
+        struct timeval tv1, tv2;
+        unsigned long long temps;
+
+        Commande c = rechercherCommande(fonction);
+        if ((c == CM_ADD || c == CM_SUB || c == CM_MULM)
+            && min > 0 && min <= max && pas > 0
+           )
+        {
+            gettimeofday(&tv1, NULL);
+            speedtest(c, min, max, pas);
+            gettimeofday(&tv2, NULL);
+
+            temps = (tv2.tv_sec - tv1.tv_sec);
+            if (temps > sec)
+                continuer = FAUX;
+        }
+    }
+    else if (sscanf(buffer, "%*s %31s %d %d %d", fonction, &min, &max, &pas) == 4)
+    {
+        Commande c = rechercherCommande(fonction);
+        if ((c == CM_ADD || c == CM_SUB || c == CM_MULM)
+            && min > 0 && min <= max && pas > 0
+           )
+            speedtest(c, min, max, pas);
+    }
+    else
+        printf("%s : Arguments invalides.\n", commande);
+
+    return continuer;
+}
+
+static Variables * ligneDeuxParties(Variables * v, char * parties[4], Commande c)
+{
+    supprimerEspaces(parties[0]);
+    c = rechercherCommande(parties[0]);
+
+    if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
+        printf("%s : Mot-clé réservé.\n", parties[0]);
+    else
+    {
+        char variable_1[32];
+        E valeur;
+        Donnee * d;
+
+        /* Ligne de la forme "variable : flottant" ? */
+        if (sscanf(parties[1], "%f\n", &valeur) == 1)
+        {
+            char variable[32];
+
+            if (sscanf(parties[0], "%31s", variable) == 1)
+            {
+                v = ajouterE(v, variable, valeur);
+                printf("\t%f\n", valeur);
+            }
+        }
+        /* Ligne de la forme "variable_2 : variable_1" ? */
+        else if (sscanf(parties[1], "%31s", variable_1) == 1
+                 && (d = obtenirDonnee(v, variable_1)) != NULL
+                )
+        {
+            char variable[32];
+
+            if (sscanf(parties[0], "%31s", variable) == 1)
+            {
+                /* Copie de la variable_1 dans la variable_2 */
+                if (estE(d))
+                {
+                    v = ajouterE(v, variable, eDonnee(d));
+                    printf("\t%f\n", eDonnee(d));
+                }
+                else
+                {
+                    v = ajouterMatrice(v, variable, copieMatrice(matriceDonnee(d)));
+                    displayMatrix(matriceDonnee(d));
+                }
+            }
+        }
+        else
+            printf("%s : Variable non affectée.\n", parties[1]);
+    }
+
+    return v;
+}
+
+static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande c)
+{
+    supprimerEspaces(parties[0]);
+    c = rechercherCommande(parties[0]);
+
+    /* Utilisation d'un mot-clé comme nom de variable ? */
+    if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
+        printf("%s : mot-clé réservé.\n", parties[0]);
+    else
+    {
+        c = rechercherCommande(parties[1]);
+
+        /* Commandes non valides sous cette forme. */
+        if (c == CM_SPD || c == CM_QUIT || c == CM_AIDE)
+            printf("Incorrect.\n");
+        /* Cas particuliers, commandes prenant une seule matrice en argument. */
+        else if (c == CM_DET || c == CM_RK)
+        {
+            char buffer[32];
+
+            if (sscanf(parties[2], " %63[^,]", buffer) == 1)
+            {
+                const Donnee * d1 = obtenirDonnee(v, buffer);
+
+                if (d1 == NULL)
+                    printf("%s n'existe pas.\n", buffer);
+                else if (!estMatrice(d1))
+                    printf("%s n'est pas une matrice.\n", buffer);
+                /* Calcul du déterminant. */
+                else if (c == CM_DET)
+                {
+                    Matrix * m0 = copieMatrice(matriceDonnee(d1));
+                    E det = determinant_opt(m0);
+                    m0 = deleteMatrix(m0);
+
+                    v = ajouterE(v, parties[0], det);
+                    printf("\t%f\n", det);
+                }
+                /* Calcul du rang. */
+                else if (c == CM_RK)
+                {
+                    Matrix * m0 = copieMatrice(matriceDonnee(d1));
+                    triangulaireDet(m0);
+
+                    int rk = rang(m0);
+                    v = ajouterE(v, parties[0], rk);
+                    printf("\t%d\n", rk);
+
+                    deleteMatrix(m0);
+                }
+            }
+        }
+        else if (c == CM_INCONNU)
+            printf("%s : Commande inconnue.\n", parties[1]);
+        /* Autres commandes. */
+        else
+        {
+            Matrix * m = traiterCommande(c, parties[2], v);
+            if (m != NULL)
+            {
+                v = ajouterMatrice(v, parties[0], m);
+                displayMatrix(m);
+            }
+        }
+    }
+
+    return v;
 }
 
 void afficherPrompt(void)
@@ -373,41 +566,36 @@ void afficherPrompt(void)
         {
             char commande[64] = { '\0' };
 
+            /* Pré-traitement pour détecter certaines commandes particulières. */
             char * copie = copierChaine(buffer);
             char * morceaux[2];
             int sousparties = preparerCommande(copie, morceaux);
 
+            /* decomposition(), seule fonction sur les matrices à s'utiliser sous
+             * la forme "fonction(argument)".
+             * (Toutes les autres sont de la forme "variable : fonction(arguments)").
+             */
             if (sousparties == 1 && strchr(buffer, ':') == NULL)
             {
-                Commande c = CM_INCONNU;
-                Donnee *d;
-                supprimerEspaces(copie);
-                c = rechercherCommande(copie);
-                if (c == CM_LU)
-                {
-                    char variable[32] = { '\0' };
-                    if (sscanf(morceaux[0], "%31s", variable) == 1
-                        && (d = obtenirDonnee(v, variable)) != NULL
-                        && estMatrice(d)
-                        )
-                    {
-                        LUM * lu = decomposition(matriceDonnee(d));
-                        v = ajouterMatrice(v, "L", copieMatrice(lu[0]));
-                        v = ajouterMatrice(v, "U", copieMatrice(lu[1]));
-                        afficheLU(lu);
-                        libererLU(lu);
-                    }
-                }
+                /* Fonction statique. */
+                v = lancerDecomposition(v, copie, morceaux);
             }
+            /* speedtest(), autre fonction dont l'appel est particulier. */
             else if (sscanf(buffer, "%63s", commande) == 1
-                && rechercherCommande(commande) == CM_SPD)
+                    && rechercherCommande(commande) == CM_SPD)
             {
-                printf("SPEED\n");
+                /* Fonction statique. */
+                continuer = lancerSpeedtest(buffer, commande);
             }
+            /* Autres lignes de commandes classiques, de la forme
+             * "variable : <fonction, variable...>"
+             */
             else
             {
                 Commande c = CM_INCONNU;
                 Donnee * d = NULL;
+
+                /* Découpage de la ligne de commande. */
                 char * parties[4];
                 int ok = preparerLigneCommmande(buffer, parties);
 
@@ -423,103 +611,21 @@ void afficherPrompt(void)
                             c = rechercherCommande(parties[0]);
                             if (c == CM_INCONNU)
                                 printf("Commande inconnue ou variable non affectée.\n");
-                            else if (c == CM_SPD)
-                                printf("SPEEDTEST\n");
+                            else if (c == CM_AIDE)
+                                afficherPromptAide();
                             else if (c != CM_QUIT)
                                 printf("Mauvaise utilisation de %s.\n", parties[0]);
                         }
                         break;
 
                     case 2 :
-                        supprimerEspaces(parties[0]);
-                        c = rechercherCommande(parties[0]);
-                        if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
-                            printf("%s : mot-clé réservé.\n", parties[0]);
-                        else
-                        {
-                            E valeur;
-                            Donnee * d;
-                            if (sscanf(parties[1], "%f\n", &valeur) == 1)
-                            {
-                                char variable[32];
-                                if (sscanf(parties[0], "%31s", variable) == 1)
-                                {
-                                    v = ajouterE(v, variable, valeur);
-                                    printf("\t%f\n", valeur);
-                                }
-                            }
-                            else if ((d = obtenirDonnee(v, parties[1])) != NULL)
-                            {
-                                char variable[32];
-                                if (sscanf(parties[0], "%31s", variable) == 1)
-                                {
-                                    if (estE(d))
-                                    {
-                                        v = ajouterE(v, variable, eDonnee(d));
-                                        printf("\t%f\n", eDonnee(d));
-                                    }
-                                    else
-                                    {
-                                        v = ajouterMatrice(v, variable, copieMatrice(matriceDonnee(d)));
-                                        displayMatrix(matriceDonnee(d));
-                                    }
-                                }
-                            }
-                            else
-                                printf("%s : Incorrect.\n", parties[1]);
-                        }
-
+                        /* Fonction statique. */
+                        v = ligneDeuxParties(v, parties, c);
                         break;
 
                     case 3 :
-                        supprimerEspaces(parties[0]);
-                        c = rechercherCommande(parties[0]);
-                        if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
-                            printf("%s : mot-clé réservé.\n", parties[0]);
-                        else
-                        {
-                            c = rechercherCommande(parties[1]);
-                            if (c == CM_SPD || c == CM_QUIT)
-                                printf("Incorrect.\n");
-                            else if (c == CM_DET || c == CM_RK)
-                            {
-                                char buffer[32];
-                                if (sscanf(parties[2], " %63[^,]", buffer) == 1)
-                                {
-                                    const Donnee * d1 = obtenirDonnee(v, buffer);
-
-                                    if (d1 == NULL)
-                                        printf("%s n'existe pas.\n", buffer);
-                                    else if (!estMatrice(d1))
-                                        printf("%s n'est pas une matrice.\n", buffer);
-                                    else if (c == CM_DET)
-                                    {
-                                        Matrix * m0 = copieMatrice(matriceDonnee(d1));
-                                        E det = determinant_opt(m0);
-                                        deleteMatrix(m0);
-                                        v = ajouterE(v, parties[0], det);
-                                        printf("\t%f\n", det);
-                                    }
-                                    else if (c == CM_RK)
-                                    {
-                                        int rk;
-                                        Matrix * m0 = copieMatrice(matriceDonnee(d1));
-                                        triangulaireDet(m0);
-                                        displayMatrix(m0);
-                                        rk = rang(m0);
-                                        v = ajouterE(v, parties[0], rk);
-                                        printf("\t%d\n", rk);
-                                        deleteMatrix(m0);
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                Matrix * m = traiterCommande(c, parties[2], v);
-                                v = ajouterMatrice(v, parties[0], m);
-                                if (m != NULL) displayMatrix(m);
-                            }
-                        }
+                        /* Fonction statique. */
+                        v = ligneTroisParties(v, parties, c);
                         break;
 
                     case 4 :
@@ -533,9 +639,84 @@ void afficherPrompt(void)
                     continuer = FAUX;
                 }
             }
+
+            free(copie);
         }
     }
     while (continuer);
 
     v = libererVariables(v);
+}
+
+void speedtest(Commande c, int min, int max, int pas)
+{
+    static const char * fichier = "/tmp/minicas";
+    Bool erreur = FAUX;
+
+    Matrix * (*fun) (const Matrix *, const Matrix *);
+
+    switch (c)
+    {
+        case CM_ADD :
+            fun = addition;
+            break;
+        case CM_SUB :
+            fun = soustraction;
+            break;
+        case CM_MULM :
+            fun = multiplication;
+            break;
+
+        default :
+            break;
+    }
+
+    FILE * const output = fopen(fichier, "w");
+    if (output == NULL)
+    {
+        perror("fopen");
+        erreur = VRAI;
+    }
+
+    if (erreur != VRAI)
+    for (int i = min; i <= max; i += pas)
+    {
+        struct timeval tv1, tv2;
+        unsigned long long temps;
+
+        Matrix * m1 = aleatoire(newMatrix(i, i), ALEA_MIN, ALEA_MAX);
+        Matrix * m2 = aleatoire(newMatrix(i, i), ALEA_MIN, ALEA_MAX);
+
+        gettimeofday(&tv1, NULL);
+        Matrix * m3 = fun(m1, m2);
+        gettimeofday(&tv2, NULL);
+
+        temps = ((tv2.tv_sec * 1000000 + tv2.tv_usec) - (tv1.tv_sec * 1000000 + tv1.tv_usec));
+
+        fprintf(output, "%d %llu\n", i, temps);
+        fflush(output);
+
+        m1 = deleteMatrix(m1);
+        m2 = deleteMatrix(m2);
+        m3 = deleteMatrix(m3);
+    }
+
+    fclose(output);
+
+    FILE * const gnuplot = popen("gnuplot -persistent", "w");
+    if (gnuplot == NULL || gnuplot == (FILE *)-1)
+    {
+        perror("popen");
+        erreur = VRAI;
+    }
+
+    fprintf(gnuplot,
+            "set style data histogram\n"
+            "set style fill solid border\n"
+            "set xlabel \"Taille\"\n"
+            "set ylabel \"Temps (µsecondes)\"\n"
+            "plot '%s' u 2:xtic(1) ti \"\"\n",
+            fichier);
+    fflush(gnuplot);
+    fclose(gnuplot);
 }
