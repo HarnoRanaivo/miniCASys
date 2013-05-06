@@ -4,7 +4,7 @@
 * To Public License, Version 2, as published by Sam Hocevar. See
 * http://wtfpl.net for more details. */
 /**
- * \file lu.h
+ * \file decompo.h
  * \brief Décomposition en LU (header)
  * \author Jérémy Meyer
  */
@@ -48,6 +48,8 @@ void afficheL(LUM* lum);
  * \return \b void
  */
 void afficheU(LUM* lum);
+
+void afficheLU(LUM* lum);
 
 /**
  * \brief Libération de la mémoire utilisée dans une décompositon en LU.

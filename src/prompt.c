@@ -105,6 +105,15 @@ LCM[] =
         { "rank", NULL, },
     },
 
+    [CM_LU] =
+    {
+        CM_LU,
+        "\tdecomposition\n"
+        "\t\tDécomposition LU d'une matrice.\n\n",
+        { "decomposition", NULL, },
+
+    },
+
     [CM_SPD] =
     {
         CM_SPD,
@@ -390,11 +399,12 @@ void afficherPrompt(void)
                 case 2 :
                     supprimerEspaces(parties[0]);
                     c = rechercherCommande(parties[0]);
-                    if (c != CM_INCONNU)
+                    if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
                         printf("%s : mot-clé réservé.\n", parties[0]);
                     else
                     {
                         E valeur;
+                        Donnee * d;
                         if (sscanf(parties[1], "%f\n", &valeur) == 1)
                         {
                             char variable[32];
@@ -402,6 +412,23 @@ void afficherPrompt(void)
                             {
                                 v = ajouterE(v, variable, valeur);
                                 printf("\t%f\n", valeur);
+                            }
+                        }
+                        else if ((d = obtenirDonnee(v, parties[1])) != NULL)
+                        {
+                            char variable[32];
+                            if (sscanf(parties[0], "%31s", variable) == 1)
+                            {
+                                if (estE(d))
+                                {
+                                    v = ajouterE(v, variable, eDonnee(d));
+                                    printf("\t%f\n", eDonnee(d));
+                                }
+                                else
+                                {
+                                    v = ajouterMatrice(v, variable, copieMatrice(matriceDonnee(d)));
+                                    displayMatrix(matriceDonnee(d));
+                                }
                             }
                         }
                         else
@@ -413,14 +440,14 @@ void afficherPrompt(void)
                 case 3 :
                     supprimerEspaces(parties[0]);
                     c = rechercherCommande(parties[0]);
-                    if (c != CM_INCONNU)
+                    if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
                         printf("%s : mot-clé réservé.\n", parties[0]);
                     else
                     {
                         c = rechercherCommande(parties[1]);
                         if (c == CM_SPD || c == CM_QUIT)
                             printf("Incorrect.\n");
-                        else if (c == CM_DET || c == CM_RK)
+                        else if (c == CM_DET || c == CM_RK || c == CM_LU)
                         {
                             char buffer[32];
                             if (sscanf(parties[2], " %63[^,]", buffer) == 1)
@@ -449,6 +476,14 @@ void afficherPrompt(void)
                                     v = ajouterE(v, parties[0], rk);
                                     printf("\t%d\n", rk);
                                     deleteMatrix(m0);
+                                }
+                                else if (c == CM_LU)
+                                {
+                                    LUM * lu = decomposition(matriceDonnee(d1));
+                                    v = ajouterMatrice(v, "L", copieMatrice(lu[0]));
+                                    v = ajouterMatrice(v, "U", copieMatrice(lu[1]));
+                                    afficheLU(lu);
+                                    libererLU(lu);
                                 }
                             }
                         }

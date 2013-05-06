@@ -23,6 +23,7 @@
 #include "parseur.h"
 #include "operations.h"
 #include "resol.h"
+#include "decompo.h"
 
 /**
  * \enum Commande
@@ -41,6 +42,7 @@ typedef enum Commande
     CM_INV,         /**<- Invcersion d'une matrice. */
     CM_SOL,         /**<- Résolution d'un système. */
     CM_RK,          /**<- Calcul du rang d'une matrice. */
+    CM_LU,          /**<- Décomposition LU. */
     CM_SPD,         /**<- Speedtest. */
     CM_QUIT,        /**<- Quitter. */
     CM_AIDE,        /**<- Afficher l'aide. */

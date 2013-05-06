@@ -4,7 +4,7 @@
 * To Public License, Version 2, as published by Sam Hocevar. See
 * http://wtfpl.net for more details. */
 /**
- * \file lu.c
+ * \file decompo.c
  * \brief Décomposition en LU (code source)
  * \author Jérémy Meyer
  */
@@ -79,19 +79,29 @@ LUM* decomposition(Matrix *m)
 
 void afficheL(LUM* lum)
 {
+    printf("\tL :\n");
 	displayMatrix(lum[0]);
 	return;
 }
 
 void afficheU(LUM* lum)
 {
+    printf("\tU :\n");
 	displayMatrix(lum[1]);
 	return;
+}
+
+void afficheLU(LUM* lum)
+{
+    afficheL(lum);
+    printf("\n\n");
+    afficheU(lum);
 }
 
 void libererLU(LUM* lum)
 {
 	deleteMatrix(lum[0]);
 	deleteMatrix(lum[1]);
+	free(lum);
 	return;
 }
