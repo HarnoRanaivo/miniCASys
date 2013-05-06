@@ -81,9 +81,9 @@ Matrix * permutLigne(Matrix * m, int i, int j)
 void permutLigneSysteme(Matrix * m, Matrix * b, int i, int j)
 {
     /* Matrice b. */
-    E tmp = getElt(b, i, 0);
-    setElt(b, i, 0, getElt(b, j, 0));
-    setElt(b, j, 0, tmp);
+    E tmp = getElt(b, i, 1);
+    setElt(b, i, 1, getElt(b, j, 1));
+    setElt(b, j, 1, tmp);
 
     /* Matrice m. */
     m = permutLigne(m, i, j);
@@ -94,7 +94,7 @@ void permutLigneSysteme(Matrix * m, Matrix * b, int i, int j)
 void addMultLigneSysteme(Matrix * m, Matrix * b, int i, int j, E k)
 {
     /* Matrice b. */
-    setElt(b, i, 0, getElt(b, i, 0) + getElt(b, j, 0) * k);
+    setElt(b, i, 1, getElt(b, i, 1) + getElt(b, j, 1) * k);
 
     /* Matrice m. */
     addMultLigne(m, i, j, k);
@@ -123,7 +123,7 @@ void triangulaireSysteme(Matrix * m, Matrix * b)
     {
         permutLigneSysteme(m, b, i, choixPivotPartiel(m, i));
 
-        for (int k = i+1; k < nbLignes(m); k++)
+        for (int k = i+1; k <= nbLignes(m); k++)
             addMultLigneSysteme(m, b, k, i, -getElt(m, k, i) / getElt(m, i, i));
     }
 }
@@ -204,7 +204,7 @@ void gauss(Matrix * m, Matrix * b, Matrix * x)
 void multLigne(Matrix * m, Matrix * b, int i, E k)
 {
     /* Matrice b. */
-    setElt(b, i, 1, getElt(b, i, 0) * k);
+    setElt(b, i, 1, getElt(b, i, 1) * k);
 
     /* Matrice m. */
     for (int j = 1; j <= nbColonnes(m); j++)

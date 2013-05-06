@@ -256,9 +256,12 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                         {
                             Matrix * m0 = copieMatrice(m1);
                             Matrix * b0 = copieMatrice(m2);
+                            /* displayMatrix(m0); */
+                            /* displayMatrix(b0); */
                             Matrix * solution = newMatrix(nbLignes(m1), 1);
 
                             gauss(m0, b0, solution);
+                            /* gauss((Matrix *)m1, (Matrix *) m2, solution); */
                             deleteMatrix(m0);
                             deleteMatrix(b0);
 
@@ -427,7 +430,7 @@ void afficherPrompt(void)
                                     printf("%s n'existe pas.\n", buffer);
                                 else if (!estMatrice(d1))
                                     printf("%s n'est pas une matrice.\n", buffer);
-                                else if (c == CM_SPD)
+                                else if (c == CM_DET)
                                 {
                                     Matrix * m0 = copieMatrice(matriceDonnee(d1));
                                     E det = determinant_opt(m0);
