@@ -1,3 +1,8 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file matrix.h
  * \brief Matrices (header)
@@ -25,8 +30,7 @@ typedef struct Matrix
 /**
  * \brief Nombre de lignes d'une matrice
  * \relatesalso matrix
- * \param m matrice
- * \return nombre de lignes
+ * \param m matrice * \return nombre de lignes
  */
 static inline int nbLignes(const Matrix * m)
 {
@@ -102,5 +106,13 @@ Matrix * identite(int size);
  * \return pointeur vers la matrice
  */
 Matrix * aleatoire(Matrix * m, float min, float max);
+
+/**
+ * \brief Copier une matrice.
+ * \relatesalso matrix
+ * \param m Matrice à copier.
+ * \return Copie.
+ */
+Matrix * copieMatrice(const Matrix * m);
 
 #endif /* __MATRIX_H */

@@ -1,3 +1,8 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file matrix.c
  * \brief Matrices (code)
@@ -17,11 +22,10 @@ Matrix * newMatrix(int nb_rows, int nb_columns)
 
         if (m->mat == NULL)
         {
+            perror("malloc");
             free(m);
             m = NULL;
         }
-        else
-            perror("malloc");
     }
     else
         perror("malloc");
@@ -55,9 +59,10 @@ void displayMatrix(const Matrix * m)
 {
     for (int i = 1; i <= nbLignes(m);i++)
     {
-        for (int j = 1; j <= nbColonnes(m); j++)
-            printf("\t%f", getElt(m, i, j));
-        printf("\n");
+        printf("\t[ ");
+        for (int j = 1; j < nbColonnes(m); j++)
+            printf("%f\t", getElt(m, i, j));
+        printf("%f ]\n", getElt(m, i, nbColonnes(m)));
     }
 
 }
@@ -89,4 +94,15 @@ Matrix * aleatoire(Matrix * m, float min, float max)
             setElt(m, i, j, min + (drand48() * (max - min)));
 
     return m;
+}
+
+Matrix * copieMatrice(const Matrix * m)
+{
+    Matrix * m0 = newMatrix(nbLignes(m), nbColonnes(m));
+
+    for (int i = 1; i <= nbLignes(m); i++)
+        for (int j = 1; j <= nbColonnes(m); j++)
+            setElt(m0, i, j, getElt(m, i, j));
+
+    return m0;
 }

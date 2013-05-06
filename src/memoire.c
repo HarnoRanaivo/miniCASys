@@ -1,3 +1,8 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file memoire.c
  * \brief Gestion des variables utilisateur (code)
@@ -56,18 +61,19 @@ E eDonnee(const Donnee * d)
     return d->u_var.flottant;
 }
 
+Matrix * matriceDonnee(const Donnee * d)
+{
+    return d->u_var.matrice;
+}
+
 Donnee * libererDonnee(Donnee * d)
 {
     if (estMatrice(d))
         deleteMatrix(d->u_var.matrice);
+    free((char *)d->nom);
     free(d);
 
     return NULL;
-}
-
-Matrix * matriceDonnee(const Donnee * d)
-{
-    return d->u_var.matrice;
 }
 
 Variables * initVariables(void)
@@ -96,7 +102,11 @@ Variables * initVariables(void)
     return v;
 }
 
-Variables * agrandirVariables(Variables * v)
+/**
+ * \brief Agrandir la taille du tableau de variables.
+ * \return Variables
+ */
+static Variables * agrandirVariables(Variables * v)
 {
     Donnee ** d0 = REALLOC(v->donnees, v->taille + VAR_TAILLE);
 
@@ -155,22 +165,27 @@ Variables * ajouterE(Variables * v, const char * nomVariable, E e)
 
 Variables * ajouterMatrice(Variables * v, const char * nomVariable, const Matrix * m)
 {
-    Donnee * d = obtenirDonnee(v, nomVariable);
+    if (m != NULL)
+    {
+        Donnee * d = obtenirDonnee(v, nomVariable);
 
-    if (d != NULL)
-    {
-        if (!estMatrice(d))
+        if (d != NULL)
         {
-            d->type = VAR_MATRICE;
+            if (!estMatrice(d))
+            {
+                d->type = VAR_MATRICE;
+            }
+            else
+                deleteMatrix(d->u_var.matrice);
+            d->u_var.matrice = (Matrix *) m;
         }
-        d->u_var.matrice = (Matrix *) m;
-    }
-    else
-    {
-        if (v->taille == v->position)
-            v = agrandirVariables(v);
-        v->donnees[v->position] = nouvelleMatrice(nomVariable, m);
-        v->position++;
+        else
+        {
+            if (v->taille == v->position)
+                v = agrandirVariables(v);
+            v->donnees[v->position] = nouvelleMatrice(nomVariable, m);
+            v->position++;
+        }
     }
 
     return v;
@@ -204,6 +219,9 @@ Variables * libererVariables(Variables * v)
 {
     for (int i = 0; i < v->position; i++)
         libererDonnee(v->donnees[i]);
+
+    free(v->donnees);
+    free(v);
 
     return NULL;
 }

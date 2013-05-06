@@ -1,3 +1,8 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file lu.c
  * \brief Décomposition en LU (code source)
@@ -11,7 +16,7 @@ LUM* decomposition(Matrix *m)
 	int n = nbLignes(m);
 	E somme=0.;
 	E somme2=0.;
-	LUM* raiponce = MALLOCN(LUM, 2);
+	LUM* raiponce = MALLOCN(raiponce, 2);
 	
 	raiponce[0] = newMatrix(n,n); // L
 	raiponce[1] = newMatrix(n,n); // U
