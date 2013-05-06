@@ -72,7 +72,7 @@ Matrix * exponentiation(const Matrix * m, int n)
 
 Matrix * transpose(const Matrix * m)
 {
-    Matrix * mt = newMatrix(nbLignes(m), nbColonnes(m));
+    Matrix * mt = newMatrix(nbColonnes(m), nbLignes(m));
 
     if (mt != NULL)
         for (int i = 1; i <= nbLignes(mt); i++)
