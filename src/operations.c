@@ -7,7 +7,7 @@
 
 Matrix * addition(const Matrix * m1, const Matrix * m2)
 {
-    Matrix * m = newMatrix(nbColonnes(m1), nbLignes(m1));
+    Matrix * m = newMatrix(nbLignes(m1), nbColonnes(m1));
 
     if (m != NULL)
         for (int i = 1; i <= nbLignes(m1); i++)
@@ -19,7 +19,7 @@ Matrix * addition(const Matrix * m1, const Matrix * m2)
 
 Matrix * soustraction(const Matrix * m1, const Matrix * m2)
 {
-    Matrix * m = newMatrix(nbColonnes(m1), nbLignes(m1));
+    Matrix * m = newMatrix(nbLignes(m1), nbColonnes(m1));
 
     if (m != NULL)
         for (int i = 1; i <= nbLignes(m1); i++)

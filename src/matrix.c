@@ -29,8 +29,7 @@ Matrix * newMatrix(int nb_rows, int nb_columns)
 }
 
 E getElt(const Matrix * m, int row, int column)
-{
-    return *(m->mat + ((row - 1) * nbColonnes(m)) + (column - 1));
+{ return *(m->mat + ((row - 1) * nbColonnes(m)) + (column - 1));
 }
 
 void setElt(Matrix * m, int row, int column, E val)
@@ -54,9 +53,10 @@ void displayMatrix(const Matrix * m)
 {
     for (int i = 1; i <= nbLignes(m);i++)
     {
+        printf("[");
         for (int j = 1; j <= nbColonnes(m); j++)
             printf("\t%f", getElt(m, i, j));
-        printf("\n");
+        printf("\t]\n");
     }
 
 }
