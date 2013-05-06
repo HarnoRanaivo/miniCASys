@@ -149,6 +149,27 @@ int triangulaireDet(Matrix * m)
     return c;
 }
 
+int rang(const Matrix * m)
+{
+    int n = 0;
+    for (int i = 1; i <= nbLignes(m); i++)
+    {
+        Bool zeros = VRAI;
+        for (int j= 1; j <= nbColonnes(m); j++)
+            if (getElt(m, i, j) != 0.)
+            {
+                zeros = FAUX;
+                break;
+            }
+        if (zeros == VRAI)
+            return n;
+        else
+            n++;
+    }
+
+    return n;
+}
+
 E determinant_opt(Matrix * m)
 {
     int c = triangulaireDet(m);

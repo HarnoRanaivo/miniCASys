@@ -183,7 +183,7 @@ void afficherDonnee(const Donnee * d)
     if (d != NULL)
     {
         if (estE(d))
-            printf("%f\n", eDonnee(d));
+            printf("\t%f\n", eDonnee(d));
         else
             displayMatrix(matriceDonnee(d));
     }
@@ -323,9 +323,6 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
         case CM_INV :
             break;
 
-        case CM_RK :
-            break;
-
         default :
             break;
     }
@@ -419,7 +416,7 @@ void afficherPrompt(void)
                         c = rechercherCommande(parties[1]);
                         if (c == CM_SPD || c == CM_QUIT)
                             printf("Incorrect.\n");
-                        else if (c == CM_DET)
+                        else if (c == CM_DET || c == CM_RK)
                         {
                             char buffer[32];
                             if (sscanf(parties[2], " %63[^,]", buffer) == 1)
@@ -430,13 +427,24 @@ void afficherPrompt(void)
                                     printf("%s n'existe pas.\n", buffer);
                                 else if (!estMatrice(d1))
                                     printf("%s n'est pas une matrice.\n", buffer);
-                                else
+                                else if (c == CM_SPD)
                                 {
                                     Matrix * m0 = copieMatrice(matriceDonnee(d1));
                                     E det = determinant_opt(m0);
                                     deleteMatrix(m0);
                                     v = ajouterE(v, parties[0], det);
                                     printf("\t%f\n", det);
+                                }
+                                else if (c == CM_RK)
+                                {
+                                    int rk;
+                                    Matrix * m0 = copieMatrice(matriceDonnee(d1));
+                                    triangulaireDet(m0);
+                                    displayMatrix(m0);
+                                    rk = rang(m0);
+                                    v = ajouterE(v, parties[0], rk);
+                                    printf("\t%d\n", rk);
+                                    deleteMatrix(m0);
                                 }
                             }
                         }
