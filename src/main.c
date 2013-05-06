@@ -12,6 +12,7 @@
 #include "matrix.h"
 #include "operations.h"
 #include "resol.h"
+#include "prompt.h"
 
 /**
  * \brief Main.
@@ -20,5 +21,6 @@
  */
 int main(int argc, char ** argv)
 {
+    afficherPrompt();
     return 0;
 }

@@ -20,6 +20,7 @@
 #include "base.h"
 #include "matrix.h"
 #include "memoire.h"
+#include "parseur.h"
 
 /**
  * \enum Commande
@@ -27,6 +28,7 @@
  */
 typedef enum Commande
 {
+    CM_NEW,         /**<- Nouvelle matrice. */
     CM_ADD,         /**<- Addition de matrices. */
     CM_SUB,         /**<- Soustraction de matrices. */
     CM_MULM,        /**<- Multiplication de matrices. */

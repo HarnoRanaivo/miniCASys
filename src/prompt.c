@@ -26,6 +26,14 @@ LCM[] =
         { "add", "addition", NULL, },
     },
 
+    [CM_NEW] =
+    {
+        CM_NEW,
+        "\tmatrix, new\n"
+        "\t\tCréation d'une nouvelle matrice.\n\n",
+        { "matrix", "new", NULL, },
+    },
+
     [CM_SUB] =
     {
         CM_SUB,
@@ -171,6 +179,126 @@ Bool verifier(const char * chaine)
     return rechercherMot(buffer, (const char * []) { "o", "oui", NULL, });
 }
 
+int preparerLigneCommmande(char * chaine, char * decomposition[4])
+{
+    int parties = 1;
+    char * parcours;
+
+    for (int i = 0; i < 4; i++)
+        decomposition[i] = NULL;
+
+    /* partie avant le ':' */
+    decomposition[0] = chaine;
+    if ((parcours = strchr(chaine, ':')) != NULL)
+    {
+        *parcours = '\0';
+        parcours += 1;
+        parties++;
+        /* Partie après le ':' */
+        decomposition[1] = parcours;
+
+        if ((parcours = strchr(parcours, '(')) !=  NULL)
+        {
+            *parcours = '\0';
+            parcours += 1;
+            parties++;
+            /* Arguments de la commande, s'il y en a */
+            decomposition[2] = parcours;
+
+            if ((parcours = strchr(parcours, ')')) != NULL)
+            {
+                *parcours = '\0';
+                parcours += 1;
+
+                char reste[32];
+                if (sscanf(parcours, "%31s", reste) == 1)
+                {
+                    parties++;
+                    decomposition[3] = parcours;
+                }
+            }
+            else
+                return -parties;
+        }
+        else
+            decomposition[2] = NULL;
+    }
+    else
+        decomposition[1] = NULL;
+
+    /* Vérification qu'il n'y a bien qu'un seul mot dans
+     * les 2 premières parties.
+     */
+    for (int i = 0; i < 2; i ++)
+    {
+        char buffer[32];
+
+        if (decomposition[i] != NULL
+            && sscanf(decomposition[i], "%s %s", buffer, buffer) == 2
+           )
+            return -parties;
+    }
+
+    return parties;
+}
+
+void afficherDonnee(const Donnee * d)
+{
+    if (estE(d))
+        printf("%f\n", eDonnee(d));
+    else
+        displayMatrix(matriceDonnee(d));
+}
+
+Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
+{
+    Matrix * m = NULL;
+    switch(c)
+    {
+        case CM_NEW :
+            if (contientMatriceValide(arguments))
+                m = recupererMatrice(arguments, v);
+            else
+                printf("%s : matrice non valide.\n", arguments);
+            break;
+
+        case CM_ADD :
+            break;
+
+        case CM_SUB :
+            break;
+
+        case CM_MULM :
+            break;
+
+        case CM_MULS :
+            break;
+
+        case CM_EXP :
+            break;
+
+        case CM_TSP :
+            break;
+
+        case CM_DET :
+            break;
+
+        case CM_INV :
+            break;
+
+        case CM_SOL :
+            break;
+
+        case CM_RK :
+            break;
+
+        default :
+            break;
+    }
+
+    return m;
+}
+
 void afficherPrompt(void)
 {
     Variables * v = initVariables();
@@ -195,13 +323,79 @@ void afficherPrompt(void)
         fflush(stdout);
 
         /* Lecture des entrées de l'utilisateur. */
-        succes = scanf("%511[^\n]%*[^\n]%*c", buffer);
+        succes = scanf("%511[^\n]%*[^\n]", buffer);
+        getchar();
 
         if (succes == 1)
         {
-            Commande c = rechercherCommande(buffer);
+            Commande c = CM_INCONNU;
+            Donnee * d = NULL;
+            char * parties[4];
+            int ok = preparerLigneCommmande(buffer, parties);
 
-            v = traiterLigneCommande(buffer, c, v);
+            printf("%d\n", ok);
+            switch (ok)
+            {
+                case 1 :
+                    d = obtenirDonnee(v, parties[0]);
+                    if (d != NULL)
+                        afficherDonnee(d);
+                    else
+                    {
+                        c = rechercherCommande(parties[0]);
+                        if (c == CM_INCONNU)
+                            printf("Commande inconnue ou variable non affectée.\n");
+                        else if (c == CM_SPD)
+                            printf("SPEEDTEST\n");
+                        else if (c != CM_QUIT)
+                            printf("Mauvaise utilisation de %s.\n", parties[0]);
+                    }
+                    break;
+
+                case 2 :
+                    c = rechercherCommande(parties[0]);
+                    if (c != CM_INCONNU)
+                        printf("%s : mot-clé réservé.\n", parties[0]);
+                    else
+                    {
+                        E valeur;
+                        if (sscanf(parties[1], "%f\n", &valeur) == 1)
+                        {
+                            char variable[32];
+                            if (sscanf(parties[0], "%31s", variable) == 1)
+                                v = ajouterE(v, variable, valeur);
+                        }
+                        else
+                            printf("%s : Incorrect.\n", parties[1]);
+                    }
+
+                    break;
+
+                case 3 :
+                    c = rechercherCommande(parties[0]);
+                    if (c != CM_INCONNU)
+                        printf("%s : mot-clé réservé.\n", parties[0]);
+                    else
+                    {
+                        c = rechercherCommande(parties[1]);
+                        if (c == CM_SPD || c == CM_QUIT)
+                            printf("Incorrect.\n");
+                        else
+                        {
+                            Matrix * m = traiterCommande(c, parties[2], v);
+                            v = ajouterMatrice(v, parties[0], m);
+                            if (m != NULL) displayMatrix(m);
+                        }
+                    }
+                    break;
+
+                case 4 :
+
+                default :
+                    printf("Syntaxe non valide.\n");
+            }
+
+            /* v = traiterLigneCommande(buffer, c, v); */
             if (c == CM_QUIT && verifier("de vouloir quitter le programme ") == VRAI)
             {
                 continuer = FAUX;
@@ -209,4 +403,6 @@ void afficherPrompt(void)
         }
     }
     while (continuer);
+
+    v = libererVariables(v);
 }

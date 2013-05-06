@@ -17,11 +17,10 @@ Matrix * newMatrix(int nb_rows, int nb_columns)
 
         if (m->mat == NULL)
         {
+            perror("malloc");
             free(m);
             m = NULL;
         }
-        else
-            perror("malloc");
     }
     else
         perror("malloc");
