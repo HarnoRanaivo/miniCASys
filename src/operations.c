@@ -7,7 +7,7 @@
 
 Matrix * addition(const Matrix * m1, const Matrix * m2)
 {
-    Matrix * m = newMatrix(nbColonnes(m1), nbLignes(m1));
+    Matrix * m = newMatrix(nbLignes(m1), nbColonnes(m1));
 
     if (m != NULL)
         for (int i = 1; i <= nbLignes(m1); i++)
@@ -19,7 +19,7 @@ Matrix * addition(const Matrix * m1, const Matrix * m2)
 
 Matrix * soustraction(const Matrix * m1, const Matrix * m2)
 {
-    Matrix * m = newMatrix(nbColonnes(m1), nbLignes(m1));
+    Matrix * m = newMatrix(nbLignes(m1), nbColonnes(m1));
 
     if (m != NULL)
         for (int i = 1; i <= nbLignes(m1); i++)
@@ -50,10 +50,11 @@ Matrix * exponentiation(const Matrix * m, int n)
     Matrix * mp = (Matrix *)m;
     Matrix * ms;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         ms = multiplication(mp, m);
-        mp = deleteMatrix(mp);
+        if (mp != m)
+            mp = deleteMatrix(mp);
 
         if (ms != NULL)
             mp = ms;
@@ -84,4 +85,6 @@ Matrix * multiplierScalaire(const Matrix * m, E k)
         for (int i = 0; i <= nbLignes(m0); i++)
             for (int j = 0; i <= nbColonnes(m0); j++)
                 setElt(m0, i, j, getElt(m, i, j) * k);
+
+    return m0;
 }

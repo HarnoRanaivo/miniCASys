@@ -25,8 +25,7 @@ typedef struct Matrix
 /**
  * \brief Nombre de lignes d'une matrice
  * \relatesalso matrix
- * \param m matrice
- * \return nombre de lignes
+ * \param m matrice * \return nombre de lignes
  */
 static inline int nbLignes(const Matrix * m)
 {
@@ -93,7 +92,7 @@ void displayMatrix(const Matrix * m);
  */
 Matrix * identite(int size);
 
-/*
+/**
  * \brief Remplir une matrice aléatoirement
  * \relatesalso matrix
  * \param m matrice à remplir
@@ -102,5 +101,13 @@ Matrix * identite(int size);
  * \return pointeur vers la matrice
  */
 Matrix * aleatoire(Matrix * m, float min, float max);
+
+/**
+ * \brief Copier une matrice.
+ * \relatesalso matrix
+ * \param m Matrice à copier.
+ * \return Copie.
+ */
+Matrix * copieMatrice(const Matrix * m);
 
 #endif /* __MATRIX_H */

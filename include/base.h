@@ -155,6 +155,19 @@ static inline Bool rechercherMot(const char * mot, const char * const * tableau)
     return FAUX;
 }
 
+static inline int compterTokens(const char * chaine, char c)
+{
+    int n = 0;
+
+    for (const char * s = chaine; s != NULL; s = strchr(s, c))
+    {
+        n++;
+        s++;
+    }
+
+    return n;
+}
+
 /**
  * \brief Compter le nombre de mots dans une chaîne de caractères.
  * \param chaine Chaîne de caractères.
@@ -163,15 +176,7 @@ static inline Bool rechercherMot(const char * mot, const char * const * tableau)
  */
 static inline int compterMots(const char * chaine)
 {
-    int n = 0;
-
-    for (const char * s = chaine; s != NULL; s = strchr(s, ' '))
-    {
-        n++;
-        s++;
-    }
-
-    return n;
+    return compterTokens(chaine, ' ');
 }
 
 /**
@@ -183,6 +188,13 @@ static inline void chaineEnMinuscules(char * chaine)
 {
     for (int i = 0; chaine[i] != '\0'; i++)
         chaine[i] = tolower(chaine[i]);
+}
+
+static inline void supprimerEspaces(char * chaine)
+{
+    for (int i = 0; chaine[i] != '\0'; i++)
+        if (isspace(chaine[i]))
+            chaine[i] = '\0';
 }
 
 #endif /* __BASE_H */

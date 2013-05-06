@@ -1,6 +1,12 @@
 # Object files
 *.o
 
+# Folders
+doc/
+bin/
+obj/
+lib/
+
 # Libraries
 *.lib
 *.a
@@ -18,3 +24,6 @@
 
 # Vim
 *.swp
+
+# Tags
+tags
