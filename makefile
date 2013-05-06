@@ -9,8 +9,8 @@ vpath %.c src/
 vpath %.h include/
 vpath %.o obj/
 
-main : main.o matrix.o operations.o resol.o memoire.o prompt.o parseur.o decompo.o | bin
-	$(CC) $(CFLAGS) -o $(BPATH)main $(OPATH)main.o $(OPATH)matrix.o $(OPATH)operations.o $(OPATH)resol.o $(OPATH)memoire.o $(OPATH)prompt.o $(OPATH)parseur.o $(OPATH)decompo.o
+minicas : main.o matrix.o operations.o resol.o memoire.o prompt.o parseur.o decompo.o | bin
+	$(CC) $(CFLAGS) -o $(BPATH)minicas $(OPATH)main.o $(OPATH)matrix.o $(OPATH)operations.o $(OPATH)resol.o $(OPATH)memoire.o $(OPATH)prompt.o $(OPATH)parseur.o $(OPATH)decompo.o
 
 parseur.o : parseur.c parseur.h base.h memoire.h
 prompt.o : prompt.c prompt.h base.h matrix.h memoire.h parseur.h operations.h resol.h
