@@ -17,6 +17,7 @@
 #include "base.h"
 #include "matrix.h"
 #include "operations.h"
+#include "resol.h"
 
 /**
  * \typedef LUM
@@ -49,6 +50,12 @@ void afficheL(LUM* lum);
  */
 void afficheU(LUM* lum);
 
+/**
+ * \brief Affichage des matrices L et U d'une décomposition en LU.
+ * \param lum (Matrix L et Matrix U)
+ * \relatesalso LUM
+ * \return \b void
+ */
 void afficheLU(LUM* lum);
 
 /**
@@ -58,5 +65,30 @@ void afficheLU(LUM* lum);
  * \return \b void
  */
 void libererLU(LUM* lum);
+
+/**
+ * \brief Récupère l'inverse de L dans une décomposition en LU.
+ * \param lum (Matrix L et Matrix U)
+ * \relatesalso LUM
+ * \return inverse de L.
+ */
+Matrix * inverseL (LUM * l);
+
+/**
+ * \brief Récupère l'inverse de U dans une décomposition en LU.
+ * \param lum (Matrix L et Matrix U)
+ * \relatesalso LUM
+ * \return inverse de U.
+ */
+Matrix * inverseU (LUM * l);
+
+/**
+ * \brief Inverse une matrice carrée à l'aide de sa décompositions en LU.
+ * \param m (Matrix)
+ * \relatesalso Matrix
+ * \pre nbLignes(m) == nbColonnes(m)
+ * \return inverse de m.
+ */
+Matrix * inverseM (Matrix * m);
 
 #endif /* __DECOMPO_H */
