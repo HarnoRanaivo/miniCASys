@@ -142,4 +142,6 @@ void multLigne(Matrix * m, Matrix * b, int i, E k);
  */
 Matrix * addMultLigne(Matrix * m, int i, int j, E k);
 
+int rang(const Matrix * m);
+
 #endif /* __RESOL_H */
