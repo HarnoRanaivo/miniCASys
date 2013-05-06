@@ -56,8 +56,6 @@ int compterColonnes(const char * chaine)
 char ** recupererLignesMatrice(char * chaine)
 {
     int n = compterLignes(chaine);
-    printf("%d\n", n);
-
     char ** lignes = MALLOCN(lignes, n);
     char * parcours = strchr(chaine, '[');
 
