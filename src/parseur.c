@@ -44,9 +44,8 @@ int compterLignes(const char * chaine)
         n++;
         s++;
     }
-    
+
     return n;
-    /* return compterTokens(chaine, '['); */
 }
 
 int compterColonnes(const char * chaine)
@@ -57,8 +56,6 @@ int compterColonnes(const char * chaine)
 char ** recupererLignesMatrice(char * chaine)
 {
     int n = compterLignes(chaine);
-    printf("%d\n", n);
-
     char ** lignes = MALLOCN(lignes, n);
     char * parcours = strchr(chaine, '[');
 
@@ -77,8 +74,6 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
     int nLignes = compterLignes(chaine);
     char ** lignes = recupererLignesMatrice(chaine);
     int nColonnes = compterColonnes(lignes[0]);
-    /* printf("%s\n", lignes[0]); */
-    /* printf("%d, %d\n", nLignes, nColonnes); */
 
     for (int i = 1; i < nLignes; i++)
         if (nColonnes != compterColonnes(lignes[i]))
@@ -99,10 +94,7 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
             E element;
 
             if (sscanf(parcours, "%f", &element) == 1)
-            {
-                /* printf("%f\n", element); */
                 setElt(m, i+1, j+1, element);
-            }
             else
             {
                 char variable[64] = { '\0' };
@@ -113,12 +105,11 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
                     && (estE(d))
                    )
                 {
-                    /* printf("%f\n", eDonnee(d)); */
                     setElt(m, i+1, j+1, eDonnee(d));
                 }
                 else
                 {
-                    printf("%s ?!\n", variable);
+                    printf("%s : argument incorrect.\n", variable);
                     free(lignes);
                     m = deleteMatrix(m);
                     return NULL;
@@ -132,4 +123,72 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
     free(lignes);
 
     return m;
+}
+
+int preparerLigneCommmande(char * chaine, char * decomposition[4])
+{
+    int parties = 1;
+    char * parcours;
+
+    for (int i = 0; i < 4; i++)
+        decomposition[i] = NULL;
+
+    /* partie avant le ':' */
+    decomposition[0] = chaine;
+
+    /* Partie après le ':' */
+    if ((parcours = strchr(chaine, ':')) != NULL)
+    {
+        *parcours = '\0';
+        parcours += 1;
+        parties++;
+        decomposition[1] = parcours;
+
+        /* Arguments de la commande, s'il y en a */
+        if ((parcours = strchr(parcours, '(')) !=  NULL)
+        {
+            *parcours = '\0';
+            parcours += 1;
+            parties++;
+            decomposition[2] = parcours;
+
+            /* Éléments superflus. */
+            if ((parcours = strchr(parcours, ')')) != NULL)
+            {
+                *parcours = '\0';
+                parcours += 1;
+                char reste[32];
+
+                /* %s ignore les espaces...si la fin ne contient que des
+                 * espaces, sscanf ratera...
+                 */
+                if (sscanf(parcours, "%31s", reste) == 1)
+                {
+                    parties++;
+                    decomposition[3] = parcours;
+                }
+            }
+            else
+                return -parties;
+        }
+        else
+            decomposition[2] = NULL;
+    }
+    else
+        decomposition[1] = NULL;
+
+    /* Vérification qu'il n'y a bien qu'un seul mot dans
+     * les 2 premières parties.
+     */
+    for (int i = 0; i < 2; i ++)
+    {
+        char buffer[64];
+
+        if (decomposition[i] != NULL
+            && sscanf(decomposition[i], "%s %s", buffer, buffer) == 2
+           )
+            return -parties;
+    }
+
+    return parties;
 }

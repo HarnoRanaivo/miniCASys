@@ -1,3 +1,8 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file operations.c
  * \brief Opérations sur les matrices (code)
@@ -70,7 +75,7 @@ Matrix * transpose(const Matrix * m)
     Matrix * mt = newMatrix(nbColonnes(m), nbLignes(m));
 
     if (mt != NULL)
-        for (int i = 0; i <= nbLignes(mt); i++)
+        for (int i = 1; i <= nbLignes(mt); i++)
             for (int j = 1; j <= nbColonnes(mt); j++)
                 setElt(mt, i, j, getElt(m, j, i));
 
@@ -79,11 +84,11 @@ Matrix * transpose(const Matrix * m)
 
 Matrix * multiplierScalaire(const Matrix * m, E k)
 {
-    Matrix * m0 = newMatrix(nbColonnes(m), nbLignes(m));
+    Matrix * m0 = newMatrix(nbLignes(m), nbColonnes(m));
 
     if (m0 != NULL)
-        for (int i = 0; i <= nbLignes(m0); i++)
-            for (int j = 0; i <= nbColonnes(m0); j++)
+        for (int i = 1; i <= nbLignes(m0); i++)
+            for (int j = 1; j <= nbColonnes(m0); j++)
                 setElt(m0, i, j, getElt(m, i, j) * k);
 
     return m0;

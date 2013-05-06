@@ -155,6 +155,12 @@ static inline Bool rechercherMot(const char * mot, const char * const * tableau)
     return FAUX;
 }
 
+/**
+ * \brief Compter le nombre de tokens.
+ * \param chaine Chaine à analyser.
+ * \param c Délimiteur.
+ * \return Nombre de tokens.
+ */
 static inline int compterTokens(const char * chaine, char c)
 {
     int n = 0;
@@ -190,6 +196,11 @@ static inline void chaineEnMinuscules(char * chaine)
         chaine[i] = tolower(chaine[i]);
 }
 
+/**
+ * \brief Raccourcir une chaîne en supprimant les espaces.
+ * \param chaine
+ * \return chaine tronquée au premier espace.
+ */
 static inline void supprimerEspaces(char * chaine)
 {
     for (int i = 0; chaine[i] != '\0'; i++)

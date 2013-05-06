@@ -1,3 +1,8 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file resol.c
  * \brief Résolution (code)
@@ -162,7 +167,7 @@ void remontee(Matrix * m, Matrix * b, Matrix * x)
     {
         setElt(x, i, 1, getElt(b, i, 1));
 
-        for (int j = i+1; j <= n; i++)
+        for (int j = i+1; j <= n; j++)
             setElt(x, i, 1, getElt(x, i, 1) - getElt(m, i, j) * getElt(x, j, 1));
         setElt(x, i, 1, getElt(x, i, 1) / getElt(m, i, i));
 
