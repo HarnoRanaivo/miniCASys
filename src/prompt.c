@@ -260,10 +260,10 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
     switch(c)
     {
         case CM_NEW :
-            /* if (contientMatriceValide(arguments)) */
+            if (contientMatriceValide(arguments))
                 m = recupererMatrice(arguments, v);
-            /* else */
-                /* printf("%s : matrice non valide.\n", arguments); */
+            else
+                printf("%s : matrice non valide.\n", arguments);
             break;
 
         case CM_ADD :

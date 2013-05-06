@@ -12,36 +12,27 @@
 
 Bool contientMatriceValide(const char * chaine)
 {
-    if (strchr(chaine, '[') != NULL)
+    Bool ferme = VRAI;
+
+    for (const char * c = chaine; *c != '\0'; c++)
     {
-        const char * parcours = chaine;
-
-        while ((parcours = strchr(parcours, ']')) != NULL)
+        if (*c == '[')
         {
-            const char * c = parcours + 1;
-
-            if (*c == ',' && strchr(c, '[' ) == NULL && strchr(c, ')') == NULL)
-            {
-                printf("Expected '[' or ')'\n");
+            if (ferme == VRAI)
+                ferme = FAUX;
+            else
                 return FAUX;
-            }
-            else if (*c == ')' && strchr(c, '['))
-            {
-                printf("Error.\n");
-                return FAUX;
-
-            }
-            else if (*c == '[')
-            {
-                printf("\"][\" : Expected ',' before '['\n");
-                return FAUX;
-            }
         }
-
-        return VRAI;
+        else if (*c == ']')
+        {
+            if (ferme == FAUX)
+                ferme = VRAI;
+            else
+                return FAUX;
+        }
     }
 
-    return FAUX;
+    return ferme;
 }
 
 int compterLignes(const char * chaine)
