@@ -188,28 +188,33 @@ int preparerLigneCommmande(char * chaine, char * decomposition[4])
 
     /* partie avant le ':' */
     decomposition[0] = chaine;
+
+    /* Partie après le ':' */
     if ((parcours = strchr(chaine, ':')) != NULL)
     {
         *parcours = '\0';
         parcours += 1;
         parties++;
-        /* Partie après le ':' */
         decomposition[1] = parcours;
 
+        /* Arguments de la commande, s'il y en a */
         if ((parcours = strchr(parcours, '(')) !=  NULL)
         {
             *parcours = '\0';
             parcours += 1;
             parties++;
-            /* Arguments de la commande, s'il y en a */
             decomposition[2] = parcours;
 
+            /* Éléments superflus. */
             if ((parcours = strchr(parcours, ')')) != NULL)
             {
                 *parcours = '\0';
                 parcours += 1;
-
                 char reste[32];
+
+                /* %s ignore les espaces...si la fin ne contient que des
+                 * espaces, sscanf ratera...
+                 */
                 if (sscanf(parcours, "%31s", reste) == 1)
                 {
                     parties++;
@@ -230,7 +235,7 @@ int preparerLigneCommmande(char * chaine, char * decomposition[4])
      */
     for (int i = 0; i < 2; i ++)
     {
-        char buffer[32];
+        char buffer[64];
 
         if (decomposition[i] != NULL
             && sscanf(decomposition[i], "%s %s", buffer, buffer) == 2
@@ -243,10 +248,13 @@ int preparerLigneCommmande(char * chaine, char * decomposition[4])
 
 void afficherDonnee(const Donnee * d)
 {
-    if (estE(d))
-        printf("%f\n", eDonnee(d));
-    else
-        displayMatrix(matriceDonnee(d));
+    if (d != NULL)
+    {
+        if (estE(d))
+            printf("%f\n", eDonnee(d));
+        else
+            displayMatrix(matriceDonnee(d));
+    }
 }
 
 Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
@@ -267,70 +275,12 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
             break;
 
         case CM_ADD :
-            if (sscanf(arguments, " %63[^,]%*[,]%63s", buffer1, buffer2) == 2)
-            {
-                const Donnee * d1 = obtenirDonnee(v, buffer1);
-                const Donnee * d2 = obtenirDonnee(v, buffer2);
-                if (d1 == NULL || d2 == NULL)
-                {
-                    if (d1 == NULL)
-                        printf("%s n'existe pas.\n", buffer1);
-                    if (d2 == NULL)
-                        printf("%s n'existe pas.\n", buffer2);
-                }
-                else if (!estMatrice(d1) || !estMatrice(d2))
-                {
-                    if (!estMatrice(d1))
-                        printf("%s n'est pas une matrice.\n", buffer1);
-                    if (!estMatrice(d2))
-                        printf("%s, n'est pas une matrice.\n", buffer2);
-                }
-                else
-                {
-                    const Matrix * m1 = matriceDonnee(d1);
-                    const Matrix * m2 = matriceDonnee(d2);
-
-                    if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m1) == nbColonnes(m2))
-                        m = addition(matriceDonnee(d1), matriceDonnee(d2));
-                    else
-                        printf("Les matrices n'ont pas la même taille.\n");
-                }
-            }
-            break;
 
         case CM_SUB :
-            if (sscanf(arguments, " %63[^,]%*[,]%63s", buffer1, buffer2) == 2)
-            {
-                const Donnee * d1 = obtenirDonnee(v, buffer1);
-                const Donnee * d2 = obtenirDonnee(v, buffer2);
-                if (d1 == NULL || d2 == NULL)
-                {
-                    if (d1 == NULL)
-                        printf("%s n'existe pas.\n", buffer1);
-                    if (d2 == NULL)
-                        printf("%s n'existe pas.\n", buffer2);
-                }
-                else if (!estMatrice(d1) || !estMatrice(d2))
-                {
-                    if (!estMatrice(d1))
-                        printf("%s n'est pas une matrice.\n", buffer1);
-                    if (!estMatrice(d2))
-                        printf("%s, n'est pas une matrice.\n", buffer2);
-                }
-                else
-                {
-                    const Matrix * m1 = matriceDonnee(d1);
-                    const Matrix * m2 = matriceDonnee(d2);
-
-                    if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m1) == nbColonnes(m2))
-                        m = soustraction(matriceDonnee(d1), matriceDonnee(d2));
-                    else
-                        printf("Les matrices n'ont pas la même taille.\n");
-                }
-            }
-            break;
 
         case CM_MULM :
+
+        case CM_SOL :
             if (sscanf(arguments, " %63[^,]%*[,]%63s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
@@ -354,10 +304,37 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                     const Matrix * m1 = matriceDonnee(d1);
                     const Matrix * m2 = matriceDonnee(d2);
 
-                    if (nbColonnes(m1) == nbLignes(m2))
-                        m = multiplication(matriceDonnee(d1), matriceDonnee(d2));
+                    if (c == CM_ADD || c == CM_SUB)
+                    {
+                        if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m1) == nbColonnes(m2))
+                            m = c == CM_ADD ? addition(m1, m2) : soustraction(m1, m2);
+                        else
+                            printf("Les matrices n'ont pas la même taille.\n");
+                    }
+                    else if (c == CM_MULM)
+                    {
+                        if (nbColonnes(m1) == nbLignes(m2))
+                            m = multiplication(m1, m2);
+                        else
+                            printf("Les matrices n'ont pas les bonnes tailles.\n");
+                    }
                     else
-                        printf("Les matrices n'ont pas la même taille.\n");
+                    {
+                        if (nbLignes(m1) == nbLignes(m2))
+                        {
+                            Matrix * m0 = copieMatrice(m1);
+                            Matrix * b0 = copieMatrice(m2);
+                            Matrix * solution = newMatrix(1, nbLignes(m1));
+
+                            gauss(m0, b0, solution);
+                            deleteMatrix(m0);
+                            deleteMatrix(b0);
+
+                            m = solution;
+                        }
+                        else
+                            printf("Les matrices n'ont pas les bonnes tailles.\n");
+                    }
                 }
             }
             break;
@@ -382,9 +359,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                         printf("%s, n'est pas un scalaire.\n", buffer2);
                 }
                 else
-                {
                     m = multiplierScalaire(matriceDonnee(d1), eDonnee(d2));
-                }
             }
             break;
 
@@ -419,48 +394,6 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
             break;
 
         case CM_INV :
-            break;
-
-        case CM_SOL :
-            if (sscanf(arguments, " %63[^,]%*[,]%63s", buffer1, buffer2) == 2)
-            {
-                const Donnee * d1 = obtenirDonnee(v, buffer1);
-                const Donnee * d2 = obtenirDonnee(v, buffer2);
-                if (d1 == NULL || d2 == NULL)
-                {
-                    if (d1 == NULL)
-                        printf("%s n'existe pas.\n", buffer1);
-                    if (d2 == NULL)
-                        printf("%s n'existe pas.\n", buffer2);
-                }
-                else if (!estMatrice(d1) || !estMatrice(d2))
-                {
-                    if (!estMatrice(d1))
-                        printf("%s n'est pas une matrice.\n", buffer1);
-                    if (!estMatrice(d2))
-                        printf("%s, n'est pas une matrice.\n", buffer2);
-                }
-                else
-                {
-                    const Matrix * m1 = matriceDonnee(d1);
-                    const Matrix * m2 = matriceDonnee(d2);
-
-                    if (nbColonnes(m1) == nbLignes(m2))
-                    {
-                        Matrix * m0 = copieMatrice(m1);
-                        Matrix * b0 = copieMatrice(m2);
-                        Matrix * solution = newMatrix(1, nbLignes(m1));
-
-                        gauss(m0, b0, solution);
-                        deleteMatrix(m0);
-                        deleteMatrix(b0);
-
-                        m = solution;
-                    }
-                    else
-                        printf("Les matrices n'ont pas la même taille.\n");
-                }
-            }
             break;
 
         case CM_RK :

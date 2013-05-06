@@ -44,9 +44,8 @@ int compterLignes(const char * chaine)
         n++;
         s++;
     }
-    
+
     return n;
-    /* return compterTokens(chaine, '['); */
 }
 
 int compterColonnes(const char * chaine)
@@ -77,8 +76,6 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
     int nLignes = compterLignes(chaine);
     char ** lignes = recupererLignesMatrice(chaine);
     int nColonnes = compterColonnes(lignes[0]);
-    /* printf("%s\n", lignes[0]); */
-    /* printf("%d, %d\n", nLignes, nColonnes); */
 
     for (int i = 1; i < nLignes; i++)
         if (nColonnes != compterColonnes(lignes[i]))
@@ -99,10 +96,7 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
             E element;
 
             if (sscanf(parcours, "%f", &element) == 1)
-            {
-                /* printf("%f\n", element); */
                 setElt(m, i+1, j+1, element);
-            }
             else
             {
                 char variable[64] = { '\0' };
@@ -113,12 +107,11 @@ Matrix * recupererMatrice(char * chaine, const Variables * v)
                     && (estE(d))
                    )
                 {
-                    /* printf("%f\n", eDonnee(d)); */
                     setElt(m, i+1, j+1, eDonnee(d));
                 }
                 else
                 {
-                    printf("%s ?!\n", variable);
+                    printf("%s : argument incorrect.\n", variable);
                     free(lignes);
                     m = deleteMatrix(m);
                     return NULL;
