@@ -455,7 +455,6 @@ void afficherPrompt(void)
                     printf("Syntaxe non valide.\n");
             }
 
-            /* v = traiterLigneCommande(buffer, c, v); */
             if (c == CM_QUIT && verifier("de vouloir quitter le programme ") == VRAI)
             {
                 continuer = FAUX;
