@@ -129,7 +129,6 @@ int preparerCommande(char * chaine, char * decomposition[2])
 {
     int parties = 0;
     char * parcours = chaine;
-    char buffer[64];
 
     /* Arguments de la commande, s'il y en a */
     if ((parcours = strchr(parcours, '(')) !=  NULL)
@@ -160,11 +159,6 @@ int preparerCommande(char * chaine, char * decomposition[2])
     }
     else
         decomposition[0] = NULL;
-
-    if (decomposition[0] != NULL
-        && sscanf(decomposition[0], "%s %s", buffer, buffer) == 2
-       )
-        return -1;
 
     return parties;
 }
