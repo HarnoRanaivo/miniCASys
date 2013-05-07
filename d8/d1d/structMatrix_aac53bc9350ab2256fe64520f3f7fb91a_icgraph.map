@@ -1,0 +1,15 @@
+<map id="Matrix::newMatrix" name="Matrix::newMatrix">
+<area shape="rect" id="node3" href="$d6/d43/operations_8c.html#a3b57a75bc6524cd1e889f0e7891924e4" title="Addition de matrices." alt="" coords="209,5,276,32"/>
+<area shape="rect" id="node5" href="$dc/dca/matrix_8c.html#a27226ed2b7f2693d47d5fa78437e104f" title="Copier une matrice." alt="" coords="195,56,291,83"/>
+<area shape="rect" id="node7" href="$d9/dd3/decompo_8c.html#a466fc82aa79c89e05c3f0d5e640b2c93" title="Décomposition en LU." alt="" coords="189,107,296,133"/>
+<area shape="rect" id="node9" href="$dc/dca/matrix_8c.html#acd1e306aad3289ea9c7b16cec6f002c1" title="Créer une matrice identité" alt="" coords="211,157,275,184"/>
+<area shape="rect" id="node11" href="$d6/d43/operations_8c.html#ac8bd62fb69906efe2fd667935d930093" title="Multiplication de matrices." alt="" coords="193,208,292,235"/>
+<area shape="rect" id="node13" href="$d6/d43/operations_8c.html#a20565332ea05e16fbbbfda517d1853a4" title="Multiplication d&#39;une matrice par un scalaire." alt="" coords="182,259,303,285"/>
+<area shape="rect" id="node15" href="$d4/df5/parseur_8c.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="183,309,302,336"/>
+<area shape="rect" id="node17" href="$d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="352,323,475,349"/>
+<area shape="rect" id="node19" href="$d4/d73/resol_8c.html#a6e3dad3ca6fec919ebc27e007f3e9d85" title="Sous&#45;matrice." alt="" coords="196,411,289,437"/>
+<area shape="rect" id="node24" href="$d6/d43/operations_8c.html#ac7d9ccaa148460e8a45ab26324dbdeab" title="Soustraction de matrices." alt="" coords="196,461,289,488"/>
+<area shape="rect" id="node26" href="$d2/db3/prompt_8c.html#ae9302c48aacd599c3338df2b824d65f9" title="Test de vitesse." alt="" coords="203,512,282,539"/>
+<area shape="rect" id="node29" href="$d6/d43/operations_8c.html#a670cecba28298b47610e9b8aad409954" title="Transposition d&#39;une matrice." alt="" coords="203,563,282,589"/>
+<area shape="rect" id="node21" href="$d4/d73/resol_8c.html#a3d3679e284c36e38b6ad842194cd27a3" title="Déterminant d&#39;une matrice (calcul récursif)." alt="" coords="354,411,473,437"/>
+</map>

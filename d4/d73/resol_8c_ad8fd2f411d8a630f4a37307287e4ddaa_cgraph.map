@@ -1,0 +1,5 @@
+<map id="remontee" name="remontee">
+<area shape="rect" id="node3" href="$d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column." alt="" coords="141,5,241,32"/>
+<area shape="rect" id="node5" href="$d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice." alt="" coords="131,56,250,83"/>
+<area shape="rect" id="node7" href="$d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="141,107,241,133"/>
+</map>

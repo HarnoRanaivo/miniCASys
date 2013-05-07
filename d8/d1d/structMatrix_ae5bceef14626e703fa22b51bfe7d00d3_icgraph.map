@@ -1,0 +1,24 @@
+<map id="Matrix::nbColonnes" name="Matrix::nbColonnes">
+<area shape="rect" id="node3" href="$d6/d43/operations_8c.html#a3b57a75bc6524cd1e889f0e7891924e4" title="Addition de matrices." alt="" coords="217,5,284,32"/>
+<area shape="rect" id="node5" href="$d4/d73/resol_8c.html#a6efcf2a3920e4344c73da95f850701be" title="Additionner à la ligne i la ligne j multipliée par k." alt="" coords="201,157,300,184"/>
+<area shape="rect" id="node13" href="$d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="853,107,976,133"/>
+<area shape="rect" id="node15" href="$d9/dd3/decompo_8c.html#a99d9997a2adf8edd80eaf0f4e2fb0ab9" title="Inverse une matrice carrée." alt="" coords="399,107,473,133"/>
+<area shape="rect" id="node21" href="$dc/dca/matrix_8c.html#a61357d05542c8404824266fbf1fee098" title="Remplir une matrice aléatoirement." alt="" coords="215,259,286,285"/>
+<area shape="rect" id="node23" href="$dc/dca/matrix_8c.html#a27226ed2b7f2693d47d5fa78437e104f" title="Copier une matrice." alt="" coords="203,309,299,336"/>
+<area shape="rect" id="node25" href="$dc/dca/matrix_8c.html#af85fa4559a72fb3aebd14cf1e719af83" title="Afficher une matrice." alt="" coords="201,360,300,387"/>
+<area shape="rect" id="node27" href="$dc/dca/matrix_8c.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column." alt="" coords="223,411,279,437"/>
+<area shape="rect" id="node30" href="$d6/d43/operations_8c.html#ac8bd62fb69906efe2fd667935d930093" title="Multiplication de matrices." alt="" coords="201,461,300,488"/>
+<area shape="rect" id="node32" href="$d6/d43/operations_8c.html#a20565332ea05e16fbbbfda517d1853a4" title="Multiplication d&#39;une matrice par un scalaire." alt="" coords="190,512,311,539"/>
+<area shape="rect" id="node34" href="$d4/d73/resol_8c.html#a744bc54cd091bbdbf0972fd99dcf9379" title="Multiplier la ligne i d&#39;un système par un facteur k." alt="" coords="211,563,290,589"/>
+<area shape="rect" id="node36" href="$d4/d73/resol_8c.html#a6b9c9212befc11cacff5582fc664c125" title="Permuter les lignes i et j d&#39;une matrice." alt="" coords="204,208,297,235"/>
+<area shape="rect" id="node43" href="$d4/d73/resol_8c.html#a9cfacd230c1083d734d1894f5362343b" title="Calcul du rang d&#39;une matrice." alt="" coords="227,613,274,640"/>
+<area shape="rect" id="node45" href="$dc/dca/matrix_8c.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="223,664,279,691"/>
+<area shape="rect" id="node47" href="$d6/d43/operations_8c.html#ac7d9ccaa148460e8a45ab26324dbdeab" title="Soustraction de matrices." alt="" coords="204,715,297,741"/>
+<area shape="rect" id="node50" href="$d6/d43/operations_8c.html#a670cecba28298b47610e9b8aad409954" title="Transposition d&#39;une matrice." alt="" coords="211,765,290,792"/>
+<area shape="rect" id="node7" href="$d4/d73/resol_8c.html#ab0d7f21512f3fc82c5d05c26b134a260" title="Additionner à la ligne i la ligne j multipliée par k." alt="" coords="361,157,511,184"/>
+<area shape="rect" id="node17" href="$d4/d73/resol_8c.html#a15d290181414b12b56fcaff076d8fbe7" title="Mise sous forme triangulaire d&#39;une matrice." alt="" coords="383,208,489,235"/>
+<area shape="rect" id="node9" href="$d4/d73/resol_8c.html#a70d1580644adbc91bc9b1fbf7db05b58" title="Met le système sous forme triangulaire." alt="" coords="561,208,698,235"/>
+<area shape="rect" id="node11" href="$d4/d73/resol_8c.html#a567ee32d45297eae108b5f58c054c2b8" title="Pivot de Gauss." alt="" coords="747,157,805,184"/>
+<area shape="rect" id="node19" href="$d4/d73/resol_8c.html#ac0a89097853ecdbd60aacebcd005199a" title="Calcul efficace du déterminant d&#39;une matrice." alt="" coords="572,157,687,184"/>
+<area shape="rect" id="node39" href="$d4/d73/resol_8c.html#af4b7a96e86d4b3437ab4c77459ef98b1" title="Permuter les lignes i et j d&#39;un système." alt="" coords="363,259,509,285"/>
+</map>

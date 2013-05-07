@@ -1,0 +1,5 @@
+<map id="Donnee::estMatrice" name="Donnee::estMatrice">
+<area shape="rect" id="node3" href="$d4/d23/memoire_8c.html#a475a5945494b8efd266128e077388947" title="Sauvegarder une matrice." alt="" coords="199,5,303,32"/>
+<area shape="rect" id="node5" href="$d4/d23/memoire_8c.html#a0538b37d6aa6559581380f99c9bd1042" title="Libérer la mémoire occuppée par une Donnee." alt="" coords="199,56,302,83"/>
+<area shape="rect" id="node7" href="$d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="189,107,312,133"/>
+</map>

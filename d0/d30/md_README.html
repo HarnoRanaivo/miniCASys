@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Minicas: miniCASys</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Minicas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li class="current"><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">miniCASys </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Minicas, projet d'ALinéA (Algèbre Linéaire), L2S4, Université de Strasbourg. Mini interpréteur de commandes correspondant à des opérations classiques d'algèbre linéaire.</p>
+<h2>Télécharger et compiler « Chasseur de Prim »</h2>
+<h3>Pré-requis</h3>
+<p>Tout d'abord, il vous faudra les outils standards de développement GNU, ainsi que git. Ce programme tire également parti de <code>gnuplot</code>.</p>
+<p>Pour Ubuntu : ````bash $ apt-get install build-essentials git-core gnuplot ````</p>
+<p>Pour Fedora : ````bash $ yum groupinstall "Development Tools" $ yum install git-all gnuplot ````</p>
+<h3>Récupérer le projet</h3>
+<p>Pour récupérer le projet dans le dossier de votre choix : ````bash $ git clone git://github.com/remove/miniCASys.git [dossier] ```` Ensuite, pour récupérer les changements : ````bash $ git pull ````</p>
+<h3>Compiler</h3>
+<p>Un makefile est fourni, il vous suffit de vous placer à la racine du projet et de lancer make : ````bash $ make ````</p>
+<h2>Lancer Minicas</h2>
+<h3>Mode interactif</h3>
+<p>Une fois le programme compilé, il suffit de lancer le binaire disponible dans <code>bin</code> : ````bash $ ledit bin/minicas `<code> </code>ledit<code>est optionnel, ce programme permet d'obtenir un prompt plus agréable (historique, complétion des noms de fichiers, ...). Pour obtenir de l'aide, entrez la commande</code>aide<code>. Pour quitter le programme, entrez la commande</code>quitter<code>ou</code>q<code>, puis confirmez votre décision par</code>oui```.</p>
+<h3>Mode non interactif</h3>
+<p>Il est possible de lancer des scripts : ````bash $ bin/minicas &lt;fichier&gt; ```` Ceux-ci doivent contenir une commande par ligne. Les commandes valides sont toutes celles qui sont disponibles dans le mode interactif.</p>
+<h3>Version</h3>
+<p>Pour connaître la version de <code>minicas</code> que vous utilisez : ````bash $ bin/minicas &ndash;version ````</p>
+<h2>Branches</h2>
+<p>Les versions stables se trouvent dans la branche <code>master</code>, la branche <code>dev</code> contient la version de développement du projet. Pour passer d'une branche à l'autre : ````bash $ git checkout &lt;branche&gt; ````</p>
+<h2>License</h2>
+<p>Copyright © 2013 Harenome RAZANAJATO, Jérémy MEYER</p>
+<p>Ce projet est libre. Vous pouvez le redistribuer ou le modifier selon les termes de la license « Do What The Fuck You Want To Public License », Version 2, comme publiée par Sam Hocevar. Pour de plus amples informations, veuillez vous référer au fichier COPYING, ou bien <a href="http://www.wtfpl.net/">http://www.wtfpl.net/</a>. </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

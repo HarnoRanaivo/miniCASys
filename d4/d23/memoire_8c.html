@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Minicas: Référence du fichier src/memoire.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Minicas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier memoire.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestion des variables utilisateur (code)  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../da/d9f/memoire_8h_source.html">memoire.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de memoire.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d19/memoire_8c__incl.png" border="0" usemap="#src_2memoire_8c" alt=""/></div>
+<map name="src_2memoire_8c" id="src_2memoire_8c">
+<area shape="rect" id="node3" href="../../da/d9f/memoire_8h.html" title="Gestion des variables utilisateur (header)" alt="" coords="131,80,213,107"/><area shape="rect" id="node9" href="../../d3/d5a/base_8h.html" title="Base (header)" alt="" coords="109,229,171,256"/><area shape="rect" id="node17" href="../../dd/df4/matrix_8h.html" title="Matrices (header)" alt="" coords="173,155,243,181"/></map>
+</div>
+</div>
+<p><a href="../../d4/d23/memoire_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ad0f7cf02252c3e38227aa512d2caba24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#ad0f7cf02252c3e38227aa512d2caba24">nouveauE</a> (const char *nom, E e)</td></tr>
+<tr class="memdesc:ad0f7cf02252c3e38227aa512d2caba24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une nouvelle donnée contenant un E.  <a href="#ad0f7cf02252c3e38227aa512d2caba24">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ad0f7cf02252c3e38227aa512d2caba24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06cf2786fa82f5d7f32a86db5092b382"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a06cf2786fa82f5d7f32a86db5092b382">nouvelleMatrice</a> (const char *nom, const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *m)</td></tr>
+<tr class="memdesc:a06cf2786fa82f5d7f32a86db5092b382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une nouvelle donnée contenant une matrice.  <a href="#a06cf2786fa82f5d7f32a86db5092b382">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a06cf2786fa82f5d7f32a86db5092b382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27042c5e15b03c0f961a9120000cfb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#ab27042c5e15b03c0f961a9120000cfb5">estE</a> (const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *d)</td></tr>
+<tr class="memdesc:ab27042c5e15b03c0f961a9120000cfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test vérifiant si la donnée est un E.  <a href="#ab27042c5e15b03c0f961a9120000cfb5">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab27042c5e15b03c0f961a9120000cfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208c99fc167fb18bb975c5118bcca9bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a208c99fc167fb18bb975c5118bcca9bc">estMatrice</a> (const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *d)</td></tr>
+<tr class="memdesc:a208c99fc167fb18bb975c5118bcca9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test vérifiant si la donnée est une matrice.  <a href="#a208c99fc167fb18bb975c5118bcca9bc">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a208c99fc167fb18bb975c5118bcca9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9dee7af40f2780a7b9960d2d0c9110"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc9dee7af40f2780a7b9960d2d0c9110"></a>
+char *&#160;</td><td class="memItemRight" valign="bottom"><b>nomDonnee</b> (const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *d)</td></tr>
+<tr class="separator:afc9dee7af40f2780a7b9960d2d0c9110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579dabaa223a99a0648a7359e93d76bc"><td class="memItemLeft" align="right" valign="top">E&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a579dabaa223a99a0648a7359e93d76bc">eDonnee</a> (const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *d)</td></tr>
+<tr class="memdesc:a579dabaa223a99a0648a7359e93d76bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir le E stocké dans une donnée.  <a href="#a579dabaa223a99a0648a7359e93d76bc">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a579dabaa223a99a0648a7359e93d76bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa01ff7e274d8b19762ef10c235490d5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#aa01ff7e274d8b19762ef10c235490d5e">matriceDonnee</a> (const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *d)</td></tr>
+<tr class="memdesc:aa01ff7e274d8b19762ef10c235490d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir la matrice stockée dans une donnée.  <a href="#aa01ff7e274d8b19762ef10c235490d5e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aa01ff7e274d8b19762ef10c235490d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0538b37d6aa6559581380f99c9bd1042"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a0538b37d6aa6559581380f99c9bd1042">libererDonnee</a> (<a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *d)</td></tr>
+<tr class="memdesc:a0538b37d6aa6559581380f99c9bd1042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libérer la mémoire occuppée par une <a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a>.  <a href="#a0538b37d6aa6559581380f99c9bd1042">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a0538b37d6aa6559581380f99c9bd1042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4beeae8ee6fbf6da8de32aea65bc13ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a4beeae8ee6fbf6da8de32aea65bc13ff">initVariables</a> (void)</td></tr>
+<tr class="memdesc:a4beeae8ee6fbf6da8de32aea65bc13ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser les variables.  <a href="#a4beeae8ee6fbf6da8de32aea65bc13ff">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a4beeae8ee6fbf6da8de32aea65bc13ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade99b10e6119398bba723483eb3db0e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#ade99b10e6119398bba723483eb3db0e6">existeVariable</a> (const <a class="el" href="../../db/d72/structVariables.html">Variables</a> *v, const char *nomVariable)</td></tr>
+<tr class="memdesc:ade99b10e6119398bba723483eb3db0e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test d'existence d'une variable.  <a href="#ade99b10e6119398bba723483eb3db0e6">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ade99b10e6119398bba723483eb3db0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b2b2afcc0752fc16179731cbe343bfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a0b2b2afcc0752fc16179731cbe343bfc">obtenirDonnee</a> (const <a class="el" href="../../db/d72/structVariables.html">Variables</a> *v, const char *nomVariable)</td></tr>
+<tr class="memdesc:a0b2b2afcc0752fc16179731cbe343bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir la <a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> <em>nomVariable</em>.  <a href="#a0b2b2afcc0752fc16179731cbe343bfc">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a0b2b2afcc0752fc16179731cbe343bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c31fbdc8f2e50c8ab5a3a42a8892b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#ad4c31fbdc8f2e50c8ab5a3a42a8892b5">ajouterE</a> (<a class="el" href="../../db/d72/structVariables.html">Variables</a> *v, const char *nomVariable, E e)</td></tr>
+<tr class="memdesc:ad4c31fbdc8f2e50c8ab5a3a42a8892b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarder un E.  <a href="#ad4c31fbdc8f2e50c8ab5a3a42a8892b5">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ad4c31fbdc8f2e50c8ab5a3a42a8892b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475a5945494b8efd266128e077388947"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a475a5945494b8efd266128e077388947">ajouterMatrice</a> (<a class="el" href="../../db/d72/structVariables.html">Variables</a> *v, const char *nomVariable, const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *m)</td></tr>
+<tr class="memdesc:a475a5945494b8efd266128e077388947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarder une matrice.  <a href="#a475a5945494b8efd266128e077388947">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a475a5945494b8efd266128e077388947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a18b7c354e31685d523c41ac7d29220"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a9a18b7c354e31685d523c41ac7d29220">supprimerVariable</a> (<a class="el" href="../../db/d72/structVariables.html">Variables</a> *v, const char *nomVariable)</td></tr>
+<tr class="memdesc:a9a18b7c354e31685d523c41ac7d29220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprimer une variable.  <a href="#a9a18b7c354e31685d523c41ac7d29220">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a9a18b7c354e31685d523c41ac7d29220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed43750f5314fbef52f00a570542b88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d23/memoire_8c.html#a7ed43750f5314fbef52f00a570542b88">libererVariables</a> (<a class="el" href="../../db/d72/structVariables.html">Variables</a> *v)</td></tr>
+<tr class="memdesc:a7ed43750f5314fbef52f00a570542b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libérer la mémoire occuppée par les variables.  <a href="#a7ed43750f5314fbef52f00a570542b88">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a7ed43750f5314fbef52f00a570542b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gestion des variables utilisateur (code) </p>
+
+<p>Définition dans le fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="ad4c31fbdc8f2e50c8ab5a3a42a8892b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d72/structVariables.html">Variables</a>* ajouterE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nomVariable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sauvegarder un E. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a>. </td></tr>
+    <tr><td class="paramname">nomVariable</td><td>Nom du E. </td></tr>
+    <tr><td class="paramname">e</td><td>E à sauvegarder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00142">142</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616">Matrix::deleteMatrix()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00052">Variables::donnees</a>, <a class="el" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5">Donnee::estE()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00040">Donnee::flottant</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00041">Donnee::matrice</a>, <a class="el" href="../../df/dce/structDonnee.html#ac5760f064ed52cdc8e078160559aa948">Donnee::nouveauE()</a>, <a class="el" href="../../d4/d23/memoire_8c_source.html#l00133">obtenirDonnee()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00054">Variables::position</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00053">Variables::taille</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00043">Donnee::type</a>, <a class="el" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">Donnee::u_var</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00027">VAR_FLOTTANT</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, nomVariable);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (d != NULL)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(d))</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a> = <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a9d2f43c3614093b70d7ee306a559641f">type</a> = <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0254c6238274de5c198947fc9ce1e1a9">VAR_FLOTTANT</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a2b9f256aefa856d386dad6901b450b8e">flottant</a> = e;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> (v-&gt;<a class="code" href="../../db/d72/structVariables.html#a3ca4386e2ee36ec7e2df489e2a779f5d">taille</a> == v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            v = agrandirVariables(v);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>] = <a class="code" href="../../df/dce/structDonnee.html#ac5760f064ed52cdc8e078160559aa948" title="Créer une nouvelle donnée contenant un E.">nouveauE</a>(nomVariable, e);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>++;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> v;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d23/memoire_8c_ad4c31fbdc8f2e50c8ab5a3a42a8892b5_cgraph.png" border="0" usemap="#d4/d23/memoire_8c_ad4c31fbdc8f2e50c8ab5a3a42a8892b5_cgraph" alt=""/></div>
+<map name="d4/d23/memoire_8c_ad4c31fbdc8f2e50c8ab5a3a42a8892b5_cgraph" id="d4/d23/memoire_8c_ad4c31fbdc8f2e50c8ab5a3a42a8892b5_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="126,5,263,32"/><area shape="rect" id="node5" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E." alt="" coords="143,56,246,83"/><area shape="rect" id="node7" href="../../df/dce/structDonnee.html#ac5760f064ed52cdc8e078160559aa948" title="Créer une nouvelle donnée contenant un E." alt="" coords="128,107,261,133"/><area shape="rect" id="node9" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable." alt="" coords="141,157,248,184"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a475a5945494b8efd266128e077388947"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d72/structVariables.html">Variables</a>* ajouterMatrice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nomVariable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sauvegarder une matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a>. </td></tr>
+    <tr><td class="paramname">nomVariable</td><td>Nom de la matrice. </td></tr>
+    <tr><td class="paramname">m</td><td>Matrice à sauvegarder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00166">166</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616">Matrix::deleteMatrix()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00052">Variables::donnees</a>, <a class="el" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc">Donnee::estMatrice()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00041">Donnee::matrice</a>, <a class="el" href="../../df/dce/structDonnee.html#ac279deff5a548de3530a1429e8915339">Donnee::nouvelleMatrice()</a>, <a class="el" href="../../d4/d23/memoire_8c_source.html#l00133">obtenirDonnee()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00054">Variables::position</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00053">Variables::taille</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00043">Donnee::type</a>, <a class="el" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">Donnee::u_var</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00028">VAR_MATRICE</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">if</span> (m != NULL)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, nomVariable);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> (d != NULL)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d))</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a9d2f43c3614093b70d7ee306a559641f">type</a> = <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0cf6b70f66474e1861494b3041a53809">VAR_MATRICE</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a> = (<a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> *) m;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">if</span> (v-&gt;<a class="code" href="../../db/d72/structVariables.html#a3ca4386e2ee36ec7e2df489e2a779f5d">taille</a> == v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                v = agrandirVariables(v);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>] = <a class="code" href="../../df/dce/structDonnee.html#ac279deff5a548de3530a1429e8915339" title="Créer une nouvelle donnée contenant une matrice.">nouvelleMatrice</a>(nomVariable, m);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>++;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span> v;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d23/memoire_8c_a475a5945494b8efd266128e077388947_cgraph.png" border="0" usemap="#d4/d23/memoire_8c_a475a5945494b8efd266128e077388947_cgraph" alt=""/></div>
+<map name="d4/d23/memoire_8c_a475a5945494b8efd266128e077388947_cgraph" id="d4/d23/memoire_8c_a475a5945494b8efd266128e077388947_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="173,5,310,32"/><area shape="rect" id="node5" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice." alt="" coords="173,56,309,83"/><area shape="rect" id="node7" href="../../df/dce/structDonnee.html#ac279deff5a548de3530a1429e8915339" title="Créer une nouvelle donnée contenant une matrice." alt="" coords="158,107,325,133"/><area shape="rect" id="node9" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable." alt="" coords="188,157,295,184"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a579dabaa223a99a0648a7359e93d76bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">E eDonnee </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtenir le E stocké dans une donnée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td><a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Précondition</dt><dd>estE(d) </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>E stocké. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00059">59</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00040">Donnee::flottant</a>, et <a class="el" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">Donnee::u_var</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a2b9f256aefa856d386dad6901b450b8e">flottant</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab27042c5e15b03c0f961a9120000cfb5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a> estE </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test vérifiant si la donnée est un E. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td><a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a> si la donnée est un E, <a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00044">44</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00043">Donnee::type</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00027">VAR_FLOTTANT</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a9d2f43c3614093b70d7ee306a559641f">type</a> == <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0254c6238274de5c198947fc9ce1e1a9">VAR_FLOTTANT</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a208c99fc167fb18bb975c5118bcca9bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a> estMatrice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test vérifiant si la donnée est une matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td><a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a> si la donnée est une matrice, <a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00049">49</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00043">Donnee::type</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00028">VAR_MATRICE</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a9d2f43c3614093b70d7ee306a559641f">type</a> == <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0cf6b70f66474e1861494b3041a53809">VAR_MATRICE</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ade99b10e6119398bba723483eb3db0e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a> existeVariable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nomVariable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test d'existence d'une variable. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a>. </td></tr>
+    <tr><td class="paramname">nomVariables</td><td>variable recherchée. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a> si la variable existe, <a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00124">124</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00052">Variables::donnees</a>, <a class="el" href="../../d3/d5a/base_8h_source.html#l00027">FAUX</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00054">Variables::position</a>, et <a class="el" href="../../d3/d5a/base_8h_source.html#l00028">VRAI</a>.</p>
+<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>; i++)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (strcmp(nomDonnee(v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[i]), nomVariable) == 0)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4beeae8ee6fbf6da8de32aea65bc13ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d72/structVariables.html">Variables</a>* initVariables </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialiser les variables. </p>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00079">79</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00052">Variables::donnees</a>, <a class="el" href="../../d3/d5a/base_8h_source.html#l00102">MALLOC</a>, <a class="el" href="../../d3/d5a/base_8h_source.html#l00109">MALLOCN</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00054">Variables::position</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00053">Variables::taille</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * v = <a class="code" href="../../d3/d5a/base_8h.html#aed83343b5b2cdb908229b4fac27cd282" title="Allouer de la mémoire.">MALLOC</a>(v);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (v != NULL)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a> = <a class="code" href="../../d3/d5a/base_8h.html#a66f86b7a62cf1c6c9afeaa47c610b750" title="Allouer un tableau de taille N.">MALLOCN</a>(v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>, VAR_TAILLE);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a> != NULL)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            v-&gt;<a class="code" href="../../db/d72/structVariables.html#a3ca4386e2ee36ec7e2df489e2a779f5d">taille</a> = VAR_TAILLE;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a> = 0;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            perror(<span class="stringliteral">&quot;malloc&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            free(v);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            v = NULL;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        perror(<span class="stringliteral">&quot;malloc&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> v;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0538b37d6aa6559581380f99c9bd1042"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a>* libererDonnee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libérer la mémoire occuppée par une <a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td><a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><em>NULL</em> </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00069">69</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616">Matrix::deleteMatrix()</a>, <a class="el" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc">Donnee::estMatrice()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00041">Donnee::matrice</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00037">Donnee::nom</a>, et <a class="el" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">Donnee::u_var</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d))</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    free((<span class="keywordtype">char</span> *)d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a08a131fecfdf45d6a4097af8348b4ebc">nom</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    free(d);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d23/memoire_8c_a0538b37d6aa6559581380f99c9bd1042_cgraph.png" border="0" usemap="#d4/d23/memoire_8c_a0538b37d6aa6559581380f99c9bd1042_cgraph" alt=""/></div>
+<map name="d4/d23/memoire_8c_a0538b37d6aa6559581380f99c9bd1042_cgraph" id="d4/d23/memoire_8c_a0538b37d6aa6559581380f99c9bd1042_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="158,5,295,32"/><area shape="rect" id="node5" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice." alt="" coords="159,56,295,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ed43750f5314fbef52f00a570542b88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d72/structVariables.html">Variables</a>* libererVariables </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libérer la mémoire occuppée par les variables. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>NULL </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00218">218</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00052">Variables::donnees</a>, <a class="el" href="../../df/dce/structDonnee.html#a2d9e8f0c596605a79e1aaa852c5e099c">Donnee::libererDonnee()</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00054">Variables::position</a>.</p>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>; i++)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="../../df/dce/structDonnee.html#a2d9e8f0c596605a79e1aaa852c5e099c" title="Libérer la mémoire occuppée par une Donnee.">libererDonnee</a>(v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[i]);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    free(v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    free(v);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d23/memoire_8c_a7ed43750f5314fbef52f00a570542b88_cgraph.png" border="0" usemap="#d4/d23/memoire_8c_a7ed43750f5314fbef52f00a570542b88_cgraph" alt=""/></div>
+<map name="d4/d23/memoire_8c_a7ed43750f5314fbef52f00a570542b88_cgraph" id="d4/d23/memoire_8c_a7ed43750f5314fbef52f00a570542b88_cgraph">
+<area shape="rect" id="node3" href="../../df/dce/structDonnee.html#a2d9e8f0c596605a79e1aaa852c5e099c" title="Libérer la mémoire occuppée par une Donnee." alt="" coords="165,5,320,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa01ff7e274d8b19762ef10c235490d5e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a>* matriceDonnee </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtenir la matrice stockée dans une donnée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td><a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Précondition</dt><dd>estMatrice(d) </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Matrice stockée. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00064">64</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00041">Donnee::matrice</a>, et <a class="el" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">Donnee::u_var</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad0f7cf02252c3e38227aa512d2caba24"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a>* nouveauE </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une nouvelle donnée contenant un E. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom</td><td>Nom de la donnée. </td></tr>
+    <tr><td class="paramname">e</td><td>E à sauvegarder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a>. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00012">12</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00040">Donnee::flottant</a>, <a class="el" href="../../d3/d5a/base_8h_source.html#l00102">MALLOC</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00037">Donnee::nom</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00043">Donnee::type</a>, <a class="el" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">Donnee::u_var</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00027">VAR_FLOTTANT</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d = <a class="code" href="../../d3/d5a/base_8h.html#aed83343b5b2cdb908229b4fac27cd282" title="Allouer de la mémoire.">MALLOC</a>(d);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> (d != NULL)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a08a131fecfdf45d6a4097af8348b4ebc">nom</a> = copierChaine(nom);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a2b9f256aefa856d386dad6901b450b8e">flottant</a> = e;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a9d2f43c3614093b70d7ee306a559641f">type</a> = <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0254c6238274de5c198947fc9ce1e1a9">VAR_FLOTTANT</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        perror(<span class="stringliteral">&quot;malloc&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> d;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a06cf2786fa82f5d7f32a86db5092b382"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a>* nouvelleMatrice </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une nouvelle donnée contenant une matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom</td><td>Nom de la donnée. </td></tr>
+    <tr><td class="paramname">m</td><td>Matrice à sauvegarder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a>. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00028">28</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../d3/d5a/base_8h_source.html#l00102">MALLOC</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00041">Donnee::matrice</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00037">Donnee::nom</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00043">Donnee::type</a>, <a class="el" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">Donnee::u_var</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00028">VAR_MATRICE</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d = <a class="code" href="../../d3/d5a/base_8h.html#aed83343b5b2cdb908229b4fac27cd282" title="Allouer de la mémoire.">MALLOC</a>(d);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (d != NULL)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a08a131fecfdf45d6a4097af8348b4ebc">nom</a> = copierChaine(nom);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a> = (<a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> *) m;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a9d2f43c3614093b70d7ee306a559641f">type</a> = <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0cf6b70f66474e1861494b3041a53809">VAR_MATRICE</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        perror(<span class="stringliteral">&quot;malloc&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> d;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0b2b2afcc0752fc16179731cbe343bfc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/dce/structDonnee.html">Donnee</a>* obtenirDonnee </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nomVariable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtenir la <a class="el" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> <em>nomVariable</em>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a>. </td></tr>
+    <tr><td class="paramname">nomVariable</td><td>variable recherchée </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00133">133</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../da/d9f/memoire_8h_source.html#l00052">Variables::donnees</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00054">Variables::position</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d4/d23/memoire_8c_source.html#l00142">ajouterE()</a>, <a class="el" href="../../d4/d23/memoire_8c_source.html#l00166">ajouterMatrice()</a>, <a class="el" href="../../d2/db3/prompt_8c_source.html#l00690">prompt()</a>, <a class="el" href="../../d4/df5/parseur_8c_source.html#l00072">recupererMatrice()</a>, et <a class="el" href="../../d2/db3/prompt_8c_source.html#l00299">traiterCommande()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>; i++)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">if</span> (strcmp(nomDonnee(v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[i]), nomVariable) == 0)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">return</span> v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[i];</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d23/memoire_8c_a0b2b2afcc0752fc16179731cbe343bfc_icgraph.png" border="0" usemap="#d4/d23/memoire_8c_a0b2b2afcc0752fc16179731cbe343bfc_icgraph" alt=""/></div>
+<map name="d4/d23/memoire_8c_a0b2b2afcc0752fc16179731cbe343bfc_icgraph" id="d4/d23/memoire_8c_a0b2b2afcc0752fc16179731cbe343bfc_icgraph">
+<area shape="rect" id="node3" href="../../d4/d23/memoire_8c.html#ad4c31fbdc8f2e50c8ab5a3a42a8892b5" title="Sauvegarder un E." alt="" coords="185,5,255,32"/><area shape="rect" id="node5" href="../../d4/d23/memoire_8c.html#a475a5945494b8efd266128e077388947" title="Sauvegarder une matrice." alt="" coords="168,56,272,83"/><area shape="rect" id="node7" href="../../d2/db3/prompt_8c.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="189,107,251,133"/><area shape="rect" id="node11" href="../../d4/df5/parseur_8c.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="161,157,279,184"/><area shape="rect" id="node13" href="../../d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="328,183,451,209"/><area shape="rect" id="node9" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main." alt="" coords="364,107,415,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a18b7c354e31685d523c41ac7d29220"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d72/structVariables.html">Variables</a>* supprimerVariable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nomVariable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprimer une variable. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a>. </td></tr>
+    <tr><td class="paramname">nomVariable</td><td>Nom de la variable à supprimer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a>. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/d23/memoire_8c_source.html#l00194">194</a> du fichier <a class="el" href="../../d4/d23/memoire_8c_source.html">memoire.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616">Matrix::deleteMatrix()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00052">Variables::donnees</a>, <a class="el" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5">Donnee::estE()</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00041">Donnee::matrice</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00037">Donnee::nom</a>, <a class="el" href="../../da/d9f/memoire_8h_source.html#l00054">Variables::position</a>, et <a class="el" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">Donnee::u_var</a>.</p>
+<div class="fragment"><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d = NULL;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>; i++)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">if</span> (strcmp(nomDonnee(v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[i]), nomVariable) == 0)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            d = v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[i];</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[i] = v-&gt;<a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>[v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a> - 1];</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (d != NULL)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(d))</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a> = <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>.<a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        free(d);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        free((<span class="keywordtype">char</span> *) d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a08a131fecfdf45d6a4097af8348b4ebc">nom</a>);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        v-&gt;<a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>--;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">return</span> v;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d23/memoire_8c_a9a18b7c354e31685d523c41ac7d29220_cgraph.png" border="0" usemap="#d4/d23/memoire_8c_a9a18b7c354e31685d523c41ac7d29220_cgraph" alt=""/></div>
+<map name="d4/d23/memoire_8c_a9a18b7c354e31685d523c41ac7d29220_cgraph" id="d4/d23/memoire_8c_a9a18b7c354e31685d523c41ac7d29220_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="182,5,319,32"/><area shape="rect" id="node5" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E." alt="" coords="199,56,302,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

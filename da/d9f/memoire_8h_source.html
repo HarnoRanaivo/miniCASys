@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Minicas:  Fichier source de include/memoire.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Minicas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">memoire.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d9f/memoire_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* This program is free software. It comes WITHOUT ANY WARRANTY, to</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* the extent permitted by applicable law. You can redistribute it</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* and/or modify it under the terms of the Do What The Fuck You Want</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* To Public License, Version 2, as published by Sam Hocevar. See</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">* http://wtfpl.net for more details. */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef __MEMOIRE_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __MEMOIRE_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d5a/base_8h.html" title="Base (header)">base.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/df4/matrix_8h.html" title="Matrices (header)">matrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define VAR_TAILLE 50</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efd">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efd" title="Type de donnée sauvegardée par dans une Donnee.">donnee_t</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0254c6238274de5c198947fc9ce1e1a9">   27</a></span>&#160;    <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0254c6238274de5c198947fc9ce1e1a9">VAR_FLOTTANT</a>,   </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0cf6b70f66474e1861494b3041a53809">   28</a></span>&#160;    <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efda0cf6b70f66474e1861494b3041a53809">VAR_MATRICE</a>,    </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efd" title="Type de donnée sauvegardée par dans une Donnee.">donnee_t</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="../../df/dce/structDonnee.html">   35</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="../../df/dce/structDonnee.html#a08a131fecfdf45d6a4097af8348b4ebc">   37</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="../../df/dce/structDonnee.html#a08a131fecfdf45d6a4097af8348b4ebc">nom</a>;       </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">union</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="../../df/dce/structDonnee.html#a2b9f256aefa856d386dad6901b450b8e">   40</a></span>&#160;        E <a class="code" href="../../df/dce/structDonnee.html#a2b9f256aefa856d386dad6901b450b8e">flottant</a>;         </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">   41</a></span>&#160;        <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * <a class="code" href="../../df/dce/structDonnee.html#a8226e2191731577a6771fd6b1c6f59be">matrice</a>;   </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    } <a class="code" href="../../df/dce/structDonnee.html#a0d737bfa2689931b521810eeccf91b4a">u_var</a>;                </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="../../df/dce/structDonnee.html#a9d2f43c3614093b70d7ee306a559641f">   43</a></span>&#160;    <a class="code" href="../../da/d9f/memoire_8h.html#a8c8b5d6b64a6ee86b155d12776ea4efd" title="Type de donnée sauvegardée par dans une Donnee.">donnee_t</a> <a class="code" href="../../df/dce/structDonnee.html#a9d2f43c3614093b70d7ee306a559641f">type</a>;          </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="../../db/d72/structVariables.html">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">   52</a></span>&#160;    <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> ** <a class="code" href="../../db/d72/structVariables.html#afcbeabc7a8c571623ee1492d135a8785">donnees</a>;      </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="../../db/d72/structVariables.html#a3ca4386e2ee36ec7e2df489e2a779f5d">   53</a></span>&#160;    <a class="code" href="../../d3/d5a/base_8h.html#ace14b382cb20e1aa61ba742ed35b2683" title="Entiers naturels.">Nat</a> <a class="code" href="../../db/d72/structVariables.html#a3ca4386e2ee36ec7e2df489e2a779f5d">taille</a>;             </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">   54</a></span>&#160;    <a class="code" href="../../d3/d5a/base_8h.html#ace14b382cb20e1aa61ba742ed35b2683" title="Entiers naturels.">Nat</a> <a class="code" href="../../db/d72/structVariables.html#aef79f9291c76cdd9b1398f6cb2dcf79e">position</a>;           </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * <a class="code" href="../../df/dce/structDonnee.html#ac5760f064ed52cdc8e078160559aa948" title="Créer une nouvelle donnée contenant un E.">nouveauE</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * nom, E e);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * <a class="code" href="../../df/dce/structDonnee.html#ac279deff5a548de3530a1429e8915339" title="Créer une nouvelle donnée contenant une matrice.">nouvelleMatrice</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * nom, <span class="keyword">const</span> <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309" title="Simulation des booléens.">Bool</a> <a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(<span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309" title="Simulation des booléens.">Bool</a> <a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(<span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;E <a class="code" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée.">eDonnee</a>(<span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * <a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(<span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * <a class="code" href="../../df/dce/structDonnee.html#a2d9e8f0c596605a79e1aaa852c5e099c" title="Libérer la mémoire occuppée par une Donnee.">libererDonnee</a>(<a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * <a class="code" href="../../db/d72/structVariables.html#a6d48b29b0e12733cad386b96a6a27e95" title="Initialiser les variables.">initVariables</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309" title="Simulation des booléens.">Bool</a> <a class="code" href="../../db/d72/structVariables.html#ade99b10e6119398bba723483eb3db0e6" title="Test d&#39;existence d&#39;une variable.">existeVariable</a>(<span class="keyword">const</span> <a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * v, <span class="keyword">const</span> <span class="keywordtype">char</span> * nomVariable);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(<span class="keyword">const</span> <a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * v, <span class="keyword">const</span> <span class="keywordtype">char</span> * nomVariable);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * <a class="code" href="../../db/d72/structVariables.html#abfe2474829974b48a93f52ed0d1eac89" title="Sauvegarder un E.">ajouterE</a>(<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * v, <span class="keyword">const</span> <span class="keywordtype">char</span> * nomVariable, E e);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * <a class="code" href="../../db/d72/structVariables.html#aad4b983ba75c0d5d529076b49b0dfe0b" title="Sauvegarder une matrice.">ajouterMatrice</a>(<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * v, <span class="keyword">const</span> <span class="keywordtype">char</span> * nomVariable, <span class="keyword">const</span> <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * <a class="code" href="../../db/d72/structVariables.html#aba382a84b6d13846b9b892277fa61fef" title="Supprimer une variable.">supprimerVariable</a>(<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * v, <span class="keyword">const</span> <span class="keywordtype">char</span> * nomVariable);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * <a class="code" href="../../db/d72/structVariables.html#a9071667d6431f0f71b051530dc096049" title="Libérer la mémoire occuppée par les variables.">libererVariables</a>(<a class="code" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> * v);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __MEMOIRE_H */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

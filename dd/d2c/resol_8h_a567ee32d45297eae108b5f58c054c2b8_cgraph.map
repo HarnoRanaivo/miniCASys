@@ -1,0 +1,13 @@
+<map id="gauss" name="gauss">
+<area shape="rect" id="node3" href="$dd/d2c/resol_8h.html#ad8fd2f411d8a630f4a37307287e4ddaa" title="Remontée d&#39;un système." alt="" coords="337,329,413,356"/>
+<area shape="rect" id="node11" href="$dd/d2c/resol_8h.html#a70d1580644adbc91bc9b1fbf7db05b58" title="Met le système sous forme triangulaire." alt="" coords="113,380,250,406"/>
+<area shape="rect" id="node5" href="$d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice." alt="" coords="499,380,618,406"/>
+<area shape="rect" id="node7" href="$d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="685,76,785,102"/>
+<area shape="rect" id="node9" href="$d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column." alt="" coords="685,278,785,305"/>
+<area shape="rect" id="node14" href="$dd/d2c/resol_8h.html#af4b7a96e86d4b3437ab4c77459ef98b1" title="Permuter les lignes i et j d&#39;un système." alt="" coords="302,228,447,254"/>
+<area shape="rect" id="node24" href="$dd/d2c/resol_8h.html#a33da153b81bc2ca9104bf3d06537852a" title="Choix pivot partiel." alt="" coords="315,430,435,457"/>
+<area shape="rect" id="node28" href="$dd/d2c/resol_8h.html#ab0d7f21512f3fc82c5d05c26b134a260" title="Additionner à la ligne i la ligne j multipliée par k." alt="" coords="299,152,450,178"/>
+<area shape="rect" id="node18" href="$dd/d2c/resol_8h.html#a6b9c9212befc11cacff5582fc664c125" title="Permuter les lignes i et j d&#39;une matrice." alt="" coords="512,177,605,204"/>
+<area shape="rect" id="node20" href="$d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice." alt="" coords="667,152,802,178"/>
+<area shape="rect" id="node30" href="$dd/d2c/resol_8h.html#a6efcf2a3920e4344c73da95f850701be" title="Additionner à la ligne i la ligne j multipliée par k." alt="" coords="509,126,608,153"/>
+</map>

@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Minicas: Référence du fichier include/matrix.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Minicas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier matrix.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Matrices (header)  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;time.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="../../d3/d5a/base_8h_source.html">base.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de matrix.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/dd7/matrix_8h__incl.png" border="0" usemap="#include_2matrix_8h" alt=""/></div>
+<map name="include_2matrix_8h" id="include_2matrix_8h">
+<area shape="rect" id="node9" href="../../d3/d5a/base_8h.html" title="Base (header)" alt="" coords="151,80,212,107"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d78/matrix_8h__dep__incl.png" border="0" usemap="#include_2matrix_8hdep" alt=""/></div>
+<map name="include_2matrix_8hdep" id="include_2matrix_8hdep">
+<area shape="rect" id="node3" href="../../da/ddd/decompo_8h.html" title="Décomposition en LU (header)" alt="" coords="119,229,249,256"/><area shape="rect" id="node5" href="../../d3/d5e/prompt_8h.html" title="Prompt (header)" alt="" coords="439,304,557,331"/><area shape="rect" id="node7" href="../../d0/d29/main_8c.html" title="Main." alt="" coords="199,379,281,405"/><area shape="rect" id="node14" href="../../da/d4f/operations_8h.html" title="Operations sur les matrices (header)" alt="" coords="219,80,357,107"/><area shape="rect" id="node17" href="../../dd/d2c/resol_8h.html" title="Résolution (header)" alt="" coords="355,155,461,181"/><area shape="rect" id="node29" href="../../da/d9f/memoire_8h.html" title="Gestion des variables utilisateur (header)" alt="" coords="611,155,739,181"/><area shape="rect" id="node41" href="../../dc/dca/matrix_8c.html" title="Matrices (code)" alt="" coords="637,80,728,107"/><area shape="rect" id="node11" href="../../d9/dd3/decompo_8c.html" title="Décomposition en LU (code source)" alt="" coords="94,304,201,331"/><area shape="rect" id="node9" href="../../d2/db3/prompt_8c.html" title="Prompt (code)" alt="" coords="451,379,545,405"/><area shape="rect" id="node26" href="../../d6/d43/operations_8c.html" title="Opérations sur les matrices (code)" alt="" coords="216,155,331,181"/><area shape="rect" id="node22" href="../../d4/d73/resol_8c.html" title="Résolution (code)" alt="" coords="328,229,411,256"/><area shape="rect" id="node31" href="../../d3/df8/parseur_8h.html" title="Parseur (header)" alt="" coords="638,229,759,256"/><area shape="rect" id="node37" href="../../d4/d23/memoire_8c.html" title="Gestion des variables utilisateur (code)" alt="" coords="783,229,888,256"/><area shape="rect" id="node34" href="../../d4/df5/parseur_8c.html" title="Parseur (code)" alt="" coords="649,304,748,331"/></map>
+</div>
+</div>
+<p><a href="../../dd/df4/matrix_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:aac53bc9350ab2256fe64520f3f7fb91a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df4/matrix_8h.html#aac53bc9350ab2256fe64520f3f7fb91a">newMatrix</a> (int nb_rows, int nb_columns)</td></tr>
+<tr class="memdesc:aac53bc9350ab2256fe64520f3f7fb91a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nouvelle matrice.  <a href="#aac53bc9350ab2256fe64520f3f7fb91a">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aac53bc9350ab2256fe64520f3f7fb91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18160601b1639e24ca0804f54a27ef1f"><td class="memItemLeft" align="right" valign="top">E&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df4/matrix_8h.html#a18160601b1639e24ca0804f54a27ef1f">getElt</a> (const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *m, int row, int column)</td></tr>
+<tr class="memdesc:a18160601b1639e24ca0804f54a27ef1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Élément à la ligne row et colonne column.  <a href="#a18160601b1639e24ca0804f54a27ef1f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a18160601b1639e24ca0804f54a27ef1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf9e5945ba7a28493dbd6836c24527f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df4/matrix_8h.html#afaf9e5945ba7a28493dbd6836c24527f">setElt</a> (<a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *m, int row, int column, E val)</td></tr>
+<tr class="memdesc:afaf9e5945ba7a28493dbd6836c24527f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changer la valeur de l'élément ligne <em>row</em> et colonne <em>column</em>.  <a href="#afaf9e5945ba7a28493dbd6836c24527f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:afaf9e5945ba7a28493dbd6836c24527f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5731a3adb317944cabb92134a9a60616"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df4/matrix_8h.html#a5731a3adb317944cabb92134a9a60616">deleteMatrix</a> (<a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *m)</td></tr>
+<tr class="memdesc:a5731a3adb317944cabb92134a9a60616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effacer une matrice.  <a href="#a5731a3adb317944cabb92134a9a60616">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a5731a3adb317944cabb92134a9a60616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af85fa4559a72fb3aebd14cf1e719af83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df4/matrix_8h.html#af85fa4559a72fb3aebd14cf1e719af83">displayMatrix</a> (const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *m)</td></tr>
+<tr class="memdesc:af85fa4559a72fb3aebd14cf1e719af83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Afficher une matrice.  <a href="#af85fa4559a72fb3aebd14cf1e719af83">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af85fa4559a72fb3aebd14cf1e719af83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebfd87e583fa65bce766196991cc851f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df4/matrix_8h.html#aebfd87e583fa65bce766196991cc851f">identite</a> (int size)</td></tr>
+<tr class="memdesc:aebfd87e583fa65bce766196991cc851f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créer une matrice identité  <a href="#aebfd87e583fa65bce766196991cc851f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aebfd87e583fa65bce766196991cc851f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a71a8b4e76a3051b3b856fc1aa919ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df4/matrix_8h.html#a9a71a8b4e76a3051b3b856fc1aa919ff">aleatoire</a> (<a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *m, float min, float max)</td></tr>
+<tr class="memdesc:a9a71a8b4e76a3051b3b856fc1aa919ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplir une matrice aléatoirement.  <a href="#a9a71a8b4e76a3051b3b856fc1aa919ff">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a9a71a8b4e76a3051b3b856fc1aa919ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed059ba172bba18115f3a88fdddabecd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df4/matrix_8h.html#aed059ba172bba18115f3a88fdddabecd">copieMatrice</a> (const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *m)</td></tr>
+<tr class="memdesc:aed059ba172bba18115f3a88fdddabecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copier une matrice.  <a href="#aed059ba172bba18115f3a88fdddabecd">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aed059ba172bba18115f3a88fdddabecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Matrices (header) </p>
+<dl class="section author"><dt>Auteur</dt><dd>Harenome RAZANAJATO </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="../../dd/df4/matrix_8h_source.html">matrix.h</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a9a71a8b4e76a3051b3b856fc1aa919ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> * aleatoire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remplir une matrice aléatoirement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>matrice à remplir </td></tr>
+    <tr><td class="paramname">min</td><td>minimum </td></tr>
+    <tr><td class="paramname">max</td><td>maximum </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pointeur vers la matrice </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../dc/dca/matrix_8c_source.html#l00087">87</a> du fichier <a class="el" href="../../dc/dca/matrix_8c_source.html">matrix.c</a>.</p>
+
+<p>Références <a class="el" href="../../dd/df4/matrix_8h_source.html#l00047">Matrix::nbColonnes()</a>, <a class="el" href="../../dd/df4/matrix_8h_source.html#l00036">Matrix::nbLignes()</a>, et <a class="el" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f">Matrix::setElt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">/* Au cas-où on oublierait de le faire en début de programme. */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    srand48(time(NULL));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m); i++)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt;= <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m); j++)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column.">setElt</a>(m, i, j, min + (drand48() * (max - min)));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/df4/matrix_8h_a9a71a8b4e76a3051b3b856fc1aa919ff_cgraph.png" border="0" usemap="#dd/df4/matrix_8h_a9a71a8b4e76a3051b3b856fc1aa919ff_cgraph" alt=""/></div>
+<map name="dd/df4/matrix_8h_a9a71a8b4e76a3051b3b856fc1aa919ff_cgraph" id="dd/df4/matrix_8h_a9a71a8b4e76a3051b3b856fc1aa919ff_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice." alt="" coords="126,5,261,32"/><area shape="rect" id="node5" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice." alt="" coords="134,56,253,83"/><area shape="rect" id="node7" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="143,107,243,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aed059ba172bba18115f3a88fdddabecd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> * copieMatrice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copier une matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Matrice à copier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Copie. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../dc/dca/matrix_8c_source.html#l00099">99</a> du fichier <a class="el" href="../../dc/dca/matrix_8c_source.html">matrix.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f">Matrix::getElt()</a>, <a class="el" href="../../dd/df4/matrix_8h_source.html#l00047">Matrix::nbColonnes()</a>, <a class="el" href="../../dd/df4/matrix_8h_source.html#l00036">Matrix::nbLignes()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a">Matrix::newMatrix()</a>, et <a class="el" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f">Matrix::setElt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m0 = <a class="code" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice.">newMatrix</a>(<a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m), <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m); i++)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt;= <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m); j++)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <a class="code" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column.">setElt</a>(m0, i, j, <a class="code" href="../../d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column.">getElt</a>(m, i, j));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> m0;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/df4/matrix_8h_aed059ba172bba18115f3a88fdddabecd_cgraph.png" border="0" usemap="#dd/df4/matrix_8h_aed059ba172bba18115f3a88fdddabecd_cgraph" alt=""/></div>
+<map name="dd/df4/matrix_8h_aed059ba172bba18115f3a88fdddabecd_cgraph" id="dd/df4/matrix_8h_aed059ba172bba18115f3a88fdddabecd_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column." alt="" coords="167,5,267,32"/><area shape="rect" id="node5" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice." alt="" coords="150,56,285,83"/><area shape="rect" id="node7" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice." alt="" coords="158,107,277,133"/><area shape="rect" id="node9" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice." alt="" coords="154,157,281,184"/><area shape="rect" id="node11" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="167,208,267,235"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5731a3adb317944cabb92134a9a60616"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> * deleteMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Effacer une matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>matrice à effacer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="../../dc/dca/matrix_8c_source.html#l00046">46</a> du fichier <a class="el" href="../../dc/dca/matrix_8c_source.html">matrix.c</a>.</p>
+
+<p>Références <a class="el" href="../../dd/df4/matrix_8h_source.html#l00025">Matrix::mat</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (m != NULL)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a7b5dc0dce5719bcd41d1427f9f35ef4b">mat</a> != NULL)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            free(m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a7b5dc0dce5719bcd41d1427f9f35ef4b">mat</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        free(m);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af85fa4559a72fb3aebd14cf1e719af83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void displayMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Afficher une matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>matrice à afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="../../dc/dca/matrix_8c_source.html#l00058">58</a> du fichier <a class="el" href="../../dc/dca/matrix_8c_source.html">matrix.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f">Matrix::getElt()</a>, <a class="el" href="../../dd/df4/matrix_8h_source.html#l00047">Matrix::nbColonnes()</a>, et <a class="el" href="../../dd/df4/matrix_8h_source.html#l00036">Matrix::nbLignes()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m);i++)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        printf(<span class="stringliteral">&quot;\t[ &quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt; <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m); j++)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            printf(<span class="stringliteral">&quot;%f\t&quot;</span>, <a class="code" href="../../d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column.">getElt</a>(m, i, j));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        printf(<span class="stringliteral">&quot;%f ]\n&quot;</span>, <a class="code" href="../../d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column.">getElt</a>(m, i, <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m)));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/df4/matrix_8h_af85fa4559a72fb3aebd14cf1e719af83_cgraph.png" border="0" usemap="#dd/df4/matrix_8h_af85fa4559a72fb3aebd14cf1e719af83_cgraph" alt=""/></div>
+<map name="dd/df4/matrix_8h_af85fa4559a72fb3aebd14cf1e719af83_cgraph" id="dd/df4/matrix_8h_af85fa4559a72fb3aebd14cf1e719af83_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column." alt="" coords="170,5,270,32"/><area shape="rect" id="node5" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice." alt="" coords="153,56,287,83"/><area shape="rect" id="node7" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice." alt="" coords="161,107,279,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a18160601b1639e24ca0804f54a27ef1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">E getElt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>column</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Élément à la ligne row et colonne column. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>ligne </td></tr>
+    <tr><td class="paramname">column</td><td>colonne </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>E </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../dc/dca/matrix_8c_source.html#l00036">36</a> du fichier <a class="el" href="../../dc/dca/matrix_8c_source.html">matrix.c</a>.</p>
+
+<p>Références <a class="el" href="../../dd/df4/matrix_8h_source.html#l00025">Matrix::mat</a>, et <a class="el" href="../../dd/df4/matrix_8h_source.html#l00047">Matrix::nbColonnes()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> *(m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a7b5dc0dce5719bcd41d1427f9f35ef4b">mat</a> + ((row - 1) * <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m)) + (column - 1));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/df4/matrix_8h_a18160601b1639e24ca0804f54a27ef1f_cgraph.png" border="0" usemap="#dd/df4/matrix_8h_a18160601b1639e24ca0804f54a27ef1f_cgraph" alt=""/></div>
+<map name="dd/df4/matrix_8h_a18160601b1639e24ca0804f54a27ef1f_cgraph" id="dd/df4/matrix_8h_a18160601b1639e24ca0804f54a27ef1f_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice." alt="" coords="110,5,245,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aebfd87e583fa65bce766196991cc851f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> * identite </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créer une matrice identité </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>taille </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="../../dc/dca/matrix_8c_source.html#l00070">70</a> du fichier <a class="el" href="../../dc/dca/matrix_8c_source.html">matrix.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a">Matrix::newMatrix()</a>, et <a class="el" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f">Matrix::setElt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m = <a class="code" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice.">newMatrix</a>(size, size);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (m != NULL)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= size; i++)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt;= size; j++)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">if</span> (i == j) <a class="code" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column.">setElt</a>(m, i, j, 1.);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">else</span> <a class="code" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column.">setElt</a>(m, i, j, 0.);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/df4/matrix_8h_aebfd87e583fa65bce766196991cc851f_cgraph.png" border="0" usemap="#dd/df4/matrix_8h_aebfd87e583fa65bce766196991cc851f_cgraph" alt=""/></div>
+<map name="dd/df4/matrix_8h_aebfd87e583fa65bce766196991cc851f_cgraph" id="dd/df4/matrix_8h_aebfd87e583fa65bce766196991cc851f_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice." alt="" coords="118,5,245,32"/><area shape="rect" id="node5" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="131,56,231,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aac53bc9350ab2256fe64520f3f7fb91a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> * newMatrix </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_columns</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nouvelle matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nb_rows</td><td>nombre de lignes </td></tr>
+    <tr><td class="paramname">nb_columns</td><td>nombre de colonnes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>pointeur vers une nouvelle matrice </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../dc/dca/matrix_8c_source.html#l00013">13</a> du fichier <a class="el" href="../../dc/dca/matrix_8c_source.html">matrix.c</a>.</p>
+
+<p>Références <a class="el" href="../../dd/df4/matrix_8h_source.html#l00025">Matrix::mat</a>, <a class="el" href="../../dd/df4/matrix_8h_source.html#l00027">Matrix::ncols</a>, et <a class="el" href="../../dd/df4/matrix_8h_source.html#l00026">Matrix::nrows</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m = malloc(<span class="keyword">sizeof</span> *m);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (m != NULL)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a172b1493d38f5bb867f4219ca4bd4c3f">nrows</a> = nb_rows;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a6f61571709191cc7586aff1a713bb63e">ncols</a> = nb_columns;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a7b5dc0dce5719bcd41d1427f9f35ef4b">mat</a> = malloc((nb_rows * nb_columns)*(<span class="keyword">sizeof</span> *m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a7b5dc0dce5719bcd41d1427f9f35ef4b">mat</a>));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a7b5dc0dce5719bcd41d1427f9f35ef4b">mat</a> == NULL)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            perror(<span class="stringliteral">&quot;malloc&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            free(m);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            m = NULL;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        perror(<span class="stringliteral">&quot;malloc&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afaf9e5945ba7a28493dbd6836c24527f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setElt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changer la valeur de l'élément ligne <em>row</em> et colonne <em>column</em>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>matrice à modifier </td></tr>
+    <tr><td class="paramname">row</td><td>ligne </td></tr>
+    <tr><td class="paramname">column</td><td>colonne </td></tr>
+    <tr><td class="paramname">val</td><td>valeur </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="../../dc/dca/matrix_8c_source.html#l00041">41</a> du fichier <a class="el" href="../../dc/dca/matrix_8c_source.html">matrix.c</a>.</p>
+
+<p>Références <a class="el" href="../../dd/df4/matrix_8h_source.html#l00025">Matrix::mat</a>, et <a class="el" href="../../dd/df4/matrix_8h_source.html#l00047">Matrix::nbColonnes()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    *(m-&gt;<a class="code" href="../../d8/d1d/structMatrix.html#a7b5dc0dce5719bcd41d1427f9f35ef4b">mat</a> + ((row - 1) * <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m)) + (column - 1)) = val;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/df4/matrix_8h_afaf9e5945ba7a28493dbd6836c24527f_cgraph.png" border="0" usemap="#dd/df4/matrix_8h_afaf9e5945ba7a28493dbd6836c24527f_cgraph" alt=""/></div>
+<map name="dd/df4/matrix_8h_afaf9e5945ba7a28493dbd6836c24527f_cgraph" id="dd/df4/matrix_8h_afaf9e5945ba7a28493dbd6836c24527f_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice." alt="" coords="110,5,245,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

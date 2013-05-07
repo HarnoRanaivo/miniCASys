@@ -1,0 +1,673 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Minicas: Référence du fichier include/parseur.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Minicas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier parseur.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Parseur (header)  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="../../d3/d5a/base_8h_source.html">base.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="../../da/d9f/memoire_8h_source.html">memoire.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de parseur.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d76/parseur_8h__incl.png" border="0" usemap="#include_2parseur_8h" alt=""/></div>
+<map name="include_2parseur_8h" id="include_2parseur_8h">
+<area shape="rect" id="node7" href="../../d3/d5a/base_8h.html" title="Base (header)" alt="" coords="276,229,337,256"/><area shape="rect" id="node15" href="../../da/d9f/memoire_8h.html" title="Gestion des variables utilisateur (header)" alt="" coords="119,80,201,107"/><area shape="rect" id="node20" href="../../dd/df4/matrix_8h.html" title="Matrices (header)" alt="" coords="125,155,195,181"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/da5/parseur_8h__dep__incl.png" border="0" usemap="#include_2parseur_8hdep" alt=""/></div>
+<map name="include_2parseur_8hdep" id="include_2parseur_8hdep">
+<area shape="rect" id="node3" href="../../d3/d5e/prompt_8h.html" title="Prompt (header)" alt="" coords="43,80,161,107"/><area shape="rect" id="node9" href="../../d4/df5/parseur_8c.html" title="Parseur (code)" alt="" coords="187,80,285,107"/><area shape="rect" id="node5" href="../../d0/d29/main_8c.html" title="Main." alt="" coords="5,155,88,181"/><area shape="rect" id="node7" href="../../d2/db3/prompt_8c.html" title="Prompt (code)" alt="" coords="113,155,207,181"/></map>
+</div>
+</div>
+<p><a href="../../d3/df8/parseur_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ab9e28860fd1ddd4ae0f5f740771efa3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/parseur_8h.html#ab9e28860fd1ddd4ae0f5f740771efa3f">contientMatriceValide</a> (const char *chaine)</td></tr>
+<tr class="memdesc:ab9e28860fd1ddd4ae0f5f740771efa3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie qu'une définition de matrice contient des lignes complètes.  <a href="#ab9e28860fd1ddd4ae0f5f740771efa3f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab9e28860fd1ddd4ae0f5f740771efa3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aebe6cd8780ece9a35241ef83116263"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/parseur_8h.html#a2aebe6cd8780ece9a35241ef83116263">compterLignes</a> (const char *chaine)</td></tr>
+<tr class="memdesc:a2aebe6cd8780ece9a35241ef83116263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compter le nombre de lignes d'une définition de matrice.  <a href="#a2aebe6cd8780ece9a35241ef83116263">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a2aebe6cd8780ece9a35241ef83116263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d73955acf439917d8a02f3b3f65877"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/parseur_8h.html#a98d73955acf439917d8a02f3b3f65877">compterColonnes</a> (const char *chaine)</td></tr>
+<tr class="memdesc:a98d73955acf439917d8a02f3b3f65877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compter le nombre de colonnes d'une définition de matrice.  <a href="#a98d73955acf439917d8a02f3b3f65877">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a98d73955acf439917d8a02f3b3f65877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1bd6e40239ae1157e329f571a079d61"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/parseur_8h.html#ae1bd6e40239ae1157e329f571a079d61">recupererLignesMatrice</a> (char *chaine)</td></tr>
+<tr class="memdesc:ae1bd6e40239ae1157e329f571a079d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupérer un tableau de pointeurs sur les lignes.  <a href="#ae1bd6e40239ae1157e329f571a079d61">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ae1bd6e40239ae1157e329f571a079d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f61720d08a2f73cc149a839eb338a84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/parseur_8h.html#a4f61720d08a2f73cc149a839eb338a84">recupererMatrice</a> (char *chaine, const <a class="el" href="../../db/d72/structVariables.html">Variables</a> *v)</td></tr>
+<tr class="memdesc:a4f61720d08a2f73cc149a839eb338a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir une matrice à partir de sa définition.  <a href="#a4f61720d08a2f73cc149a839eb338a84">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a4f61720d08a2f73cc149a839eb338a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ca82f136817be9b6fbb8710f9be7ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/parseur_8h.html#a73ca82f136817be9b6fbb8710f9be7ef">preparerLigneCommmande</a> (char *chaine, char *<a class="el" href="../../d9/dd3/decompo_8c.html#a466fc82aa79c89e05c3f0d5e640b2c93">decomposition</a>[4])</td></tr>
+<tr class="memdesc:a73ca82f136817be9b6fbb8710f9be7ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Préparer la ligne de commande entrée par l'utilisateur.  <a href="#a73ca82f136817be9b6fbb8710f9be7ef">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a73ca82f136817be9b6fbb8710f9be7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433da8cd442ed75a5ce554331a25b497"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/parseur_8h.html#a433da8cd442ed75a5ce554331a25b497">preparerCommande</a> (char *chaine, char *<a class="el" href="../../d9/dd3/decompo_8c.html#a466fc82aa79c89e05c3f0d5e640b2c93">decomposition</a>[2])</td></tr>
+<tr class="memdesc:a433da8cd442ed75a5ce554331a25b497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Préparer la commande entrée par l'utilisateur.  <a href="#a433da8cd442ed75a5ce554331a25b497">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a433da8cd442ed75a5ce554331a25b497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Parseur (header) </p>
+<dl class="section author"><dt>Auteur</dt><dd>Harenome RAZANAJATO </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="../../d3/df8/parseur_8h_source.html">parseur.h</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a98d73955acf439917d8a02f3b3f65877"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compterColonnes </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>chaine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compter le nombre de colonnes d'une définition de matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaine</td><td>Matrice à analyser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>nombre de colonnes. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/df5/parseur_8c_source.html#l00051">51</a> du fichier <a class="el" href="../../d4/df5/parseur_8c_source.html">parseur.c</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d4/df5/parseur_8c_source.html#l00072">recupererMatrice()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> compterTokens(chaine, <span class="charliteral">&#39;,&#39;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_a98d73955acf439917d8a02f3b3f65877_icgraph.png" border="0" usemap="#d3/df8/parseur_8h_a98d73955acf439917d8a02f3b3f65877_icgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_a98d73955acf439917d8a02f3b3f65877_icgraph" id="d3/df8/parseur_8h_a98d73955acf439917d8a02f3b3f65877_icgraph">
+<area shape="rect" id="node3" href="../../d4/df5/parseur_8c.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="179,5,298,32"/><area shape="rect" id="node5" href="../../d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="347,5,469,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2aebe6cd8780ece9a35241ef83116263"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compterLignes </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>chaine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compter le nombre de lignes d'une définition de matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaine</td><td>Matrice à analyser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>nombre de lignes. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/df5/parseur_8c_source.html#l00038">38</a> du fichier <a class="el" href="../../d4/df5/parseur_8c_source.html">parseur.c</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d4/df5/parseur_8c_source.html#l00056">recupererLignesMatrice()</a>, et <a class="el" href="../../d4/df5/parseur_8c_source.html#l00072">recupererMatrice()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> n = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> * s = strchr(chaine, <span class="charliteral">&#39;[&#39;</span>); s != NULL; s = strchr(s, <span class="charliteral">&#39;[&#39;</span>))</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        n++;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        s++;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_a2aebe6cd8780ece9a35241ef83116263_icgraph.png" border="0" usemap="#d3/df8/parseur_8h_a2aebe6cd8780ece9a35241ef83116263_icgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_a2aebe6cd8780ece9a35241ef83116263_icgraph" id="d3/df8/parseur_8h_a2aebe6cd8780ece9a35241ef83116263_icgraph">
+<area shape="rect" id="node3" href="../../d4/df5/parseur_8c.html#ae1bd6e40239ae1157e329f571a079d61" title="Récupérer un tableau de pointeurs sur les lignes." alt="" coords="160,5,317,32"/><area shape="rect" id="node5" href="../../d4/df5/parseur_8c.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="366,31,485,57"/><area shape="rect" id="node7" href="../../d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="533,31,656,57"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9e28860fd1ddd4ae0f5f740771efa3f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a> contientMatriceValide </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>chaine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie qu'une définition de matrice contient des lignes complètes. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaine</td><td>Matrice à analyser </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a> si les lignes sont correctes, <a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a> sinon.</dd></dl>
+<p>Chaque '[' doit avoir son ']', les lignes ne doivent pas être imbriquées. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d4/df5/parseur_8c_source.html#l00013">13</a> du fichier <a class="el" href="../../d4/df5/parseur_8c_source.html">parseur.c</a>.</p>
+
+<p>Références <a class="el" href="../../d3/d5a/base_8h_source.html#l00027">FAUX</a>, et <a class="el" href="../../d3/d5a/base_8h_source.html#l00028">VRAI</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d2/db3/prompt_8c_source.html#l00299">traiterCommande()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309" title="Simulation des booléens.">Bool</a> ferme = <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> * c = chaine; *c != <span class="charliteral">&#39;\0&#39;</span>; c++)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (*c == <span class="charliteral">&#39;[&#39;</span>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span> (ferme == <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                ferme = <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*c == <span class="charliteral">&#39;]&#39;</span>)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">if</span> (ferme == <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a>)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                ferme = <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> ferme;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_ab9e28860fd1ddd4ae0f5f740771efa3f_icgraph.png" border="0" usemap="#d3/df8/parseur_8h_ab9e28860fd1ddd4ae0f5f740771efa3f_icgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_ab9e28860fd1ddd4ae0f5f740771efa3f_icgraph" id="d3/df8/parseur_8h_ab9e28860fd1ddd4ae0f5f740771efa3f_icgraph">
+<area shape="rect" id="node3" href="../../d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="200,5,323,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a433da8cd442ed75a5ce554331a25b497"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int preparerCommande </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>chaine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>decomposition</em>[2]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Préparer la commande entrée par l'utilisateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaine</td><td>Ligne de commande utilisateur. </td></tr>
+    <tr><td class="paramname">decomposition</td><td>Tableau destiné aux pointeurs vers les sous-chaînes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Nombre de parties.</dd></dl>
+<p>Les parties délimitées par cette fonction sont de la forme : &lt;partie 1&gt; ( &lt;partie 2&gt; )</p>
+<p>La partie 1 ne doit contenir qu'un seul mot. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d4/df5/parseur_8c_source.html#l00128">128</a> du fichier <a class="el" href="../../d4/df5/parseur_8c_source.html">parseur.c</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d4/df5/parseur_8c_source.html#l00166">preparerLigneCommmande()</a>, et <a class="el" href="../../d2/db3/prompt_8c_source.html#l00690">prompt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> parties = 0;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">char</span> * parcours = chaine;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">/* Arguments de la commande, s&#39;il y en a */</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> ((parcours = strchr(parcours, <span class="charliteral">&#39;(&#39;</span>)) !=  NULL)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        *parcours = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        parcours += 1;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        parties++;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[0] = parcours;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment">/* Éléments superflus. */</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">if</span> ((parcours = strchr(parcours, <span class="charliteral">&#39;)&#39;</span>)) != NULL)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            *parcours = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            parcours += 1;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordtype">char</span> reste[32];</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="comment">/* %s ignore les espaces...si la fin ne contient que des</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">                * espaces, sscanf ratera...</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">                */</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keywordflow">if</span> (sscanf(parcours, <span class="stringliteral">&quot;%31s&quot;</span>, reste) == 1)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                parties++;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[1] = parcours;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">return</span> -parties;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[0] = NULL;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> parties;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_a433da8cd442ed75a5ce554331a25b497_icgraph.png" border="0" usemap="#d3/df8/parseur_8h_a433da8cd442ed75a5ce554331a25b497_icgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_a433da8cd442ed75a5ce554331a25b497_icgraph" id="d3/df8/parseur_8h_a433da8cd442ed75a5ce554331a25b497_icgraph">
+<area shape="rect" id="node3" href="../../d4/df5/parseur_8c.html#a73ca82f136817be9b6fbb8710f9be7ef" title="Préparer la ligne de commande entrée par l&#39;utilisateur." alt="" coords="189,5,368,32"/><area shape="rect" id="node5" href="../../d2/db3/prompt_8c.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="417,31,479,57"/><area shape="rect" id="node7" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main." alt="" coords="528,31,579,57"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a73ca82f136817be9b6fbb8710f9be7ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int preparerLigneCommmande </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>chaine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>decomposition</em>[4]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Préparer la ligne de commande entrée par l'utilisateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaine</td><td>Ligne de commande utilisateur. </td></tr>
+    <tr><td class="paramname">decomposition</td><td>Tableau destiné aux pointeurs vers les sous-chaînes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Nombre de parties.</dd></dl>
+<p>Les parties délimitées par cette fonction sont de la forme : &lt;partie 1&gt; : &lt;partie 2&gt; ( &lt;partie 3&gt; ) &lt;partie 4&gt;</p>
+<p>Les parties 1 et 2 ne doivent contenir qu'un seul mot. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d4/df5/parseur_8c_source.html#l00166">166</a> du fichier <a class="el" href="../../d4/df5/parseur_8c_source.html">parseur.c</a>.</p>
+
+<p>Références <a class="el" href="../../d4/df5/parseur_8c_source.html#l00128">preparerCommande()</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d2/db3/prompt_8c_source.html#l00690">prompt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">int</span> parties = 1;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">char</span> * parcours;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[i] = NULL;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">/* partie avant le &#39;:&#39; */</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[0] = chaine;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">/* Partie après le &#39;:&#39; */</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">if</span> ((parcours = strchr(chaine, <span class="charliteral">&#39;:&#39;</span>)) != NULL)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        *parcours = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        parcours += 1;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        parties++;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[1] = parcours;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        parties += <a class="code" href="../../d3/df8/parseur_8h.html#a433da8cd442ed75a5ce554331a25b497" title="Préparer la commande entrée par l&#39;utilisateur.">preparerCommande</a>(parcours, <a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a> + 2);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[1] = NULL;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">/* Vérification qu&#39;il n&#39;y a bien qu&#39;un seul mot dans</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">     * les 2 premières parties.</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2; i ++)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordtype">char</span> buffer[64];</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[i] != NULL</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            &amp;&amp; sscanf(<a class="code" href="../../da/ddd/decompo_8h.html#a2457df63ff34c84fd5b6bfc68468346f" title="Décomposition en LU.">decomposition</a>[i], <span class="stringliteral">&quot;%s %s&quot;</span>, buffer, buffer) == 2</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;           )</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">return</span> -parties;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">return</span> parties;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_a73ca82f136817be9b6fbb8710f9be7ef_cgraph.png" border="0" usemap="#d3/df8/parseur_8h_a73ca82f136817be9b6fbb8710f9be7ef_cgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_a73ca82f136817be9b6fbb8710f9be7ef_cgraph" id="d3/df8/parseur_8h_a73ca82f136817be9b6fbb8710f9be7ef_cgraph">
+<area shape="rect" id="node3" href="../../d3/df8/parseur_8h.html#a433da8cd442ed75a5ce554331a25b497" title="Préparer la commande entrée par l&#39;utilisateur." alt="" coords="232,5,368,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_a73ca82f136817be9b6fbb8710f9be7ef_icgraph.png" border="0" usemap="#d3/df8/parseur_8h_a73ca82f136817be9b6fbb8710f9be7ef_icgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_a73ca82f136817be9b6fbb8710f9be7ef_icgraph" id="d3/df8/parseur_8h_a73ca82f136817be9b6fbb8710f9be7ef_icgraph">
+<area shape="rect" id="node3" href="../../d2/db3/prompt_8c.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="233,5,295,32"/><area shape="rect" id="node5" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main." alt="" coords="344,5,395,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1bd6e40239ae1157e329f571a079d61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char** recupererLignesMatrice </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>chaine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupérer un tableau de pointeurs sur les lignes. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaine</td><td>Matrice à analyser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>lignes de la matrice.</dd></dl>
+<p>Chaque élément du tableau pointe vers le début d'une sous-chaîne correspondant à une ligne de la matrice. </p>
+
+<p>Définition à la ligne <a class="el" href="../../d4/df5/parseur_8c_source.html#l00056">56</a> du fichier <a class="el" href="../../d4/df5/parseur_8c_source.html">parseur.c</a>.</p>
+
+<p>Références <a class="el" href="../../d4/df5/parseur_8c_source.html#l00038">compterLignes()</a>, et <a class="el" href="../../d3/d5a/base_8h_source.html#l00109">MALLOCN</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d4/df5/parseur_8c_source.html#l00072">recupererMatrice()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> n = <a class="code" href="../../d3/df8/parseur_8h.html#a2aebe6cd8780ece9a35241ef83116263" title="Compter le nombre de lignes d&#39;une définition de matrice.">compterLignes</a>(chaine);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">char</span> ** lignes = <a class="code" href="../../d3/d5a/base_8h.html#a66f86b7a62cf1c6c9afeaa47c610b750" title="Allouer un tableau de taille N.">MALLOCN</a>(lignes, n);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">char</span> * parcours = strchr(chaine, <span class="charliteral">&#39;[&#39;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        lignes[i] = parcours;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        parcours = strchr(parcours + 1, <span class="charliteral">&#39;[&#39;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        *(strchr(lignes[i], <span class="charliteral">&#39;]&#39;</span>) + 1) = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> lignes;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_ae1bd6e40239ae1157e329f571a079d61_cgraph.png" border="0" usemap="#d3/df8/parseur_8h_ae1bd6e40239ae1157e329f571a079d61_cgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_ae1bd6e40239ae1157e329f571a079d61_cgraph" id="d3/df8/parseur_8h_ae1bd6e40239ae1157e329f571a079d61_cgraph">
+<area shape="rect" id="node3" href="../../d3/df8/parseur_8h.html#a2aebe6cd8780ece9a35241ef83116263" title="Compter le nombre de lignes d&#39;une définition de matrice." alt="" coords="211,5,317,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_ae1bd6e40239ae1157e329f571a079d61_icgraph.png" border="0" usemap="#d3/df8/parseur_8h_ae1bd6e40239ae1157e329f571a079d61_icgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_ae1bd6e40239ae1157e329f571a079d61_icgraph" id="d3/df8/parseur_8h_ae1bd6e40239ae1157e329f571a079d61_icgraph">
+<area shape="rect" id="node3" href="../../d4/df5/parseur_8c.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="211,5,330,32"/><area shape="rect" id="node5" href="../../d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="379,5,501,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f61720d08a2f73cc149a839eb338a84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a>* recupererMatrice </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>chaine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtenir une matrice à partir de sa définition. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaine</td><td>Matrice à analyser. </td></tr>
+    <tr><td class="paramname">v</td><td><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> déjà définies. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Matrice. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d4/df5/parseur_8c_source.html#l00072">72</a> du fichier <a class="el" href="../../d4/df5/parseur_8c_source.html">parseur.c</a>.</p>
+
+<p>Références <a class="el" href="../../d4/df5/parseur_8c_source.html#l00051">compterColonnes()</a>, <a class="el" href="../../d4/df5/parseur_8c_source.html#l00038">compterLignes()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616">Matrix::deleteMatrix()</a>, <a class="el" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc">Donnee::eDonnee()</a>, <a class="el" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5">Donnee::estE()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a">Matrix::newMatrix()</a>, <a class="el" href="../../d4/d23/memoire_8c_source.html#l00133">obtenirDonnee()</a>, <a class="el" href="../../d4/df5/parseur_8c_source.html#l00056">recupererLignesMatrice()</a>, et <a class="el" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f">Matrix::setElt()</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d2/db3/prompt_8c_source.html#l00299">traiterCommande()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> nLignes = <a class="code" href="../../d3/df8/parseur_8h.html#a2aebe6cd8780ece9a35241ef83116263" title="Compter le nombre de lignes d&#39;une définition de matrice.">compterLignes</a>(chaine);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">char</span> ** lignes = <a class="code" href="../../d3/df8/parseur_8h.html#ae1bd6e40239ae1157e329f571a079d61" title="Récupérer un tableau de pointeurs sur les lignes.">recupererLignesMatrice</a>(chaine);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> nColonnes = <a class="code" href="../../d3/df8/parseur_8h.html#a98d73955acf439917d8a02f3b3f65877" title="Compter le nombre de colonnes d&#39;une définition de matrice.">compterColonnes</a>(lignes[0]);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; nLignes; i++)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (nColonnes != <a class="code" href="../../d3/df8/parseur_8h.html#a98d73955acf439917d8a02f3b3f65877" title="Compter le nombre de colonnes d&#39;une définition de matrice.">compterColonnes</a>(lignes[i]))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            printf(<span class="stringliteral">&quot;\t%s : Nombre de colonnes incorrect.\n&quot;</span>, lignes[i]);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            free(lignes);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m = <a class="code" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice.">newMatrix</a>(nLignes, nColonnes);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nLignes; i++)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">char</span> * parcours = lignes[i] + 1;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; nColonnes; j++)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            E element;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span> (sscanf(parcours, <span class="stringliteral">&quot;%f&quot;</span>, &amp;element) == 1)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column.">setElt</a>(m, i+1, j+1, element);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordtype">char</span> variable[64] = { <span class="charliteral">&#39;\0&#39;</span> };</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">if</span> (sscanf(parcours, <span class="stringliteral">&quot; %63[^],]&quot;</span>, variable) == 1</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    &amp;&amp; (d = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, variable)) != NULL</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    &amp;&amp; (<a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(d))</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                   )</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    <a class="code" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column.">setElt</a>(m, i+1, j+1, <a class="code" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée.">eDonnee</a>(d));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    printf(<span class="stringliteral">&quot;%s : argument incorrect.\n&quot;</span>, variable);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    free(lignes);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    m = <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(m);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            parcours = strchr(parcours, <span class="charliteral">&#39;,&#39;</span>) + 1;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    free(lignes);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_a4f61720d08a2f73cc149a839eb338a84_cgraph.png" border="0" usemap="#d3/df8/parseur_8h_a4f61720d08a2f73cc149a839eb338a84_cgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_a4f61720d08a2f73cc149a839eb338a84_cgraph" id="d3/df8/parseur_8h_a4f61720d08a2f73cc149a839eb338a84_cgraph">
+<area shape="rect" id="node3" href="../../d3/df8/parseur_8h.html#a98d73955acf439917d8a02f3b3f65877" title="Compter le nombre de colonnes d&#39;une définition de matrice." alt="" coords="190,5,314,32"/><area shape="rect" id="node5" href="../../d3/df8/parseur_8h.html#a2aebe6cd8780ece9a35241ef83116263" title="Compter le nombre de lignes d&#39;une définition de matrice." alt="" coords="379,208,485,235"/><area shape="rect" id="node7" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="183,107,321,133"/><area shape="rect" id="node9" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée." alt="" coords="189,157,315,184"/><area shape="rect" id="node11" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E." alt="" coords="201,208,303,235"/><area shape="rect" id="node13" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice." alt="" coords="189,259,315,285"/><area shape="rect" id="node15" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable." alt="" coords="199,309,305,336"/><area shape="rect" id="node17" href="../../d3/df8/parseur_8h.html#ae1bd6e40239ae1157e329f571a079d61" title="Récupérer un tableau de pointeurs sur les lignes." alt="" coords="173,360,331,387"/><area shape="rect" id="node20" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="202,411,302,437"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/parseur_8h_a4f61720d08a2f73cc149a839eb338a84_icgraph.png" border="0" usemap="#d3/df8/parseur_8h_a4f61720d08a2f73cc149a839eb338a84_icgraph" alt=""/></div>
+<map name="d3/df8/parseur_8h_a4f61720d08a2f73cc149a839eb338a84_icgraph" id="d3/df8/parseur_8h_a4f61720d08a2f73cc149a839eb338a84_icgraph">
+<area shape="rect" id="node3" href="../../d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="173,5,296,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

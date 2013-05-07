@@ -1,0 +1,13 @@
+<map id="Matrix::deleteMatrix" name="Matrix::deleteMatrix">
+<area shape="rect" id="node3" href="$d4/d23/memoire_8c.html#ad4c31fbdc8f2e50c8ab5a3a42a8892b5" title="Sauvegarder un E." alt="" coords="221,5,291,32"/>
+<area shape="rect" id="node5" href="$d4/d23/memoire_8c.html#a475a5945494b8efd266128e077388947" title="Sauvegarder une matrice." alt="" coords="204,56,308,83"/>
+<area shape="rect" id="node7" href="$d4/d73/resol_8c.html#a3d3679e284c36e38b6ad842194cd27a3" title="Déterminant d&#39;une matrice (calcul récursif)." alt="" coords="197,131,315,157"/>
+<area shape="rect" id="node10" href="$d6/d43/operations_8c.html#aa08a0dac650367894067df7d4e0f22d6" title="Exponentiation d&#39;une matrice." alt="" coords="203,181,309,208"/>
+<area shape="rect" id="node12" href="$d9/dd3/decompo_8c.html#a99d9997a2adf8edd80eaf0f4e2fb0ab9" title="Inverse une matrice carrée." alt="" coords="219,232,293,259"/>
+<area shape="rect" id="node14" href="$d4/d23/memoire_8c.html#a0538b37d6aa6559581380f99c9bd1042" title="Libérer la mémoire occuppée par une Donnee." alt="" coords="205,283,307,309"/>
+<area shape="rect" id="node16" href="$d9/dd3/decompo_8c.html#afca4137fb2989d3c9a378afa572882ce" title="Libération de la mémoire utilisée dans une décompositon en LU." alt="" coords="219,333,293,360"/>
+<area shape="rect" id="node18" href="$d4/df5/parseur_8c.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="197,384,315,411"/>
+<area shape="rect" id="node20" href="$d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="368,409,491,436"/>
+<area shape="rect" id="node22" href="$d2/db3/prompt_8c.html#ae9302c48aacd599c3338df2b824d65f9" title="Test de vitesse." alt="" coords="217,485,295,512"/>
+<area shape="rect" id="node24" href="$d4/d23/memoire_8c.html#a9a18b7c354e31685d523c41ac7d29220" title="Supprimer une variable." alt="" coords="193,536,319,563"/>
+</map>

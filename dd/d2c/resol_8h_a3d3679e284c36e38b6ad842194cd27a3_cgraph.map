@@ -1,0 +1,8 @@
+<map id="determinant_naif" name="determinant_naif">
+<area shape="rect" id="node3" href="$d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="174,5,311,32"/>
+<area shape="rect" id="node6" href="$d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column." alt="" coords="374,56,474,83"/>
+<area shape="rect" id="node8" href="$d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice." alt="" coords="365,107,483,133"/>
+<area shape="rect" id="node10" href="$dd/d2c/resol_8h.html#a6e3dad3ca6fec919ebc27e007f3e9d85" title="Sous&#45;matrice." alt="" coords="196,157,289,184"/>
+<area shape="rect" id="node13" href="$d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice." alt="" coords="361,157,487,184"/>
+<area shape="rect" id="node15" href="$d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="374,208,474,235"/>
+</map>

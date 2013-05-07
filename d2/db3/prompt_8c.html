@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Minicas: Référence du fichier src/prompt.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Minicas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier prompt.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Prompt (code)  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/d5e/prompt_8h_source.html">prompt.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de prompt.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d5e/prompt_8c__incl.png" border="0" usemap="#src_2prompt_8c" alt=""/></div>
+<map name="src_2prompt_8c" id="src_2prompt_8c">
+<area shape="rect" id="node3" href="../../d3/d5e/prompt_8h.html" title="Prompt (header)" alt="" coords="602,80,675,107"/><area shape="rect" id="node25" href="../../d3/d5a/base_8h.html" title="Base (header)" alt="" coords="556,453,617,480"/><area shape="rect" id="node31" href="../../dd/df4/matrix_8h.html" title="Matrices (header)" alt="" coords="877,379,947,405"/><area shape="rect" id="node37" href="../../da/d9f/memoire_8h.html" title="Gestion des variables utilisateur (header)" alt="" coords="639,304,721,331"/><area shape="rect" id="node43" href="../../d3/df8/parseur_8h.html" title="Parseur (header)" alt="" coords="473,229,548,256"/><area shape="rect" id="node49" href="../../da/d4f/operations_8h.html" title="Operations sur les matrices (header)" alt="" coords="948,304,1041,331"/><area shape="rect" id="node54" href="../../dd/d2c/resol_8h.html" title="Résolution (header)" alt="" coords="1049,229,1111,256"/><area shape="rect" id="node60" href="../../da/ddd/decompo_8h.html" title="Décomposition en LU (header)" alt="" coords="898,155,984,181"/></map>
+</div>
+</div>
+<p><a href="../../d2/db3/prompt_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a27683b1af1a75bb74b57d0ee7233495e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db3/prompt_8c.html#a27683b1af1a75bb74b57d0ee7233495e">afficherAideCommande</a> (<a class="el" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2">Commande</a> c)</td></tr>
+<tr class="memdesc:a27683b1af1a75bb74b57d0ee7233495e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Afficher l'aide correspondant à une commande.  <a href="#a27683b1af1a75bb74b57d0ee7233495e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a27683b1af1a75bb74b57d0ee7233495e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1995b4745ff223779591ed37525a8fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1995b4745ff223779591ed37525a8fb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db3/prompt_8c.html#af1995b4745ff223779591ed37525a8fb">afficherPromptAide</a> (void)</td></tr>
+<tr class="memdesc:af1995b4745ff223779591ed37525a8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Afficher l'aide du programme. <br/></td></tr>
+<tr class="separator:af1995b4745ff223779591ed37525a8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace911bc532062029bf9751132314b0a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2">Commande</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db3/prompt_8c.html#ace911bc532062029bf9751132314b0a6">rechercherCommande</a> (const char *ligne)</td></tr>
+<tr class="memdesc:ace911bc532062029bf9751132314b0a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rechercher la commande correspondante.  <a href="#ace911bc532062029bf9751132314b0a6">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ace911bc532062029bf9751132314b0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a898b3b44a72a0490e4864639d8896b61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db3/prompt_8c.html#a898b3b44a72a0490e4864639d8896b61">verifier</a> (const char *chaine)</td></tr>
+<tr class="memdesc:a898b3b44a72a0490e4864639d8896b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifier l'intention de l'utilisateur.  <a href="#a898b3b44a72a0490e4864639d8896b61">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a898b3b44a72a0490e4864639d8896b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83d74888404fc395a2b545b37d2da0d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db3/prompt_8c.html#a83d74888404fc395a2b545b37d2da0d8">afficherDonnee</a> (const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *d)</td></tr>
+<tr class="memdesc:a83d74888404fc395a2b545b37d2da0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Afficher le contenu d'une donnée.  <a href="#a83d74888404fc395a2b545b37d2da0d8">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a83d74888404fc395a2b545b37d2da0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c300f5b864b1edfdf58990556e20161"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161">traiterCommande</a> (<a class="el" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2">Commande</a> c, char *arguments, const <a class="el" href="../../db/d72/structVariables.html">Variables</a> *v)</td></tr>
+<tr class="memdesc:a0c300f5b864b1edfdf58990556e20161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traiter une commande sur les matrices.  <a href="#a0c300f5b864b1edfdf58990556e20161">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a0c300f5b864b1edfdf58990556e20161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a873eee67c49a4476b923fc7aa5b19cfa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a873eee67c49a4476b923fc7aa5b19cfa"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db3/prompt_8c.html#a873eee67c49a4476b923fc7aa5b19cfa">prompt</a> (FILE *fichier)</td></tr>
+<tr class="memdesc:a873eee67c49a4476b923fc7aa5b19cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Afficher un prompt et gérer les entrées de l'utilisateur. <br/></td></tr>
+<tr class="separator:a873eee67c49a4476b923fc7aa5b19cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9302c48aacd599c3338df2b824d65f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db3/prompt_8c.html#ae9302c48aacd599c3338df2b824d65f9">speedtest</a> (<a class="el" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2">Commande</a> c, int min, int max, int pas)</td></tr>
+<tr class="memdesc:ae9302c48aacd599c3338df2b824d65f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test de vitesse.  <a href="#ae9302c48aacd599c3338df2b824d65f9">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ae9302c48aacd599c3338df2b824d65f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Prompt (code) </p>
+<dl class="section author"><dt>Auteur</dt><dd>Harenome RAZANAJATO </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="../../d2/db3/prompt_8c_source.html">prompt.c</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a27683b1af1a75bb74b57d0ee7233495e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficherAideCommande </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2">Commande</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Afficher l'aide correspondant à une commande. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pc</td><td>Commande. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="../../d2/db3/prompt_8c_source.html#l00246">246</a> du fichier <a class="el" href="../../d2/db3/prompt_8c_source.html">prompt.c</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d2/db3/prompt_8c_source.html#l00690">prompt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    printf(<span class="stringliteral">&quot;%s&quot;</span>, LCM[c].aide);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/db3/prompt_8c_a27683b1af1a75bb74b57d0ee7233495e_icgraph.png" border="0" usemap="#d2/db3/prompt_8c_a27683b1af1a75bb74b57d0ee7233495e_icgraph" alt=""/></div>
+<map name="d2/db3/prompt_8c_a27683b1af1a75bb74b57d0ee7233495e_icgraph" id="d2/db3/prompt_8c_a27683b1af1a75bb74b57d0ee7233495e_icgraph">
+<area shape="rect" id="node3" href="../../d2/db3/prompt_8c.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="214,5,277,32"/><area shape="rect" id="node5" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main." alt="" coords="325,5,376,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a83d74888404fc395a2b545b37d2da0d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficherDonnee </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/dce/structDonnee.html">Donnee</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Afficher le contenu d'une donnée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>Donnée à afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="../../d2/db3/prompt_8c_source.html#l00287">287</a> du fichier <a class="el" href="../../d2/db3/prompt_8c_source.html">prompt.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#af85fa4559a72fb3aebd14cf1e719af83">Matrix::displayMatrix()</a>, <a class="el" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc">Donnee::eDonnee()</a>, <a class="el" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5">Donnee::estE()</a>, <a class="el" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a">Donnee::matriceDonnee()</a>, et <a class="el" href="../../da/d9f/memoire_8h_source.html#l00037">Donnee::nom</a>.</p>
+<div class="fragment"><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;{</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">if</span> (d != NULL)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        printf(<span class="stringliteral">&quot;\t%s :\n&quot;</span>, d-&gt;<a class="code" href="../../df/dce/structDonnee.html#a08a131fecfdf45d6a4097af8348b4ebc">nom</a>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(d))</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            printf(<span class="stringliteral">&quot;\t%f\n&quot;</span>, <a class="code" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée.">eDonnee</a>(d));</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <a class="code" href="../../d8/d1d/structMatrix.html#af85fa4559a72fb3aebd14cf1e719af83" title="Afficher une matrice.">displayMatrix</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d));</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/db3/prompt_8c_a83d74888404fc395a2b545b37d2da0d8_cgraph.png" border="0" usemap="#d2/db3/prompt_8c_a83d74888404fc395a2b545b37d2da0d8_cgraph" alt=""/></div>
+<map name="d2/db3/prompt_8c_a83d74888404fc395a2b545b37d2da0d8_cgraph" id="d2/db3/prompt_8c_a83d74888404fc395a2b545b37d2da0d8_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#af85fa4559a72fb3aebd14cf1e719af83" title="Afficher une matrice." alt="" coords="175,5,318,32"/><area shape="rect" id="node5" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée." alt="" coords="183,56,310,83"/><area shape="rect" id="node7" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E." alt="" coords="195,107,298,133"/><area shape="rect" id="node9" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée." alt="" coords="165,157,328,184"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace911bc532062029bf9751132314b0a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2">Commande</a> rechercherCommande </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ligne</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rechercher la commande correspondante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ligne</td><td>Ligne de commande. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>commande correspondante. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d2/db3/prompt_8c_source.html#l00258">258</a> du fichier <a class="el" href="../../d2/db3/prompt_8c_source.html">prompt.c</a>.</p>
+
+<p>Références <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00057">CM_INCONNU</a>, et <a class="el" href="../../d3/d5a/base_8h_source.html#l00028">VRAI</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d2/db3/prompt_8c_source.html#l00690">prompt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">char</span> commande[32] = { <span class="charliteral">&#39;\0&#39;</span> };</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (sscanf(ligne, <span class="stringliteral">&quot;%31s&quot;</span>, commande) == 1)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        chaineEnMinuscules(commande);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2af4e6d9e8e7adbe584ae0b2e7980f9944">CM_INCONNU</a>; i++)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">if</span> (rechercherMot(commande, LCM[i].alias) == <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keywordflow">return</span> LCM[i].commande;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2af4e6d9e8e7adbe584ae0b2e7980f9944">CM_INCONNU</a>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/db3/prompt_8c_ace911bc532062029bf9751132314b0a6_icgraph.png" border="0" usemap="#d2/db3/prompt_8c_ace911bc532062029bf9751132314b0a6_icgraph" alt=""/></div>
+<map name="d2/db3/prompt_8c_ace911bc532062029bf9751132314b0a6_icgraph" id="d2/db3/prompt_8c_ace911bc532062029bf9751132314b0a6_icgraph">
+<area shape="rect" id="node3" href="../../d2/db3/prompt_8c.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="206,5,269,32"/><area shape="rect" id="node5" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main." alt="" coords="317,5,368,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9302c48aacd599c3338df2b824d65f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void speedtest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2">Commande</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test de vitesse. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Commande à tester. </td></tr>
+    <tr><td class="paramname">min</td><td>Taille de départ des matrices de test. </td></tr>
+    <tr><td class="paramname">max</td><td>Taille maximale des matrices de test. </td></tr>
+    <tr><td class="paramname">pas</td><td>Incrément des tailles de matrices. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Précondition</dt><dd>0 &lt; min &lt;= max &amp;&amp; pas &gt; 0 </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d2/db3/prompt_8c_source.html#l00826">826</a> du fichier <a class="el" href="../../d2/db3/prompt_8c_source.html">prompt.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#a61628c4d143da269de174f4cb06be300">Matrix::addition()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a9a71a8b4e76a3051b3b856fc1aa919ff">Matrix::aleatoire()</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00043">CM_ADD</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00045">CM_MULM</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00044">CM_SUB</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616">Matrix::deleteMatrix()</a>, <a class="el" href="../../d3/d5a/base_8h_source.html#l00027">FAUX</a>, <a class="el" href="../../d8/d1d/structMatrix.html#ac967abc28583fe30e1c6db194f57664d">Matrix::multiplication()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a">Matrix::newMatrix()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a3e90d671aa4caea8bbbcc4b6a3b71b6b">Matrix::soustraction()</a>, et <a class="el" href="../../d3/d5a/base_8h_source.html#l00028">VRAI</a>.</p>
+<div class="fragment"><div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;{</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * fichier = <span class="stringliteral">&quot;/tmp/minicas&quot;</span>;</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309" title="Simulation des booléens.">Bool</a> erreur = <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a>;</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="comment">/* Pointeur sur fonction. */</span></div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * (*fun) (<span class="keyword">const</span> <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> *, <span class="keyword">const</span> Matrix *);</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    <span class="comment">/* Choix de la comande. */</span></div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <span class="keywordflow">switch</span> (c)</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    {</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2abd80e63b1dddc237c7353c928be9bbc9">CM_ADD</a> :</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;            fun = <a class="code" href="../../d8/d1d/structMatrix.html#a61628c4d143da269de174f4cb06be300" title="Addition de matrices.">addition</a>;</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2af048695a0c810fb5a9822776e839cafb">CM_SUB</a> :</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            fun = <a class="code" href="../../d8/d1d/structMatrix.html#a3e90d671aa4caea8bbbcc4b6a3b71b6b" title="Soustraction de matrices.">soustraction</a>;</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2a86e48bdf0af1d3bab287e380300eaae6">CM_MULM</a> :</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;            fun = <a class="code" href="../../d8/d1d/structMatrix.html#ac967abc28583fe30e1c6db194f57664d" title="Multiplication de matrices.">multiplication</a>;</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        <span class="keywordflow">default</span> :</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    }</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;    FILE * <span class="keyword">const</span> output = fopen(fichier, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    <span class="keywordflow">if</span> (output == NULL)</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    {</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        perror(<span class="stringliteral">&quot;fopen&quot;</span>);</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        erreur = <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>;</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    }</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    <span class="keywordflow">if</span> (erreur != <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>)</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = min; i &lt;= max; i += pas)</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    {</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        <span class="keyword">struct </span>timeval tv1, tv2;</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> temps;</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        Matrix * m1 = <a class="code" href="../../d8/d1d/structMatrix.html#a9a71a8b4e76a3051b3b856fc1aa919ff" title="Remplir une matrice aléatoirement.">aleatoire</a>(<a class="code" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice.">newMatrix</a>(i, i), ALEA_MIN, ALEA_MAX);</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        Matrix * m2 = <a class="code" href="../../d8/d1d/structMatrix.html#a9a71a8b4e76a3051b3b856fc1aa919ff" title="Remplir une matrice aléatoirement.">aleatoire</a>(<a class="code" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice.">newMatrix</a>(i, i), ALEA_MIN, ALEA_MAX);</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        gettimeofday(&amp;tv1, NULL);</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        Matrix * m3 = fun(m1, m2);</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        gettimeofday(&amp;tv2, NULL);</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;        temps = ((tv2.tv_sec * 1000000 + tv2.tv_usec) - (tv1.tv_sec * 1000000 + tv1.tv_usec));</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        fprintf(output, <span class="stringliteral">&quot;%d %llu\n&quot;</span>, i, temps);</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        fflush(output);</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        m1 = <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(m1);</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        m2 = <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(m2);</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        m3 = <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(m3);</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    }</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    fclose(output);</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    FILE * <span class="keyword">const</span> gnuplot = popen(<span class="stringliteral">&quot;gnuplot -persistent&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    <span class="keywordflow">if</span> (gnuplot == NULL || gnuplot == (FILE *)-1)</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    {</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;        perror(<span class="stringliteral">&quot;popen&quot;</span>);</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        erreur = <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>;</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;    }</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    {</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        fprintf(gnuplot,</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                <span class="stringliteral">&quot;set style data histogram\n&quot;</span></div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                <span class="stringliteral">&quot;set style fill solid border\n&quot;</span></div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;                <span class="stringliteral">&quot;set xlabel \&quot;Taille\&quot;\n&quot;</span></div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;                <span class="stringliteral">&quot;set ylabel \&quot;Temps (µsecondes)\&quot;\n&quot;</span></div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;                <span class="stringliteral">&quot;plot &#39;%s&#39; u 2:xtic(1) ti \&quot;\&quot;\n&quot;</span>,</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;                fichier);</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;        fflush(gnuplot);</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;        fclose(gnuplot);</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    }</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/db3/prompt_8c_ae9302c48aacd599c3338df2b824d65f9_cgraph.png" border="0" usemap="#d2/db3/prompt_8c_ae9302c48aacd599c3338df2b824d65f9_cgraph" alt=""/></div>
+<map name="d2/db3/prompt_8c_ae9302c48aacd599c3338df2b824d65f9_cgraph" id="d2/db3/prompt_8c_ae9302c48aacd599c3338df2b824d65f9_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#a61628c4d143da269de174f4cb06be300" title="Addition de matrices." alt="" coords="150,5,261,32"/><area shape="rect" id="node5" href="../../d8/d1d/structMatrix.html#a9a71a8b4e76a3051b3b856fc1aa919ff" title="Remplir une matrice aléatoirement." alt="" coords="148,56,263,83"/><area shape="rect" id="node7" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="137,107,274,133"/><area shape="rect" id="node9" href="../../d8/d1d/structMatrix.html#ac967abc28583fe30e1c6db194f57664d" title="Multiplication de matrices." alt="" coords="134,157,277,184"/><area shape="rect" id="node11" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice." alt="" coords="142,208,269,235"/><area shape="rect" id="node13" href="../../d8/d1d/structMatrix.html#a3e90d671aa4caea8bbbcc4b6a3b71b6b" title="Soustraction de matrices." alt="" coords="137,259,274,285"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0c300f5b864b1edfdf58990556e20161"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d1d/structMatrix.html">Matrix</a>* traiterCommande </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2">Commande</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>arguments</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d72/structVariables.html">Variables</a> *&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Traiter une commande sur les matrices. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Commande à éxécuter. </td></tr>
+    <tr><td class="paramname">arguments</td><td>Arguments. </td></tr>
+    <tr><td class="paramname">v</td><td><a class="el" href="../../db/d72/structVariables.html" title="Variables sauvegardées.">Variables</a> où chercher d'éventuels opérandes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Matrice résultante, <em>NULL</em> en cas d'erreur. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d2/db3/prompt_8c_source.html#l00299">299</a> du fichier <a class="el" href="../../d2/db3/prompt_8c_source.html">prompt.c</a>.</p>
+
+<p>Références <a class="el" href="../../d8/d1d/structMatrix.html#a61628c4d143da269de174f4cb06be300">Matrix::addition()</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00043">CM_ADD</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00047">CM_EXP</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00050">CM_INV</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00045">CM_MULM</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00046">CM_MULS</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00042">CM_NEW</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00051">CM_SOL</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00044">CM_SUB</a>, <a class="el" href="../../d3/d5e/prompt_8h_source.html#l00048">CM_TSP</a>, <a class="el" href="../../d4/df5/parseur_8c_source.html#l00013">contientMatriceValide()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#aed059ba172bba18115f3a88fdddabecd">Matrix::copieMatrice()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616">Matrix::deleteMatrix()</a>, <a class="el" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc">Donnee::eDonnee()</a>, <a class="el" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5">Donnee::estE()</a>, <a class="el" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc">Donnee::estMatrice()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a9fece41e5468b63f3ba8b300326aec54">Matrix::exponentiation()</a>, <a class="el" href="../../d4/d73/resol_8c_source.html#l00198">gauss()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a362005beeb6f8cfaceb57a2ceec4df08">Matrix::inverseM()</a>, <a class="el" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a">Donnee::matriceDonnee()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#ac967abc28583fe30e1c6db194f57664d">Matrix::multiplication()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a03576f3d538724636c76fdc0f12d840d">Matrix::multiplierScalaire()</a>, <a class="el" href="../../dd/df4/matrix_8h_source.html#l00047">Matrix::nbColonnes()</a>, <a class="el" href="../../dd/df4/matrix_8h_source.html#l00036">Matrix::nbLignes()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a">Matrix::newMatrix()</a>, <a class="el" href="../../d4/d23/memoire_8c_source.html#l00133">obtenirDonnee()</a>, <a class="el" href="../../d4/df5/parseur_8c_source.html#l00072">recupererMatrice()</a>, <a class="el" href="../../d8/d1d/structMatrix.html#a3e90d671aa4caea8bbbcc4b6a3b71b6b">Matrix::soustraction()</a>, et <a class="el" href="../../d8/d1d/structMatrix.html#a0f61be607ba2f6e5cc7cb8a7ba2459c2">Matrix::transpose()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m = NULL;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">char</span> buffer1[64] = { <span class="charliteral">&#39;\0&#39;</span> };</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordtype">char</span> buffer2[64] = { <span class="charliteral">&#39;\0&#39;</span> };</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    E buffer3;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordtype">int</span> buffer4;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">switch</span>(c)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2aed972348991521f640299154a33c7bb4">CM_NEW</a> :</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="../../d3/df8/parseur_8h.html#ab9e28860fd1ddd4ae0f5f740771efa3f" title="Vérifie qu&#39;une définition de matrice contient des lignes complètes.">contientMatriceValide</a>(arguments))</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                m = <a class="code" href="../../d3/df8/parseur_8h.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition.">recupererMatrice</a>(arguments, v);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                fprintf(stderr, <span class="stringliteral">&quot;%s : matrice non valide.\n&quot;</span>, arguments);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2abd80e63b1dddc237c7353c928be9bbc9">CM_ADD</a> :</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2af048695a0c810fb5a9822776e839cafb">CM_SUB</a> :</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2a86e48bdf0af1d3bab287e380300eaae6">CM_MULM</a> :</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2ac7e1e8c6c698ffc5d437af332686c773">CM_SOL</a> :</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="comment">/* Partie commune aux quatres commandes CM_ADD, CM_SUB, CM_MULM,</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">             * CM_SOL.</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">             */</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">if</span> (sscanf(arguments, <span class="stringliteral">&quot; %63[^, ]%*[,]%63s&quot;</span>, buffer1, buffer2) == 2)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d1 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer1);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d2 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer2);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                <span class="keywordflow">if</span> (d1 == NULL || d2 == NULL)</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                    <span class="keywordflow">if</span> (d1 == NULL)</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                    <span class="keywordflow">if</span> (d2 == NULL)</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer2);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1) || !<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d2))</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                    <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1))</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;est pas une matrice.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                    <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d2))</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s, n&#39;est pas une matrice.\n&quot;</span>, buffer2);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    <span class="keyword">const</span> <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m1 = <a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                    <span class="keyword">const</span> <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m2 = <a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d2);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                    <span class="comment">/* Addition et soustraction. */</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                    <span class="keywordflow">if</span> (c == <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2abd80e63b1dddc237c7353c928be9bbc9">CM_ADD</a> || c == <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2af048695a0c810fb5a9822776e839cafb">CM_SUB</a>)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                    {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m1) == <a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m2) &amp;&amp; <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m1) == <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m2))</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                            m = c == <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2abd80e63b1dddc237c7353c928be9bbc9">CM_ADD</a> ? <a class="code" href="../../d8/d1d/structMatrix.html#a61628c4d143da269de174f4cb06be300" title="Addition de matrices.">addition</a>(m1, m2) : <a class="code" href="../../d8/d1d/structMatrix.html#a3e90d671aa4caea8bbbcc4b6a3b71b6b" title="Soustraction de matrices.">soustraction</a>(m1, m2);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                            fprintf(stderr, <span class="stringliteral">&quot;Les matrices n&#39;ont pas la même taille.\n&quot;</span>);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                    <span class="comment">/* Multiplication. */</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2a86e48bdf0af1d3bab287e380300eaae6">CM_MULM</a>)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    {</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m1) == <a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m2))</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                            m = <a class="code" href="../../d8/d1d/structMatrix.html#ac967abc28583fe30e1c6db194f57664d" title="Multiplication de matrices.">multiplication</a>(m1, m2);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                            fprintf(stderr, <span class="stringliteral">&quot;Les matrices n&#39;ont pas les bonnes tailles.\n&quot;</span>);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                    }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                    <span class="comment">/* Résolution. */</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                    {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m1) == <a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m2) &amp;&amp; <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(m2) == 1)</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                        {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                            <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * m0 = <a class="code" href="../../d8/d1d/structMatrix.html#aed059ba172bba18115f3a88fdddabecd" title="Copier une matrice.">copieMatrice</a>(m1);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                            <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * b0 = <a class="code" href="../../d8/d1d/structMatrix.html#aed059ba172bba18115f3a88fdddabecd" title="Copier une matrice.">copieMatrice</a>(m2);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                            <a class="code" href="../../d8/d1d/structMatrix.html">Matrix</a> * solution = <a class="code" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice.">newMatrix</a>(<a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(m1), 1);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                            <a class="code" href="../../dd/d2c/resol_8h.html#a567ee32d45297eae108b5f58c054c2b8" title="Pivot de Gauss.">gauss</a>(m0, b0, solution);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                            <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(m0);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                            <a class="code" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice.">deleteMatrix</a>(b0);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                            m = solution;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                        }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                            fprintf(stderr, <span class="stringliteral">&quot;Les matrices n&#39;ont pas les bonnes tailles.\n&quot;</span>);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                    }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                }</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            }</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2a168a6477a2f50e78954d6cd550b5fb8b">CM_MULS</a> :</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="comment">/* L&#39;utilisateur a donné une variable et un flottant. */</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keywordflow">if</span> (sscanf(arguments, <span class="stringliteral">&quot; %63[^, ]%*[,]%f&quot;</span>, buffer1, &amp;buffer3) == 2)</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d1 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer1);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                <span class="keywordflow">if</span> (d1 == NULL)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1))</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;est pas une matrice.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                    m = <a class="code" href="../../d8/d1d/structMatrix.html#a03576f3d538724636c76fdc0f12d840d" title="Multiplication d&#39;une matrice par un scalaire.">multiplierScalaire</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1), buffer3);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="comment">/* L&#39;utilisateur a donné deux variables. */</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sscanf(arguments, <span class="stringliteral">&quot; %63[^, ]%*[,]%31s&quot;</span>, buffer1, buffer2) == 2)</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d1 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer1);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d2 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer2);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                <span class="keywordflow">if</span> (d1 == NULL || d2 == NULL)</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    <span class="keywordflow">if</span> (d1 == NULL)</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                    <span class="keywordflow">if</span> (d2 == NULL)</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer2);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                }</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1) || !<a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(d2))</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                    <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1))</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;est pas une matrice.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                    <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(d2))</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;est pas un flottant.\n&quot;</span>, buffer2);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                }</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                    m = <a class="code" href="../../d8/d1d/structMatrix.html#a03576f3d538724636c76fdc0f12d840d" title="Multiplication d&#39;une matrice par un scalaire.">multiplierScalaire</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1), <a class="code" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée.">eDonnee</a>(d2));</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            }</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                fprintf(stderr, <span class="stringliteral">&quot;Erreur.\n&quot;</span>);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2acceafe03384800ddfe5ce39bad7ad6d6">CM_EXP</a> :</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keywordflow">if</span> (sscanf(arguments, <span class="stringliteral">&quot; %63[^, ]%*[,]%d&quot;</span>, buffer1, &amp;buffer4) == 2)</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d1 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer1);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                <span class="keywordflow">if</span> (d1 == NULL)</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1))</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;est pas une matrice.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (buffer4 &lt; 0)</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;L&#39;exposant doit être positif.\n&quot;</span>);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1)) != <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1)))</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;La matrice n&#39;est pas carrée.\n&quot;</span>);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                    m = <a class="code" href="../../d8/d1d/structMatrix.html#a9fece41e5468b63f3ba8b300326aec54" title="Exponentiation d&#39;une matrice.">exponentiation</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1), buffer4);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            }</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sscanf(arguments, <span class="stringliteral">&quot; %63[^, ]%*[,]%31s&quot;</span>, buffer1, buffer2) == 2)</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            {</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d1 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer1);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d2 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer2);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                <span class="keywordflow">if</span> (d1 == NULL || d2 == NULL)</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                {</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                    <span class="keywordflow">if</span> (d1 == NULL)</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                    <span class="keywordflow">if</span> (d2 == NULL)</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer2);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                }</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1) || !<a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(d2))</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                {</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                    <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1))</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;est pas une matrice.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                    <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E.">estE</a>(d2))</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                        fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;est pas une matrice.\n&quot;</span>, buffer2);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée.">eDonnee</a>(d2) &lt; 0)</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;L&#39;exposant doit être positif.\n&quot;</span>);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice.">nbLignes</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1)) != <a class="code" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice.">nbColonnes</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1)))</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;La matrice n&#39;est pas carrée.\n&quot;</span>);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                    m = <a class="code" href="../../d8/d1d/structMatrix.html#a9fece41e5468b63f3ba8b300326aec54" title="Exponentiation d&#39;une matrice.">exponentiation</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1), <a class="code" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée.">eDonnee</a>(d2));</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            }</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2a6ef644377ecd30f3faa51f710561ecea">CM_TSP</a> :</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2ac7fe5eb82568efb03f4adbd7d217a7ab">CM_INV</a> :</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            <span class="keywordflow">if</span> (sscanf(arguments, <span class="stringliteral">&quot; %63[^, ]&quot;</span>, buffer1) == 1)</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            {</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../df/dce/structDonnee.html" title="Donnée sauvegardée.">Donnee</a> * d1 = <a class="code" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable.">obtenirDonnee</a>(v, buffer1);</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                <span class="keywordflow">if</span> (d1 == NULL)</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;existe pas.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice.">estMatrice</a>(d1))</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                    fprintf(stderr, <span class="stringliteral">&quot;%s n&#39;est pas une matrice.\n&quot;</span>, buffer1);</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                    m = c == <a class="code" href="../../d3/d5e/prompt_8h.html#a9fb2590414cf400da50c9bc3d39bbdb2a6ef644377ecd30f3faa51f710561ecea">CM_TSP</a> ? <a class="code" href="../../d8/d1d/structMatrix.html#a0f61be607ba2f6e5cc7cb8a7ba2459c2" title="Transposition d&#39;une matrice.">transpose</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1)) : <a class="code" href="../../d8/d1d/structMatrix.html#a362005beeb6f8cfaceb57a2ceec4df08" title="Inverse une matrice carrée.">inverseM</a>(<a class="code" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée.">matriceDonnee</a>(d1));</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            }</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        <span class="keywordflow">default</span> :</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    }</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/db3/prompt_8c_a0c300f5b864b1edfdf58990556e20161_cgraph.png" border="0" usemap="#d2/db3/prompt_8c_a0c300f5b864b1edfdf58990556e20161_cgraph" alt=""/></div>
+<map name="d2/db3/prompt_8c_a0c300f5b864b1edfdf58990556e20161_cgraph" id="d2/db3/prompt_8c_a0c300f5b864b1edfdf58990556e20161_cgraph">
+<area shape="rect" id="node3" href="../../d8/d1d/structMatrix.html#a61628c4d143da269de174f4cb06be300" title="Addition de matrices." alt="" coords="203,28,314,55"/><area shape="rect" id="node5" href="../../d3/df8/parseur_8h.html#ab9e28860fd1ddd4ae0f5f740771efa3f" title="Vérifie qu&#39;une définition de matrice contient des lignes complètes." alt="" coords="185,79,332,106"/><area shape="rect" id="node7" href="../../d8/d1d/structMatrix.html#aed059ba172bba18115f3a88fdddabecd" title="Copier une matrice." alt="" coords="189,130,329,156"/><area shape="rect" id="node9" href="../../d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="399,332,537,359"/><area shape="rect" id="node11" href="../../df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée." alt="" coords="405,434,531,460"/><area shape="rect" id="node13" href="../../df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E." alt="" coords="417,496,519,523"/><area shape="rect" id="node15" href="../../df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice." alt="" coords="191,332,327,359"/><area shape="rect" id="node17" href="../../d8/d1d/structMatrix.html#a9fece41e5468b63f3ba8b300326aec54" title="Exponentiation d&#39;une matrice." alt="" coords="183,383,334,410"/><area shape="rect" id="node19" href="../../dd/d2c/resol_8h.html#a567ee32d45297eae108b5f58c054c2b8" title="Pivot de Gauss." alt="" coords="230,180,287,207"/><area shape="rect" id="node25" href="../../d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice." alt="" coords="795,180,914,207"/><area shape="rect" id="node36" href="../../d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice." alt="" coords="963,484,1098,511"/><area shape="rect" id="node56" href="../../d8/d1d/structMatrix.html#a362005beeb6f8cfaceb57a2ceec4df08" title="Inverse une matrice carrée." alt="" coords="199,586,318,612"/><area shape="rect" id="node58" href="../../df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée." alt="" coords="177,636,340,663"/><area shape="rect" id="node60" href="../../d8/d1d/structMatrix.html#ac967abc28583fe30e1c6db194f57664d" title="Multiplication de matrices." alt="" coords="187,687,330,714"/><area shape="rect" id="node62" href="../../d8/d1d/structMatrix.html#a03576f3d538724636c76fdc0f12d840d" title="Multiplication d&#39;une matrice par un scalaire." alt="" coords="176,738,341,764"/><area shape="rect" id="node66" href="../../d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice." alt="" coords="405,560,531,587"/><area shape="rect" id="node68" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable." alt="" coords="415,839,521,866"/><area shape="rect" id="node70" href="../../d3/df8/parseur_8h.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="199,788,318,815"/><area shape="rect" id="node85" href="../../d8/d1d/structMatrix.html#a3e90d671aa4caea8bbbcc4b6a3b71b6b" title="Soustraction de matrices." alt="" coords="190,940,327,967"/><area shape="rect" id="node87" href="../../d8/d1d/structMatrix.html#a0f61be607ba2f6e5cc7cb8a7ba2459c2" title="Transposition d&#39;une matrice." alt="" coords="197,991,320,1018"/><area shape="rect" id="node21" href="../../dd/d2c/resol_8h.html#ad8fd2f411d8a630f4a37307287e4ddaa" title="Remontée d&#39;un système." alt="" coords="633,79,709,106"/><area shape="rect" id="node29" href="../../dd/d2c/resol_8h.html#a70d1580644adbc91bc9b1fbf7db05b58" title="Met le système sous forme triangulaire." alt="" coords="399,180,537,207"/><area shape="rect" id="node23" href="../../d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column." alt="" coords="981,231,1081,258"/><area shape="rect" id="node27" href="../../d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="981,408,1081,435"/><area shape="rect" id="node31" href="../../dd/d2c/resol_8h.html#ab0d7f21512f3fc82c5d05c26b134a260" title="Additionner à la ligne i la ligne j multipliée par k." alt="" coords="595,307,746,334"/><area shape="rect" id="node41" href="../../dd/d2c/resol_8h.html#a33da153b81bc2ca9104bf3d06537852a" title="Choix pivot partiel." alt="" coords="611,130,731,156"/><area shape="rect" id="node47" href="../../dd/d2c/resol_8h.html#af4b7a96e86d4b3437ab4c77459ef98b1" title="Permuter les lignes i et j d&#39;un système." alt="" coords="598,383,743,410"/><area shape="rect" id="node33" href="../../dd/d2c/resol_8h.html#a6efcf2a3920e4344c73da95f850701be" title="Additionner à la ligne i la ligne j multipliée par k." alt="" coords="805,383,904,410"/><area shape="rect" id="node50" href="../../dd/d2c/resol_8h.html#a6b9c9212befc11cacff5582fc664c125" title="Permuter les lignes i et j d&#39;une matrice." alt="" coords="808,484,901,511"/><area shape="rect" id="node72" href="../../d3/df8/parseur_8h.html#a98d73955acf439917d8a02f3b3f65877" title="Compter le nombre de colonnes d&#39;une définition de matrice." alt="" coords="406,636,530,663"/><area shape="rect" id="node74" href="../../d3/df8/parseur_8h.html#a2aebe6cd8780ece9a35241ef83116263" title="Compter le nombre de lignes d&#39;une définition de matrice." alt="" coords="617,763,724,790"/><area shape="rect" id="node81" href="../../d3/df8/parseur_8h.html#ae1bd6e40239ae1157e329f571a079d61" title="Récupérer un tableau de pointeurs sur les lignes." alt="" coords="389,738,547,764"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a898b3b44a72a0490e4864639d8896b61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309">Bool</a> verifier </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>chaine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifier l'intention de l'utilisateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaine</td><td>Ce qu'il faut confirmer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a> si l'utilisateur approuve, <a class="el" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="../../d2/db3/prompt_8c_source.html#l00274">274</a> du fichier <a class="el" href="../../d2/db3/prompt_8c_source.html">prompt.c</a>.</p>
+
+<p>Référencé par <a class="el" href="../../d2/db3/prompt_8c_source.html#l00690">prompt()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordtype">char</span> buffer[8] = { <span class="charliteral">&#39;\0&#39;</span> };</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    printf(<span class="stringliteral">&quot;Êtes-vous sûr %s?\n? &quot;</span>, chaine);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    fflush(stdout);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    scanf(<span class="stringliteral">&quot;%7s%*[^\n]%*c&quot;</span>, buffer);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    chaineEnMinuscules(buffer);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">return</span> rechercherMot(buffer, (<span class="keyword">const</span> <span class="keywordtype">char</span> * []) { <span class="stringliteral">&quot;o&quot;</span>, <span class="stringliteral">&quot;oui&quot;</span>, NULL, });</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/db3/prompt_8c_a898b3b44a72a0490e4864639d8896b61_icgraph.png" border="0" usemap="#d2/db3/prompt_8c_a898b3b44a72a0490e4864639d8896b61_icgraph" alt=""/></div>
+<map name="d2/db3/prompt_8c_a898b3b44a72a0490e4864639d8896b61_icgraph" id="d2/db3/prompt_8c_a898b3b44a72a0490e4864639d8896b61_icgraph">
+<area shape="rect" id="node3" href="../../d2/db3/prompt_8c.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="115,5,178,32"/><area shape="rect" id="node5" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main." alt="" coords="227,5,277,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

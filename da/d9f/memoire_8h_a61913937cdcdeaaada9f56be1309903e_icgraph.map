@@ -1,0 +1,8 @@
+<map id="obtenirDonnee" name="obtenirDonnee">
+<area shape="rect" id="node3" href="$d4/d23/memoire_8c.html#ad4c31fbdc8f2e50c8ab5a3a42a8892b5" title="Sauvegarder un E." alt="" coords="185,5,255,32"/>
+<area shape="rect" id="node5" href="$d4/d23/memoire_8c.html#a475a5945494b8efd266128e077388947" title="Sauvegarder une matrice." alt="" coords="168,56,272,83"/>
+<area shape="rect" id="node7" href="$d2/db3/prompt_8c.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="189,107,251,133"/>
+<area shape="rect" id="node11" href="$d4/df5/parseur_8c.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="161,157,279,184"/>
+<area shape="rect" id="node13" href="$d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="328,183,451,209"/>
+<area shape="rect" id="node9" href="$d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main." alt="" coords="364,107,415,133"/>
+</map>

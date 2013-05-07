@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Minicas: Référence du fichier src/main.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Minicas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="../../annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier main.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Main.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;sysexits.h&gt;</code><br/>
+<code>#include &lt;time.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
+<code>#include &lt;sys/stat.h&gt;</code><br/>
+<code>#include &lt;unistd.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="../../d3/d5a/base_8h_source.html">base.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="../../dd/df4/matrix_8h_source.html">matrix.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="../../da/d4f/operations_8h_source.html">operations.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="../../da/ddd/decompo_8h_source.html">decompo.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="../../dd/d2c/resol_8h_source.html">resol.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="../../d3/d5e/prompt_8h_source.html">prompt.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de main.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d10/main_8c__incl.png" border="0" usemap="#src_2main_8c" alt=""/></div>
+<map name="src_2main_8c" id="src_2main_8c">
+<area shape="rect" id="node17" href="../../d3/d5a/base_8h.html" title="Base (header)" alt="" coords="508,453,569,480"/><area shape="rect" id="node25" href="../../dd/df4/matrix_8h.html" title="Matrices (header)" alt="" coords="983,379,1052,405"/><area shape="rect" id="node31" href="../../da/d4f/operations_8h.html" title="Operations sur les matrices (header)" alt="" coords="1207,304,1300,331"/><area shape="rect" id="node36" href="../../da/ddd/decompo_8h.html" title="Décomposition en LU (header)" alt="" coords="1005,155,1091,181"/><area shape="rect" id="node43" href="../../dd/d2c/resol_8h.html" title="Résolution (header)" alt="" coords="1055,229,1116,256"/><area shape="rect" id="node50" href="../../d3/d5e/prompt_8h.html" title="Prompt (header)" alt="" coords="621,80,693,107"/><area shape="rect" id="node65" href="../../da/d9f/memoire_8h.html" title="Gestion des variables utilisateur (header)" alt="" coords="745,304,828,331"/><area shape="rect" id="node71" href="../../d3/df8/parseur_8h.html" title="Parseur (header)" alt="" coords="543,229,619,256"/></map>
+</div>
+</div>
+<p><a href="../../d0/d29/main_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1c6d5de492ac61ad29aec7aa9a436bbf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c6d5de492ac61ad29aec7aa9a436bbf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VERSION</b>&#160;&#160;&#160;&quot;1.1.3&quot;</td></tr>
+<tr class="separator:a1c6d5de492ac61ad29aec7aa9a436bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main.  <a href="#a3c04138a5bfe5d72780bb7e82a18e627">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Main. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Harenome RAZANAJATO </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="../../d0/d29/main_8c_source.html">main.c</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Nombre d'arguments de la ligne de commande. </td></tr>
+    <tr><td class="paramname">argv</td><td>Arguments de la ligne de commande. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="../../d0/d29/main_8c_source.html#l00034">34</a> du fichier <a class="el" href="../../d0/d29/main_8c_source.html">main.c</a>.</p>
+
+<p>Références <a class="el" href="../../d3/d5a/base_8h_source.html#l00027">FAUX</a>, <a class="el" href="../../d2/db3/prompt_8c_source.html#l00690">prompt()</a>, et <a class="el" href="../../d3/d5a/base_8h_source.html#l00028">VRAI</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309" title="Simulation des booléens.">Bool</a> erreursFichiers = <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a1bb75a30f93b418be2d44aa0eafe9be3">FAUX</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (argc == 1)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="../../d3/d5e/prompt_8h.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur.">prompt</a>(NULL);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rechercherMot(<span class="stringliteral">&quot;--version&quot;</span>, (<span class="keyword">const</span> <span class="keywordtype">char</span> * <span class="keyword">const</span> *)argv) || rechercherMot(<span class="stringliteral">&quot;-v&quot;</span>, (<span class="keyword">const</span> <span class="keywordtype">char</span> * <span class="keyword">const</span> *)argv))</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            printf(<span class="stringliteral">&quot;Minicas, version %s\n&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="stringliteral">&quot;Copyright © 2013, MEYER Jérémy, RAZANAJATO Harenome.\n&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="stringliteral">&quot;&lt;https://github.com/remove/miniCASys&gt;\n&quot;</span>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    VERSION</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                  );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; argc; i++)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">struct </span>stat buffer;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (stat(argv[i], &amp;buffer) == 0)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                FILE * fichier = fopen(argv[i], <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">if</span> (fichier != NULL)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <a class="code" href="../../d3/d5e/prompt_8h.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur.">prompt</a>(fichier);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    perror(<span class="stringliteral">&quot;fopen&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                fprintf(stderr, <span class="stringliteral">&quot;Le fichier %s n&#39;existe pas.\n&quot;</span>, argv[i]);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                erreursFichiers = <a class="code" href="../../d3/d5a/base_8h.html#a39db6982619d623273fad8a383489309a763723ffe7a348ad0f5c1b58a331b523">VRAI</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (erreursFichiers)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        exit(EX_NOINPUT);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+</div><!-- fragment -->
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d29/main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#d0/d29/main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
+<map name="d0/d29/main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="d0/d29/main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
+<area shape="rect" id="node3" href="../../d3/d5e/prompt_8h.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="105,233,167,260"/><area shape="rect" id="node5" href="../../db/d72/structVariables.html#a6d48b29b0e12733cad386b96a6a27e95" title="Initialiser les variables." alt="" coords="228,5,383,32"/><area shape="rect" id="node7" href="../../d3/df8/parseur_8h.html#a433da8cd442ed75a5ce554331a25b497" title="Préparer la commande entrée par l&#39;utilisateur." alt="" coords="443,132,579,159"/><area shape="rect" id="node9" href="../../d3/d5e/prompt_8h.html#ace911bc532062029bf9751132314b0a6" title="Rechercher la commande correspondante." alt="" coords="230,107,381,133"/><area shape="rect" id="node11" href="../../d3/d5e/prompt_8h.html#a27683b1af1a75bb74b57d0ee7233495e" title="Afficher l&#39;aide correspondant à une commande." alt="" coords="226,157,385,184"/><area shape="rect" id="node13" href="../../d3/df8/parseur_8h.html#a73ca82f136817be9b6fbb8710f9be7ef" title="Préparer la ligne de commande entrée par l&#39;utilisateur." alt="" coords="216,208,395,235"/><area shape="rect" id="node16" href="../../da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable." alt="" coords="252,259,359,285"/><area shape="rect" id="node18" href="../../df/dce/structDonnee.html#a83d74888404fc395a2b545b37d2da0d8" title="Afficher le contenu d&#39;une donnée." alt="" coords="224,309,387,336"/><area shape="rect" id="node20" href="../../d3/d5e/prompt_8h.html#af1995b4745ff223779591ed37525a8fb" title="Afficher l&#39;aide du programme." alt="" coords="239,360,372,387"/><area shape="rect" id="node22" href="../../d3/d5e/prompt_8h.html#a898b3b44a72a0490e4864639d8896b61" title="Vérifier l&#39;intention de l&#39;utilisateur." alt="" coords="275,411,336,437"/><area shape="rect" id="node24" href="../../db/d72/structVariables.html#a9071667d6431f0f71b051530dc096049" title="Libérer la mémoire occuppée par les variables." alt="" coords="219,461,392,488"/></map>
+</div>
+</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.3.1
+</small></address>
+</body>
+</html>

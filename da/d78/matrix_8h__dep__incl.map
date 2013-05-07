@@ -1,0 +1,16 @@
+<map id="include/matrix.h" name="include/matrix.h">
+<area shape="rect" id="node3" href="$da/ddd/decompo_8h.html" title="Décomposition en LU (header)" alt="" coords="119,229,249,256"/>
+<area shape="rect" id="node5" href="$d3/d5e/prompt_8h.html" title="Prompt (header)" alt="" coords="439,304,557,331"/>
+<area shape="rect" id="node7" href="$d0/d29/main_8c.html" title="Main." alt="" coords="199,379,281,405"/>
+<area shape="rect" id="node14" href="$da/d4f/operations_8h.html" title="Operations sur les matrices (header)" alt="" coords="219,80,357,107"/>
+<area shape="rect" id="node17" href="$dd/d2c/resol_8h.html" title="Résolution (header)" alt="" coords="355,155,461,181"/>
+<area shape="rect" id="node29" href="$da/d9f/memoire_8h.html" title="Gestion des variables utilisateur (header)" alt="" coords="611,155,739,181"/>
+<area shape="rect" id="node41" href="$dc/dca/matrix_8c.html" title="Matrices (code)" alt="" coords="637,80,728,107"/>
+<area shape="rect" id="node11" href="$d9/dd3/decompo_8c.html" title="Décomposition en LU (code source)" alt="" coords="94,304,201,331"/>
+<area shape="rect" id="node9" href="$d2/db3/prompt_8c.html" title="Prompt (code)" alt="" coords="451,379,545,405"/>
+<area shape="rect" id="node26" href="$d6/d43/operations_8c.html" title="Opérations sur les matrices (code)" alt="" coords="216,155,331,181"/>
+<area shape="rect" id="node22" href="$d4/d73/resol_8c.html" title="Résolution (code)" alt="" coords="328,229,411,256"/>
+<area shape="rect" id="node31" href="$d3/df8/parseur_8h.html" title="Parseur (header)" alt="" coords="638,229,759,256"/>
+<area shape="rect" id="node37" href="$d4/d23/memoire_8c.html" title="Gestion des variables utilisateur (code)" alt="" coords="783,229,888,256"/>
+<area shape="rect" id="node34" href="$d4/df5/parseur_8c.html" title="Parseur (code)" alt="" coords="649,304,748,331"/>
+</map>

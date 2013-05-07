@@ -1,0 +1,23 @@
+<map id="Matrix::nbLignes" name="Matrix::nbLignes">
+<area shape="rect" id="node3" href="$d6/d43/operations_8c.html#a3b57a75bc6524cd1e889f0e7891924e4" title="Addition de matrices." alt="" coords="201,5,268,32"/>
+<area shape="rect" id="node5" href="$dc/dca/matrix_8c.html#a61357d05542c8404824266fbf1fee098" title="Remplir une matrice aléatoirement." alt="" coords="199,56,270,83"/>
+<area shape="rect" id="node7" href="$d4/d73/resol_8c.html#a33da153b81bc2ca9104bf3d06537852a" title="Choix pivot partiel." alt="" coords="175,259,295,285"/>
+<area shape="rect" id="node9" href="$d9/dd3/decompo_8c.html#a99d9997a2adf8edd80eaf0f4e2fb0ab9" title="Inverse une matrice carrée." alt="" coords="376,157,451,184"/>
+<area shape="rect" id="node11" href="$d4/d73/resol_8c.html#a15d290181414b12b56fcaff076d8fbe7" title="Mise sous forme triangulaire d&#39;une matrice." alt="" coords="360,208,467,235"/>
+<area shape="rect" id="node13" href="$d4/d73/resol_8c.html#ac0a89097853ecdbd60aacebcd005199a" title="Calcul efficace du déterminant d&#39;une matrice." alt="" coords="531,157,645,184"/>
+<area shape="rect" id="node15" href="$d4/d73/resol_8c.html#a70d1580644adbc91bc9b1fbf7db05b58" title="Met le système sous forme triangulaire." alt="" coords="345,309,482,336"/>
+<area shape="rect" id="node19" href="$d2/db3/prompt_8c.html#a0c300f5b864b1edfdf58990556e20161" title="Traiter une commande sur les matrices." alt="" coords="693,613,816,640"/>
+<area shape="rect" id="node21" href="$dc/dca/matrix_8c.html#a27226ed2b7f2693d47d5fa78437e104f" title="Copier une matrice." alt="" coords="187,411,283,437"/>
+<area shape="rect" id="node23" href="$d9/dd3/decompo_8c.html#a466fc82aa79c89e05c3f0d5e640b2c93" title="Décomposition en LU." alt="" coords="181,461,288,488"/>
+<area shape="rect" id="node25" href="$d4/d73/resol_8c.html#a3d3679e284c36e38b6ad842194cd27a3" title="Déterminant d&#39;une matrice (calcul récursif)." alt="" coords="354,664,473,691"/>
+<area shape="rect" id="node29" href="$dc/dca/matrix_8c.html#af85fa4559a72fb3aebd14cf1e719af83" title="Afficher une matrice." alt="" coords="185,563,284,589"/>
+<area shape="rect" id="node31" href="$d6/d43/operations_8c.html#aa08a0dac650367894067df7d4e0f22d6" title="Exponentiation d&#39;une matrice." alt="" coords="181,613,288,640"/>
+<area shape="rect" id="node34" href="$d6/d43/operations_8c.html#ac8bd62fb69906efe2fd667935d930093" title="Multiplication de matrices." alt="" coords="185,664,284,691"/>
+<area shape="rect" id="node36" href="$d6/d43/operations_8c.html#a20565332ea05e16fbbbfda517d1853a4" title="Multiplication d&#39;une matrice par un scalaire." alt="" coords="174,715,295,741"/>
+<area shape="rect" id="node38" href="$d4/d73/resol_8c.html#a9cfacd230c1083d734d1894f5362343b" title="Calcul du rang d&#39;une matrice." alt="" coords="211,765,258,792"/>
+<area shape="rect" id="node40" href="$d4/d73/resol_8c.html#ad8fd2f411d8a630f4a37307287e4ddaa" title="Remontée d&#39;un système." alt="" coords="375,360,451,387"/>
+<area shape="rect" id="node43" href="$d4/d73/resol_8c.html#a6e3dad3ca6fec919ebc27e007f3e9d85" title="Sous&#45;matrice." alt="" coords="188,512,281,539"/>
+<area shape="rect" id="node46" href="$d6/d43/operations_8c.html#ac7d9ccaa148460e8a45ab26324dbdeab" title="Soustraction de matrices." alt="" coords="188,917,281,944"/>
+<area shape="rect" id="node49" href="$d6/d43/operations_8c.html#a670cecba28298b47610e9b8aad409954" title="Transposition d&#39;une matrice." alt="" coords="195,968,274,995"/>
+<area shape="rect" id="node17" href="$d4/d73/resol_8c.html#a567ee32d45297eae108b5f58c054c2b8" title="Pivot de Gauss." alt="" coords="559,360,617,387"/>
+</map>

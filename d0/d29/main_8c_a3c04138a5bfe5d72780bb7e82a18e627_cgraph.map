@@ -1,0 +1,13 @@
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$d3/d5e/prompt_8h.html#a873eee67c49a4476b923fc7aa5b19cfa" title="Afficher un prompt et gérer les entrées de l&#39;utilisateur." alt="" coords="105,233,167,260"/>
+<area shape="rect" id="node5" href="$db/d72/structVariables.html#a6d48b29b0e12733cad386b96a6a27e95" title="Initialiser les variables." alt="" coords="228,5,383,32"/>
+<area shape="rect" id="node7" href="$d3/df8/parseur_8h.html#a433da8cd442ed75a5ce554331a25b497" title="Préparer la commande entrée par l&#39;utilisateur." alt="" coords="443,132,579,159"/>
+<area shape="rect" id="node9" href="$d3/d5e/prompt_8h.html#ace911bc532062029bf9751132314b0a6" title="Rechercher la commande correspondante." alt="" coords="230,107,381,133"/>
+<area shape="rect" id="node11" href="$d3/d5e/prompt_8h.html#a27683b1af1a75bb74b57d0ee7233495e" title="Afficher l&#39;aide correspondant à une commande." alt="" coords="226,157,385,184"/>
+<area shape="rect" id="node13" href="$d3/df8/parseur_8h.html#a73ca82f136817be9b6fbb8710f9be7ef" title="Préparer la ligne de commande entrée par l&#39;utilisateur." alt="" coords="216,208,395,235"/>
+<area shape="rect" id="node16" href="$da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable." alt="" coords="252,259,359,285"/>
+<area shape="rect" id="node18" href="$df/dce/structDonnee.html#a83d74888404fc395a2b545b37d2da0d8" title="Afficher le contenu d&#39;une donnée." alt="" coords="224,309,387,336"/>
+<area shape="rect" id="node20" href="$d3/d5e/prompt_8h.html#af1995b4745ff223779591ed37525a8fb" title="Afficher l&#39;aide du programme." alt="" coords="239,360,372,387"/>
+<area shape="rect" id="node22" href="$d3/d5e/prompt_8h.html#a898b3b44a72a0490e4864639d8896b61" title="Vérifier l&#39;intention de l&#39;utilisateur." alt="" coords="275,411,336,437"/>
+<area shape="rect" id="node24" href="$db/d72/structVariables.html#a9071667d6431f0f71b051530dc096049" title="Libérer la mémoire occuppée par les variables." alt="" coords="219,461,392,488"/>
+</map>

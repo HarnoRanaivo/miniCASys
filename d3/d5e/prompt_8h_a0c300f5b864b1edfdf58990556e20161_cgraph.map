@@ -1,0 +1,34 @@
+<map id="traiterCommande" name="traiterCommande">
+<area shape="rect" id="node3" href="$d8/d1d/structMatrix.html#a61628c4d143da269de174f4cb06be300" title="Addition de matrices." alt="" coords="203,28,314,55"/>
+<area shape="rect" id="node5" href="$d3/df8/parseur_8h.html#ab9e28860fd1ddd4ae0f5f740771efa3f" title="Vérifie qu&#39;une définition de matrice contient des lignes complètes." alt="" coords="185,79,332,106"/>
+<area shape="rect" id="node7" href="$d8/d1d/structMatrix.html#aed059ba172bba18115f3a88fdddabecd" title="Copier une matrice." alt="" coords="189,130,329,156"/>
+<area shape="rect" id="node9" href="$d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="399,332,537,359"/>
+<area shape="rect" id="node11" href="$df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée." alt="" coords="405,434,531,460"/>
+<area shape="rect" id="node13" href="$df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E." alt="" coords="417,496,519,523"/>
+<area shape="rect" id="node15" href="$df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice." alt="" coords="191,332,327,359"/>
+<area shape="rect" id="node17" href="$d8/d1d/structMatrix.html#a9fece41e5468b63f3ba8b300326aec54" title="Exponentiation d&#39;une matrice." alt="" coords="183,383,334,410"/>
+<area shape="rect" id="node19" href="$dd/d2c/resol_8h.html#a567ee32d45297eae108b5f58c054c2b8" title="Pivot de Gauss." alt="" coords="230,180,287,207"/>
+<area shape="rect" id="node23" href="$d8/d1d/structMatrix.html#a0f21d139cda3dda9f73240b24f26e2f3" title="Nombre de lignes d&#39;une matrice." alt="" coords="795,180,914,207"/>
+<area shape="rect" id="node33" href="$d8/d1d/structMatrix.html#ae5bceef14626e703fa22b51bfe7d00d3" title="Nombre de colonnes d&#39;une matrice." alt="" coords="963,484,1098,511"/>
+<area shape="rect" id="node56" href="$d8/d1d/structMatrix.html#a362005beeb6f8cfaceb57a2ceec4df08" title="Inverse une matrice carrée." alt="" coords="199,586,318,612"/>
+<area shape="rect" id="node58" href="$df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée." alt="" coords="177,636,340,663"/>
+<area shape="rect" id="node60" href="$d8/d1d/structMatrix.html#ac967abc28583fe30e1c6db194f57664d" title="Multiplication de matrices." alt="" coords="187,687,330,714"/>
+<area shape="rect" id="node62" href="$d8/d1d/structMatrix.html#a03576f3d538724636c76fdc0f12d840d" title="Multiplication d&#39;une matrice par un scalaire." alt="" coords="176,738,341,764"/>
+<area shape="rect" id="node66" href="$d8/d1d/structMatrix.html#aac53bc9350ab2256fe64520f3f7fb91a" title="Nouvelle matrice." alt="" coords="405,560,531,587"/>
+<area shape="rect" id="node68" href="$da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable." alt="" coords="415,839,521,866"/>
+<area shape="rect" id="node70" href="$d3/df8/parseur_8h.html#a4f61720d08a2f73cc149a839eb338a84" title="Obtenir une matrice à partir de sa définition." alt="" coords="199,788,318,815"/>
+<area shape="rect" id="node85" href="$d8/d1d/structMatrix.html#a3e90d671aa4caea8bbbcc4b6a3b71b6b" title="Soustraction de matrices." alt="" coords="190,940,327,967"/>
+<area shape="rect" id="node87" href="$d8/d1d/structMatrix.html#a0f61be607ba2f6e5cc7cb8a7ba2459c2" title="Transposition d&#39;une matrice." alt="" coords="197,991,320,1018"/>
+<area shape="rect" id="node21" href="$dd/d2c/resol_8h.html#a70d1580644adbc91bc9b1fbf7db05b58" title="Met le système sous forme triangulaire." alt="" coords="399,180,537,207"/>
+<area shape="rect" id="node51" href="$dd/d2c/resol_8h.html#ad8fd2f411d8a630f4a37307287e4ddaa" title="Remontée d&#39;un système." alt="" coords="633,79,709,106"/>
+<area shape="rect" id="node25" href="$dd/d2c/resol_8h.html#af4b7a96e86d4b3437ab4c77459ef98b1" title="Permuter les lignes i et j d&#39;un système." alt="" coords="598,383,743,410"/>
+<area shape="rect" id="node27" href="$d8/d1d/structMatrix.html#a18160601b1639e24ca0804f54a27ef1f" title="Élément à la ligne row et colonne column." alt="" coords="981,231,1081,258"/>
+<area shape="rect" id="node37" href="$dd/d2c/resol_8h.html#a33da153b81bc2ca9104bf3d06537852a" title="Choix pivot partiel." alt="" coords="611,130,731,156"/>
+<area shape="rect" id="node41" href="$dd/d2c/resol_8h.html#ab0d7f21512f3fc82c5d05c26b134a260" title="Additionner à la ligne i la ligne j multipliée par k." alt="" coords="595,307,746,334"/>
+<area shape="rect" id="node29" href="$d8/d1d/structMatrix.html#afaf9e5945ba7a28493dbd6836c24527f" title="Changer la valeur de l&#39;élément ligne row et colonne column." alt="" coords="981,408,1081,435"/>
+<area shape="rect" id="node31" href="$dd/d2c/resol_8h.html#a6b9c9212befc11cacff5582fc664c125" title="Permuter les lignes i et j d&#39;une matrice." alt="" coords="808,484,901,511"/>
+<area shape="rect" id="node45" href="$dd/d2c/resol_8h.html#a6efcf2a3920e4344c73da95f850701be" title="Additionner à la ligne i la ligne j multipliée par k." alt="" coords="805,383,904,410"/>
+<area shape="rect" id="node72" href="$d3/df8/parseur_8h.html#a98d73955acf439917d8a02f3b3f65877" title="Compter le nombre de colonnes d&#39;une définition de matrice." alt="" coords="406,636,530,663"/>
+<area shape="rect" id="node74" href="$d3/df8/parseur_8h.html#a2aebe6cd8780ece9a35241ef83116263" title="Compter le nombre de lignes d&#39;une définition de matrice." alt="" coords="617,763,724,790"/>
+<area shape="rect" id="node81" href="$d3/df8/parseur_8h.html#ae1bd6e40239ae1157e329f571a079d61" title="Récupérer un tableau de pointeurs sur les lignes." alt="" coords="389,738,547,764"/>
+</map>

@@ -1,0 +1,29 @@
+# Object files
+*.o
+
+# Folders
+doc/
+bin/
+obj/
+lib/
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Vim
+*.swp
+
+# Tags
+tags

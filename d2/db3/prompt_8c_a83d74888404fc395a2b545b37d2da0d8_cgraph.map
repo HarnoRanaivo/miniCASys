@@ -1,0 +1,6 @@
+<map id="afficherDonnee" name="afficherDonnee">
+<area shape="rect" id="node3" href="$d8/d1d/structMatrix.html#af85fa4559a72fb3aebd14cf1e719af83" title="Afficher une matrice." alt="" coords="175,5,318,32"/>
+<area shape="rect" id="node5" href="$df/dce/structDonnee.html#a579dabaa223a99a0648a7359e93d76bc" title="Obtenir le E stocké dans une donnée." alt="" coords="183,56,310,83"/>
+<area shape="rect" id="node7" href="$df/dce/structDonnee.html#ab27042c5e15b03c0f961a9120000cfb5" title="Test vérifiant si la donnée est un E." alt="" coords="195,107,298,133"/>
+<area shape="rect" id="node9" href="$df/dce/structDonnee.html#aefd506ba250a1c79796b9de37726262a" title="Obtenir la matrice stockée dans une donnée." alt="" coords="165,157,328,184"/>
+</map>

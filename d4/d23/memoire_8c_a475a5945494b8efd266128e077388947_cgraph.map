@@ -1,0 +1,6 @@
+<map id="ajouterMatrice" name="ajouterMatrice">
+<area shape="rect" id="node3" href="$d8/d1d/structMatrix.html#a5731a3adb317944cabb92134a9a60616" title="Effacer une matrice." alt="" coords="173,5,310,32"/>
+<area shape="rect" id="node5" href="$df/dce/structDonnee.html#a208c99fc167fb18bb975c5118bcca9bc" title="Test vérifiant si la donnée est une matrice." alt="" coords="173,56,309,83"/>
+<area shape="rect" id="node7" href="$df/dce/structDonnee.html#ac279deff5a548de3530a1429e8915339" title="Créer une nouvelle donnée contenant une matrice." alt="" coords="158,107,325,133"/>
+<area shape="rect" id="node9" href="$da/d9f/memoire_8h.html#a61913937cdcdeaaada9f56be1309903e" title="Obtenir la Donnee nomVariable." alt="" coords="188,157,295,184"/>
+</map>
