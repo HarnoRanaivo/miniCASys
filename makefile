@@ -37,4 +37,4 @@ cleanall : clean
 	rm -rf lib/* doc/*
 
 archive :
-	tar -f L2S4-ALA-TP2_razanajato-harenome.tar.gz -cvz src/*.c include/*.h makefile
+	tar -f L2S4-ALA-MINICAS_meyer-jeremy_razanajato-harenome.tar.gz -cvz src/*.c include/*.h makefile Doxyfile exemples/*
