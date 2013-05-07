@@ -164,7 +164,7 @@ LCM[] =
     [CM_SOL] =
     {
         CM_SOL,
-        "\tsolve\n"
+        "\tsolve, resolution\n"
         "\t\tsolve(<matrice>,<matrice>)\n\n"
         "\t\tRésolution d'un système.\n"
         "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
@@ -178,7 +178,7 @@ LCM[] =
     [CM_RK] =
     {
         CM_RK,
-        "\trank\n"
+        "\trank, rang\n"
         "\t\trank(<matrice>)\n\n"
         "\t\tCalcul du rang d'une matrice.\n"
         "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
@@ -220,10 +220,11 @@ LCM[] =
     [CM_AIDE] =
     {
         CM_AIDE,
-        "\taide [commande]\n"
+        "\thelp, aide [commande]\n"
+        "\t\taide [commande]\n\n"
         "\t\tAfficher l'aide d'une commande, si donnée en argument, ou\n"
         "\t\tafficher l'aide du programme.\n\n",
-        { "aide", NULL, },
+        { "aide", "help", NULL, },
     },
 
     [CM_QUIT] =
@@ -417,7 +418,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
                     m = multiplierScalaire(matriceDonnee(d1), eDonnee(d2));
             }
             else
-                printf("???\n");
+                fprintf(stderr, "Erreur.\n");
             break;
 
         case CM_EXP :
@@ -723,6 +724,7 @@ void prompt(FILE * fichier)
         if (succes == 1)
         {
             char commande[64] = { '\0' };
+            char arg[64] = { '\0' };
 
             /* Pré-traitement pour détecter certaines commandes particulières. */
             char * copie = copierChaine(buffer);
@@ -740,10 +742,17 @@ void prompt(FILE * fichier)
             }
             /* speedtest(), autre fonction dont l'appel est particulier. */
             else if (sscanf(buffer, "%63s", commande) == 1
-                    && rechercherCommande(commande) == CM_SPD)
+                    && rechercherCommande(commande) == CM_SPD
+                    )
             {
                 /* Fonction statique. */
                 continuer = lancerSpeedtest(buffer, commande);
+            }
+            else if (sscanf(buffer, "%63s %63s", commande, arg) == 2
+                    && rechercherCommande(commande) == CM_AIDE
+                    )
+            {
+                afficherAideCommande(rechercherCommande(arg));
             }
             /* Autres lignes de commandes classiques, de la forme
              * "variable : <fonction, variable...>"
@@ -792,9 +801,9 @@ void prompt(FILE * fichier)
                         fprintf(stderr, "Syntaxe non valide.\n");
                 }
 
-                if ((c == CM_QUIT && terminal
+                if ((c == CM_QUIT && !terminal)
+                    || (c == CM_QUIT && terminal
                         && verifier("de vouloir quitter le programme "))
-                    || (c == CM_QUIT && !terminal)
                    )
                 {
                     continuer = FAUX;
