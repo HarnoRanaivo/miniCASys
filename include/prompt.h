@@ -18,6 +18,9 @@
 #include <sysexits.h>
 #include <time.h>
 #include <sys/time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 #include "base.h"
 #include "matrix.h"
@@ -94,7 +97,7 @@ Bool verifier(const char * chaine);
 /**
  * \brief Afficher un prompt et gérer les entrées de l'utilisateur.
  */
-void afficherPrompt(void);
+void prompt(FILE * fichier);
 
 void speedtest(Commande c, int min, int max, int pas);
 

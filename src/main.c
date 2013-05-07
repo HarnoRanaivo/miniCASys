@@ -12,6 +12,10 @@
 #include <stdlib.h>
 #include <sysexits.h>
 #include <time.h>
+#include <sysexits.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 #include "base.h"
 #include "matrix.h"
@@ -27,7 +31,35 @@
  */
 int main(int argc, char ** argv)
 {
-    afficherPrompt();
+    if (argc == 1)
+        prompt(NULL);
+    else if (argc == 2)
+    {
+        struct stat buffer;
+
+        if (stat(argv[1], &buffer) == 0)
+        {
+            FILE * fichier = fopen(argv[1], "r");
+            if (fichier != NULL)
+                prompt(fichier);
+            else
+            {
+                perror("fopen");
+                exit(EX_OSERR);
+            }
+        }
+        else
+        {
+            fprintf(stderr, "Le fichier %s n'existe pas.\n", argv[1]);
+            exit(EX_NOINPUT);
+        }
+
+    }
+    else
+    {
+        fprintf(stderr, "Usage : %s [fichier]\n", argv[0]);
+        exit(EX_USAGE);
+    }
 
     return 0;
 }
