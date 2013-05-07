@@ -10,6 +10,20 @@
  */
 #include "prompt.h"
 
+static const char * INTROAIDE =
+"Aide :\n\n"
+"L'affectation d'une valeur à une variable se fait comme suit :\n"
+"\t<nomvariable> : <valeur>\n"
+"Les valeurs que l'on peut affecter à une variable sont :\n"
+"- un flottant.\n"
+"\ta : 4\n"
+"- une autre variable, si elle existe (son contenu sera copié).\n"
+"\tb : a\n"
+"- le résultat d'une commande retournant une matrice ou un flottant.\n"
+"\tm : matrix([1, 2], [3, 4])\n"
+"\td : determinant(m)\n\n"
+"Les commandes disponibles sont :\n\n";
+
 static const struct
 {
     Commande commande;
@@ -18,98 +32,174 @@ static const struct
 }
 LCM[] =
 {
-    [CM_ADD] =
-    {
-        CM_ADD,
-        "\tadd, addition\n" "\t\tAddition de matrices\n\n",
-        { "add", "addition", NULL, },
-    },
-
     [CM_NEW] =
     {
         CM_NEW,
         "\tmatrix, new\n"
-        "\t\tCréation d'une nouvelle matrice.\n\n",
+        "\t\tmatrix(<déclaration>)\n\n"
+        "\t\tCréation d'une nouvelle matrice.\n"
+        "\t\tChaque ligne doit contenir le même nombre de colonnes. Le résultat\n"
+        "\t\tde cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemples :\n"
+        "\t\t\tm1 : matrix([1])\n"
+        "\t\t\tm2 : matrix([1, 2], [3, 4], [5, 6])\n"
+        "\t\t\tm3 : matrix([1, 2, 3], [4, 5, 6])\n\n",
         { "matrix", "new", NULL, },
+    },
+
+    [CM_ADD] =
+    {
+        CM_ADD,
+        "\tadd, addition\n"
+        "\t\taddition(<matrice>,<matrice>)\n\n"
+        "\t\tAddition de deux matrices.\n"
+        "\t\tLes deux matrices doivent avoir la même taille. Le résultat de\n"
+        "\t\tcette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : matrix([7, 8, 9], [10, 11, 12])\n"
+        "\t\t\tm3 : addition(m1, m2)\n\n",
+        { "add", "addition", NULL, },
     },
 
     [CM_SUB] =
     {
         CM_SUB,
-        "\tsub, soustraction\n"
-        "\t\tSoustraction de matrices.\n\n",
-        { "sub", "soustraction", "substraction", NULL, },
+        "\tsub, substraction, sous, soustraction\n"
+        "\t\tsub(<matrice>,<matrice>)\n\n"
+        "\t\tSoustraction de deux matrices.\n"
+        "\t\tLes deux matrices doivent avoir la même taille. Le résultat de\n"
+        "\t\tcette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : matrix([7, 8, 9], [10, 11, 12])\n"
+        "\t\t\tm3 : sub(m2, m1)\n\n",
+        { "sub", "sous", "soustraction", "substraction", NULL, },
     },
 
     [CM_MULM] =
     {
         CM_MULM,
-        "\tmult\n"
-        "\t\tMultiplication de matrices.\n\n",
-        { "mult", NULL, },
+        "\tmult, multmatrice\n"
+        "\t\tmult(<matrice>,<matrice>)\n"
+        "\t\tMultiplication de deux matrices.\n"
+        "\t\tLe nombre de colonnes de la première matrice doit être\n"
+        "\t\tégal au nombre de lignes de la seconde matrice.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : matrix([7, 8, 9], [10, 11, 12], [13, 14, 15])\n"
+        "\t\t\tm3 : mult(m1, m2)\n\n",
+        { "mult", "multmatrice", NULL, },
     },
 
     [CM_MULS] =
     {
         CM_MULS,
-        "\tmuls\n"
-        "\t\tMultiplication d'une matrice par un scalaire.\n\n",
-        { "muls", NULL, },
+        "\tmuls, mulscalaire\n"
+        "\t\tmuls(<matrice>,<flottant>)\n\n"
+        "\t\tMultiplication d'une matrice par un scalaire.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\ta : 4\n"
+        "\t\t\tm2 : muls(m1, a)\n"
+        "\t\t\tm3 : muls(m1, 3)\n\n",
+        { "muls", "mulscalaire", NULL, },
     },
 
     [CM_EXP] =
     {
         CM_EXP,
-        "\texpo\n"
-        "\t\tExponentiation d'une matrice.\n\n",
+        "\texpo, exponentiation\n"
+        "\t\texpo(<matrice>,<entier>)\n\n"
+        "\t\tExponentiation d'une matrice.\n"
+        "\t\tL'exposant doit être positif. Le résultat de\n"
+        "\t\tcette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : expo(m1, 2)\n\n",
         { "expo", NULL, },
     },
 
     [CM_TSP] =
     {
         CM_TSP,
-        "\ttranspose\n"
-        "\t\tTransposition d'une matrice.\n\n",
-        { "transpose", NULL, },
+        "\ttrans, transpose\n"
+        "\t\ttranspose(<matrice>)\n\n"
+        "\t\tTransposition d'une matrice.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : transpose(m1)\n\n",
+        { "transpose", "trans", NULL, },
     },
 
     [CM_DET] =
     {
         CM_DET,
-        "\tdeterminant\n"
-        "\t\tCalcul du déterminant.\n\n",
-        { "determinant", NULL, },
+        "\tdet, determinant\n"
+        "\t\tdeterminant(<matrice>)\n\n"
+        "\t\tCalcul du déterminant d'une matrice carrée.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2], [4, 5])\n"
+        "\t\t\td : determinant(m1)\n\n",
+        { "determinant", "det", NULL, },
     },
 
     [CM_INV] =
     {
         CM_INV,
-        "\tinvert\n"
-        "\t\tInversion d'une matrice.\n\n",
-        { "invert", NULL, },
+        "\tinvert, inversion\n"
+        "\t\tinvert(<matrice>)\n\n"
+        "\t\tInversion d'une matrice carrée.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2], [4, 5])\n"
+        "\t\t\tm2 : invert(m1)\n\n",
+        { "invert", "inversion", NULL, },
     },
 
     [CM_SOL] =
     {
         CM_SOL,
         "\tsolve\n"
-        "\t\tRésolution d'un système.\n\n",
-        { "solve", NULL, },
+        "\t\tsolve(<matrice>,<matrice>)\n\n"
+        "\t\tRésolution d'un système.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6], [7, 8, 9])\n"
+        "\t\t\tm2 : matrix([1], [2], [3])\n"
+        "\t\t\tm3 : solve(m1, m2)\n\n",
+        { "solve", "resolution", NULL, },
     },
 
     [CM_RK] =
     {
         CM_RK,
         "\trank\n"
-        "\t\tCalcul du rang d'une matrice.\n\n",
-        { "rank", NULL, },
+        "\t\trank(<matrice>)\n\n"
+        "\t\tCalcul du rang d'une matrice.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6], [7, 8, 9])\n"
+        "\t\t\tr : rank(m1)\n\n",
+        { "rank", "rang", NULL, },
     },
 
     [CM_LU] =
     {
         CM_LU,
         "\tdecomposition\n"
-        "\t\tDécomposition LU d'une matrice.\n\n",
+        "\t\tdecomposition(<matrice>)\n\n"
+        "\t\tDécomposition LU d'une matrice.\n"
+        "\t\tLe résultat de cette commande ne doit pas être affecté à une\n"
+        "\t\tvariable. Les résultats seront disponibles dans les variables\n"
+        "\t\tspéciales \"L\" et \"U\".\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6], [7, 8, 9])\n"
+        "\t\t\tdecomposition(m1)\n\n",
         { "decomposition", NULL, },
 
     },
@@ -117,23 +207,29 @@ LCM[] =
     [CM_SPD] =
     {
         CM_SPD,
-        "\tspeedtest\n"
-        "\t\tSpeedtest.\n\n",
+        "\tspeedtest <commande> <taille_min> <taille_max> <pas> [secondes]\n"
+        "\t\tLancement du speedtest d'une commande sur deux matrices.\n"
+        "\t\t- commande : add | sub | mult (commande sur deux matrices).\n"
+        "\t\t- taille_min : Taille de départ des matrices.\n"
+        "\t\t- taille_max : Taille maximale des matrices.\n"
+        "\t\t- pas : Incrément des tailles.\n"
+        "\t\t- secondes : (Optionnel) Le programme quitera si le test est trop long.\n\n",
         { "speedtest", NULL, },
     },
 
     [CM_AIDE] =
     {
         CM_AIDE,
-        "\taide\n"
-        "\t\tAide.\n\n",
+        "\taide [commande]\n"
+        "\t\tAfficher l'aide d'une commande, si donnée en argument, ou\n"
+        "\t\tafficher l'aide du programme.\n\n",
         { "aide", NULL, },
     },
 
     [CM_QUIT] =
     {
         CM_QUIT,
-        "\tquit\n"
+        "\tquit, quitter\n"
         "\t\tQuitter le programme.\n\n",
         { "quit", "quitter", "q", NULL, },
     },
@@ -153,7 +249,7 @@ void afficherAideCommande(Commande c)
 
 void afficherPromptAide(void)
 {
-    printf("Aide :\n\n");
+    printf("%s", INTROAIDE);
     for (int i = 0; i < CM_INCONNU; i++)
         printf("%s", LCM[i].aide);
 }
