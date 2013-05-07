@@ -535,8 +535,14 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
     return v;
 }
 
-void afficherPrompt(void)
+void prompt(FILE * fichier)
 {
+    FILE * entree = fichier == NULL ? stdin : fichier;
+
+    struct stat statBuffer;
+    fstat(fileno(entree), &statBuffer);
+    Bool terminal = S_ISCHR(statBuffer.st_mode);
+
     Variables * v = initVariables();
 
     /* Le reste du programme ne peut pas fonctionner sans v. */
@@ -555,12 +561,16 @@ void afficherPrompt(void)
          * sur des chaînes de caractères valides.
          */
 
-        printf("> ");
-        fflush(stdout);
+        if (terminal)
+        {
+            printf("> ");
+            fflush(stdout);
+        }
 
-        /* Lecture des entrées de l'utilisateur. */
-        succes = scanf(" %511[^\n]%*[^\n]", buffer);
-        getchar();
+        /* Lecture des entrées. */
+        succes = fscanf(entree, " %511[^\n]%*[^\n]", buffer);
+        if (terminal)
+            getchar();
 
         if (succes == 1)
         {
@@ -634,7 +644,10 @@ void afficherPrompt(void)
                         printf("Syntaxe non valide.\n");
                 }
 
-                if (c == CM_QUIT && verifier("de vouloir quitter le programme ") == VRAI)
+                if ((c == CM_QUIT && terminal
+                        && verifier("de vouloir quitter le programme "))
+                    || (c == CM_QUIT && !terminal)
+                   )
                 {
                     continuer = FAUX;
                 }
@@ -642,6 +655,8 @@ void afficherPrompt(void)
 
             free(copie);
         }
+        else if (succes == EOF)
+            continuer = FAUX;
     }
     while (continuer);
 
@@ -672,6 +687,7 @@ void speedtest(Commande c, int min, int max, int pas)
     }
 
     FILE * const output = fopen(fichier, "w");
+
     if (output == NULL)
     {
         perror("fopen");
@@ -704,19 +720,22 @@ void speedtest(Commande c, int min, int max, int pas)
     fclose(output);
 
     FILE * const gnuplot = popen("gnuplot -persistent", "w");
+
     if (gnuplot == NULL || gnuplot == (FILE *)-1)
     {
         perror("popen");
         erreur = VRAI;
     }
-
-    fprintf(gnuplot,
-            "set style data histogram\n"
-            "set style fill solid border\n"
-            "set xlabel \"Taille\"\n"
-            "set ylabel \"Temps (µsecondes)\"\n"
-            "plot '%s' u 2:xtic(1) ti \"\"\n",
-            fichier);
-    fflush(gnuplot);
-    fclose(gnuplot);
+    else
+    {
+        fprintf(gnuplot,
+                "set style data histogram\n"
+                "set style fill solid border\n"
+                "set xlabel \"Taille\"\n"
+                "set ylabel \"Temps (µsecondes)\"\n"
+                "plot '%s' u 2:xtic(1) ti \"\"\n",
+                fichier);
+        fflush(gnuplot);
+        fclose(gnuplot);
+    }
 }
