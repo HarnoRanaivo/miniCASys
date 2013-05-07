@@ -22,9 +22,9 @@
  */
 typedef struct Matrix
 {
-    E * mat;
-    int nrows;
-    int ncols;
+    E * mat;        /**<- Matrice. */
+    int nrows;      /**<- Nombre de lignes. */
+    int ncols;      /**<- Nombre de colonnes. */
 } Matrix;
 
 /**

@@ -78,23 +78,42 @@ void afficherPromptAide(void);
  */
 Commande rechercherCommande(const char * ligne);
 
-Bool verifier(const char * chaine);
-
-void afficherDonnee(const Donnee * d);
-
-Matrix * traiterCommande(Commande c, char * arguments, const Variables * v);
-
 /**
  * \brief Vérifier l'intention de l'utilisateur.
- * \param chaine Ce que l'utilisateur est sur le point de faire.
+ * \param chaine Ce qu'il faut confirmer.
+ * \return #VRAI si l'utilisateur approuve, #FAUX sinon.
  */
 Bool verifier(const char * chaine);
+
+/**
+ * \brief Afficher le contenu d'une donnée.
+ * \relatesalso Donnee
+ * \param d Donnée à afficher.
+ */
+void afficherDonnee(const Donnee * d);
+
+/**
+ * \brief Traiter une commande sur les matrices.
+ * \param c Commande à éxécuter.
+ * \param arguments Arguments.
+ * \param v Variables où chercher d'éventuels opérandes.
+ * \return Matrice résultante, \a NULL en cas d'erreur.
+ */
+Matrix * traiterCommande(Commande c, char * arguments, const Variables * v);
 
 /**
  * \brief Afficher un prompt et gérer les entrées de l'utilisateur.
  */
 void prompt(FILE * fichier);
 
+/**
+ * \brief Test de vitesse.
+ * \param c Commande à tester.
+ * \param min Taille de départ des matrices de test.
+ * \param max Taille maximale des matrices de test.
+ * \param pas Incrément des tailles de matrices.
+ * \pre 0 < min <= max && pas > 0
+ */
 void speedtest(Commande c, int min, int max, int pas);
 
 #endif /* __PROMPT_H */

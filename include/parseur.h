@@ -78,9 +78,9 @@ int preparerLigneCommmande(char * chaine, char * decomposition[4]);
  * \return Nombre de parties.
  *
  * Les parties délimitées par cette fonction sont de la forme :
- * <partie 2> ( <partie 3> )
+ * <partie 1> ( <partie 2> )
  *
- * Les parties 1 et 2 ne doivent contenir qu'un seul mot.
+ * La partie 1 ne doit contenir qu'un seul mot.
  */
 int preparerCommande(char * chaine, char * decomposition[2]);
 

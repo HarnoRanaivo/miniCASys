@@ -142,6 +142,11 @@ void multLigne(Matrix * m, Matrix * b, int i, E k);
  */
 Matrix * addMultLigne(Matrix * m, int i, int j, E k);
 
+/**
+ * \brief Calcul du rang d'une matrice.
+ * \param m Matrice.
+ * \return Rang de m.
+ */
 int rang(const Matrix * m);
 
 #endif /* __RESOL_H */
