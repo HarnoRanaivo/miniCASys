@@ -47,7 +47,7 @@ $ ledit bin/minicas
 ### Mode non interactif ###
 Il est possible de lancer des scripts :
 ````bash
-$ bin/minicas <fichier>
+$ bin/minicas exemples/script1
 ````
 Ceux-ci doivent contenir une commande par ligne. Les commandes valides sont toutes celles qui sont disponibles dans le mode interactif.
 
@@ -57,11 +57,35 @@ Pour connaître la version de ```minicas``` que vous utilisez :
 $ bin/minicas --version
 ````
 
-Branches
---------
+Documentation
+-------------
+Minicas est documenté à l'aide de Doxygen. Pour installer doxygen sur Ubuntu :
+````bash
+$ apt-get install doxygen
+````
+Pour Fedora :
+````bash
+$ yum install doxygen
+````
+Un ```Doxyfile``` est déjà présent. Il suffit de lancer ```doxygen``` pour générer la documentation. Celle-ci sera disponible dans le dossier ```doc```.
+````bash
+$ doxygen
+````
+Sinon, nous avons déjà généré et publié la documentation [ici](http://remove.github.io/minicasys "Documentation").
+
+Branches et versions
+--------------------
 Les versions stables se trouvent dans la branche ````master````, la branche ````dev```` contient la version de développement du projet. Pour passer d'une branche à l'autre :
 ````bash
 $ git checkout <branche>
+````
+Nous avons également étiqueté nos différentes verions « stables ». Par exemple, pour revenir à la version 1.0 :
+````bash
+$ git checkout v1.0
+````
+Ensuite, pour revenir à l'état actuel du projet, il suffit de revenir dans la branche ```master``` ou la branche ```dev``` :
+````bash
+$ git checkout master
 ````
 
 License
