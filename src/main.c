@@ -28,6 +28,12 @@
 int main(int argc, char ** argv)
 {
     afficherPrompt();
+    
+    //~ Matrix * m = aleatoire(newMatrix(3,3),1.,10.);
+    //~ 
+    //~ displayMatrix(m);
+    //~ printf("\n\n");
+    //~ displayMatrix(inverseM(m));
 
     return 0;
 }
