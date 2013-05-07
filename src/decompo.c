@@ -79,14 +79,14 @@ LUM* decomposition(Matrix *m)
 
 void afficheL(LUM* lum)
 {
-    printf("\tL :\n");
+    printf("L :\n");
 	displayMatrix(lum[0]);
 	return;
 }
 
 void afficheU(LUM* lum)
 {
-    printf("\tU :\n");
+    printf("U :\n");
 	displayMatrix(lum[1]);
 	return;
 }
