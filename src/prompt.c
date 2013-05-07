@@ -288,6 +288,7 @@ void afficherDonnee(const Donnee * d)
 {
     if (d != NULL)
     {
+        printf("\t%s :\n", d->nom);
         if (estE(d))
             printf("\t%f\n", eDonnee(d));
         else
@@ -578,7 +579,7 @@ static Variables * ligneDeuxParties(Variables * v, char * parties[4], Commande c
             if (sscanf(parties[0], "%31s", variable) == 1)
             {
                 v = ajouterE(v, variable, valeur);
-                printf("\t%f\n", valeur);
+                printf("%s :\n\t%f\n", variable, valeur);
             }
         }
         /* Ligne de la forme "variable_2 : variable_1" ? */
@@ -594,11 +595,12 @@ static Variables * ligneDeuxParties(Variables * v, char * parties[4], Commande c
                 if (estE(d))
                 {
                     v = ajouterE(v, variable, eDonnee(d));
-                    printf("\t%f\n", eDonnee(d));
+                    printf("%s :\n\t%f\n", variable, eDonnee(d));
                 }
                 else
                 {
                     v = ajouterMatrice(v, variable, copieMatrice(matriceDonnee(d)));
+                    printf("%s :\n", variable);
                     displayMatrix(matriceDonnee(d));
                 }
             }
@@ -648,7 +650,7 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
                         m0 = deleteMatrix(m0);
 
                         v = ajouterE(v, parties[0], det);
-                        printf("\t%f\n", det);
+                        printf("%s :\n\t%f\n", parties[0], det);
                     }
                     else
                         fprintf(stderr, "La matrice n'est pas carrée.\n");
@@ -661,7 +663,7 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
 
                     int rk = rang(m0);
                     v = ajouterE(v, parties[0], rk);
-                    printf("\t%d\n", rk);
+                    printf("%s :\n\t%d\n", parties[0], rk);
 
                     deleteMatrix(m0);
                 }
@@ -676,6 +678,7 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
             if (m != NULL)
             {
                 v = ajouterMatrice(v, parties[0], m);
+                printf("%s :\n", parties[0]);
                 displayMatrix(m);
             }
         }
