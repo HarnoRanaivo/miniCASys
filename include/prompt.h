@@ -31,7 +31,7 @@
 #include "decompo.h"
 
 #define ALEA_MIN 1.
-#define ALEA_MAX 10.
+#define ALEA_MAX 100.
 
 /**
  * \enum Commande
