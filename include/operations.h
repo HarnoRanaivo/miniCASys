@@ -13,11 +13,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "matrix.h"
 
 /**
  * \brief Addition de matrices
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m1 matrice 1
  * \param m2 matrice 2
  * \pre nbColonnes(m1) == nbColonnes(m2) && nbLignes(m1) == nbLignes(m2)
@@ -27,7 +28,7 @@ Matrix * addition(const Matrix * m1, const Matrix * m2);
 
 /**
  * \brief Multiplication de matrices
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m1 matrice 1
  * \param m2 matrice 2
  * \pre nbColonnes(m1) == nbLignes(m2)
@@ -37,7 +38,7 @@ Matrix * multiplication(const Matrix * m1, const Matrix * m2);
 
 /**
  * \brief Soustraction de matrices
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m1 matrice 1
  * \param m2 matrice 2
  * \pre nbColonnes(m1) == nbLignes(m2)
@@ -47,7 +48,7 @@ Matrix * soustraction(const Matrix * m1, const Matrix * m2);
 
 /**
  * \brief Exponentiation d'une matrice
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m matrice
  * \param n exposant
  * \return m^n
@@ -56,7 +57,7 @@ Matrix * exponentiation(const Matrix * m, int n);
 
 /**
  * \brief Transposition d'une matrice
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m
  * \return pointeur vers la transposée
  */
@@ -64,7 +65,7 @@ Matrix * transpose(const Matrix * m);
 
 /**
  * \brief Multiplication d'une matrice par un scalaire
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m1 matrice 1
  * \param k scalaire
  * \return pointeur vers le produit

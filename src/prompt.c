@@ -164,7 +164,7 @@ LCM[] =
     [CM_SOL] =
     {
         CM_SOL,
-        "\tsolve\n"
+        "\tsolve, resolution\n"
         "\t\tsolve(<matrice>,<matrice>)\n\n"
         "\t\tRésolution d'un système.\n"
         "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
@@ -178,7 +178,7 @@ LCM[] =
     [CM_RK] =
     {
         CM_RK,
-        "\trank\n"
+        "\trank, rang\n"
         "\t\trank(<matrice>)\n\n"
         "\t\tCalcul du rang d'une matrice.\n"
         "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
@@ -220,10 +220,11 @@ LCM[] =
     [CM_AIDE] =
     {
         CM_AIDE,
-        "\taide [commande]\n"
+        "\thelp, aide [commande]\n"
+        "\t\taide [commande]\n\n"
         "\t\tAfficher l'aide d'une commande, si donnée en argument, ou\n"
         "\t\tafficher l'aide du programme.\n\n",
-        { "aide", NULL, },
+        { "aide", "help", NULL, },
     },
 
     [CM_QUIT] =
@@ -321,7 +322,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
             /* Partie commune aux quatres commandes CM_ADD, CM_SUB, CM_MULM,
              * CM_SOL.
              */
-            if (sscanf(arguments, " %63[^,]%*[,]%63s", buffer1, buffer2) == 2)
+            if (sscanf(arguments, " %63[^, ]%*[,]%63s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 const Donnee * d2 = obtenirDonnee(v, buffer2);
@@ -384,7 +385,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
 
         case CM_MULS :
             /* L'utilisateur a donné une variable et un flottant. */
-            if (sscanf(arguments, " %63[^,]%*[,]%f", buffer1, &buffer3) == 2)
+            if (sscanf(arguments, " %63[^, ]%*[,]%f", buffer1, &buffer3) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 if (d1 == NULL)
@@ -395,7 +396,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
                     m = multiplierScalaire(matriceDonnee(d1), buffer3);
             }
             /* L'utilisateur a donné deux variables. */
-            else if (sscanf(arguments, " %63[^,]%*[,]%31s", buffer1, buffer2) == 2)
+            else if (sscanf(arguments, " %63[^, ]%*[,]%31s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 const Donnee * d2 = obtenirDonnee(v, buffer2);
@@ -417,11 +418,11 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
                     m = multiplierScalaire(matriceDonnee(d1), eDonnee(d2));
             }
             else
-                printf("???\n");
+                fprintf(stderr, "Erreur.\n");
             break;
 
         case CM_EXP :
-            if (sscanf(arguments, " %63[^,]%*[,]%d", buffer1, &buffer4) == 2)
+            if (sscanf(arguments, " %63[^, ]%*[,]%d", buffer1, &buffer4) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
 
@@ -436,7 +437,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
                 else
                     m = exponentiation(matriceDonnee(d1), buffer4);
             }
-            else if (sscanf(arguments, " %63[^,]%*[,]%31s", buffer1, buffer2) == 2)
+            else if (sscanf(arguments, " %63[^, ]%*[,]%31s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 const Donnee * d2 = obtenirDonnee(v, buffer2);
@@ -467,7 +468,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
         case CM_TSP :
 
         case CM_INV :
-            if (sscanf(arguments, " %63[^,]", buffer1) == 1)
+            if (sscanf(arguments, " %63[^, ]", buffer1) == 1)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
 
@@ -629,7 +630,7 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
         {
             char buffer[32];
 
-            if (sscanf(parties[2], " %63[^,]", buffer) == 1)
+            if (sscanf(parties[2], " %63[^, ]", buffer) == 1)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer);
 
@@ -723,6 +724,7 @@ void prompt(FILE * fichier)
         if (succes == 1)
         {
             char commande[64] = { '\0' };
+            char arg[64] = { '\0' };
 
             /* Pré-traitement pour détecter certaines commandes particulières. */
             char * copie = copierChaine(buffer);
@@ -740,10 +742,17 @@ void prompt(FILE * fichier)
             }
             /* speedtest(), autre fonction dont l'appel est particulier. */
             else if (sscanf(buffer, "%63s", commande) == 1
-                    && rechercherCommande(commande) == CM_SPD)
+                    && rechercherCommande(commande) == CM_SPD
+                    )
             {
                 /* Fonction statique. */
                 continuer = lancerSpeedtest(buffer, commande);
+            }
+            else if (sscanf(buffer, "%63s %63s", commande, arg) == 2
+                    && rechercherCommande(commande) == CM_AIDE
+                    )
+            {
+                afficherAideCommande(rechercherCommande(arg));
             }
             /* Autres lignes de commandes classiques, de la forme
              * "variable : <fonction, variable...>"
@@ -792,9 +801,9 @@ void prompt(FILE * fichier)
                         fprintf(stderr, "Syntaxe non valide.\n");
                 }
 
-                if ((c == CM_QUIT && terminal
+                if ((c == CM_QUIT && !terminal)
+                    || (c == CM_QUIT && terminal
                         && verifier("de vouloir quitter le programme "))
-                    || (c == CM_QUIT && !terminal)
                    )
                 {
                     continuer = FAUX;
