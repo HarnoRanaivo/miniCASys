@@ -24,6 +24,8 @@
 #include "resol.h"
 #include "prompt.h"
 
+#define VERSION "1.1"
+
 /**
  * \brief Main.
  * \param argc Nombre d'arguments de la ligne de commande.
@@ -31,35 +33,42 @@
  */
 int main(int argc, char ** argv)
 {
+    Bool erreursFichiers = FAUX;
+
     if (argc == 1)
         prompt(NULL);
-    else if (argc == 2)
-    {
-        struct stat buffer;
-
-        if (stat(argv[1], &buffer) == 0)
-        {
-            FILE * fichier = fopen(argv[1], "r");
-            if (fichier != NULL)
-                prompt(fichier);
-            else
-            {
-                perror("fopen");
-                exit(EX_OSERR);
-            }
-        }
-        else
-        {
-            fprintf(stderr, "Le fichier %s n'existe pas.\n", argv[1]);
-            exit(EX_NOINPUT);
-        }
-
-    }
+    else if (rechercherMot("--version", (const char * const *)argv) || rechercherMot("-v", (const char * const *)argv))
+            printf("Minicas, version %s\n"
+                    "Copyright © 2013, MEYER Jérémy, RAZANAJATO Harenome.\n"
+                    "<https://github.com/remove/miniCASys>\n",
+                    VERSION
+                  );
     else
     {
-        fprintf(stderr, "Usage : %s [fichier]\n", argv[0]);
-        exit(EX_USAGE);
+        for (int i = 1; i < argc; i++)
+        {
+            struct stat buffer;
+
+            if (stat(argv[i], &buffer) == 0)
+            {
+                FILE * fichier = fopen(argv[i], "r");
+                if (fichier != NULL)
+                    prompt(fichier);
+                else
+                {
+                    perror("fopen");
+                }
+            }
+            else
+            {
+                fprintf(stderr, "Le fichier %s n'existe pas.\n", argv[i]);
+                erreursFichiers = VRAI;
+            }
+        }
     }
+
+    if (erreursFichiers)
+        exit(EX_NOINPUT);
 
     return 0;
 }

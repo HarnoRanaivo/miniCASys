@@ -106,79 +106,66 @@ void libererLU(LUM* lum)
 	return;
 }
 
-Matrix * inverseL (LUM * l)
+Matrix * inverseM (Matrix * m)
 {
-	int n = nbLignes(l[0]);
-	Matrix * lprime = copieMatrice(l[0]);
-	Matrix * solve = identite(n);
+	Matrix * solve = identite(nbColonnes(m));
+	Matrix * copie = copieMatrice(m);
 	
-	for (int i = 2 ; i<=n ; i++) // pour toutes lignes en dehors de la diagonale
-	{
-		for (int j = 1 ; j<i ; j++) // pour toutes colonnes en dehors de la diagonale
-		{
-			if (getElt(lprime,i,j) != 0) // On cherche à mettre l'élément à 0 donc ce test réduit les calculs
-			{
-				E multiple = -1.*getElt(lprime,i,j); // multiple permettant de mettre à 0 car il n'y a que des 1 sur la diagonale de L
-				lprime = addMultLigne(lprime, i, j, multiple);
-				solve = addMultLigne(solve, i, j, multiple);
-				/*On fait les mêmes opérations sur les deux matrices,
-				 * permettant ainsi d'avoir la solution
-				 */
-			}
-		}
-	}
-	deleteMatrix(lprime);
-	
-	return solve;
-}
+	int n = nbLignes(copie);
 
-Matrix * inverseU (LUM * l)
-{
-	int n = nbLignes(l[1]);
-	Matrix * lprime = copieMatrice(l[1]);
-	Matrix * solve = identite(n);
-	
-	for (int i = 1 ; i<=n ; i++) // Pour toute la diagonale
-	{
-		if (getElt(lprime,i,i) != 1) // si l'élément de la diagonale est différent de 1 on le met à 1
+    for (int i = 1; i <= n-1; i++)
+    {
+        int pivot = choixPivotPartiel(copie, i);
+
+        if (pivot != i)
+        {
+            permutLigne(copie, i, pivot);
+            permutLigne(solve, i, pivot);
+        }
+        for (int j = i+1; j <= n; j++)
+        {
+			E multiple = -getElt(copie, j, i) / getElt(copie, i, i);
+            addMultLigne(copie, j, i, multiple);
+            addMultLigne(solve, j, i, multiple);
+        }
+    }
+    
+    for (int i = 1; i<=n ; i++)
+    {
+		if(getElt(copie,i,i)==0)
 		{
-			E multiple = 1./getElt(lprime,i,i);
+			deleteMatrix(copie);
+			deleteMatrix(solve);
+			return NULL;
+		}
+		else
+		{
+			E multiple = 1./getElt(copie,i,i);
 			for (int j = 1 ; j<=n ; j++) // on oublie pas de modifier le reste de la ligne en conséquence
 			{
-				E element = getElt(lprime,i,j);
+				E element = getElt(copie,i,j);
 				element*=multiple;
-				setElt(lprime,i,j,element);
+				setElt(copie,i,j,element);
 				element = getElt(solve,i,j);
 				element*=multiple;
 				setElt(solve,i,j,element);
 			}
-		}
-	}
-	
-	for (int i = n-1 ; i>0 ; i--) // Même algorithme que pour L
-	{
-		for (int j = n ; j>i ; j--)
-		{
-			if (getElt(lprime,i,j) != 0)
+			
+			for (int i = n-1 ; i>0 ; i--)
 			{
-				E multiple = -1.*getElt(lprime,i,j);
-				lprime = addMultLigne(lprime, i, j, multiple);
-				solve = addMultLigne(solve,i ,j ,multiple);
+				for (int j = n ; j>i ; j--)
+				{
+					if (getElt(copie,i,j) != 0)
+					{
+						E multiple = -1.*getElt(copie,i,j);
+						copie = addMultLigne(copie, i, j, multiple);
+						solve = addMultLigne(solve,i ,j ,multiple);
+					}
+				}
 			}
 		}
 	}
-	deleteMatrix(lprime);
-		
-	return solve;
-}
-
-Matrix * inverseM (Matrix * m)
-{
-	LUM * decompo = decomposition(m);
-	Matrix * solve;
-	
-	solve = multiplication(inverseU(decompo),inverseL(decompo)); // l'inverse d'une matrice m = inv(U).inv(L)
-	libererLU(decompo);
-	
-	return solve;
+    
+    deleteMatrix(copie);
+    return solve;
 }

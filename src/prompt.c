@@ -294,7 +294,7 @@ void afficherDonnee(const Donnee * d)
     }
 }
 
-Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
+Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
 {
     Matrix * m = NULL;
     char buffer1[64] = { '\0' };
@@ -344,7 +344,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                     const Matrix * m1 = matriceDonnee(d1);
                     const Matrix * m2 = matriceDonnee(d2);
 
-                    /* Partie spécifique. */
+                    /* Addition et soustraction. */
                     if (c == CM_ADD || c == CM_SUB)
                     {
                         if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m1) == nbColonnes(m2))
@@ -352,6 +352,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                         else
                             fprintf(stderr, "Les matrices n'ont pas la même taille.\n");
                     }
+                    /* Multiplication. */
                     else if (c == CM_MULM)
                     {
                         if (nbColonnes(m1) == nbLignes(m2))
@@ -359,9 +360,10 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                         else
                             fprintf(stderr, "Les matrices n'ont pas les bonnes tailles.\n");
                     }
+                    /* Résolution. */
                     else
                     {
-                        if (nbLignes(m1) == nbLignes(m2))
+                        if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m2) == 1)
                         {
                             Matrix * m0 = copieMatrice(m1);
                             Matrix * b0 = copieMatrice(m2);
@@ -381,19 +383,38 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
             break;
 
         case CM_MULS :
+            /* L'utilisateur a donné une variable et un flottant. */
             if (sscanf(arguments, " %63[^,]%*[,]%f", buffer1, &buffer3) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 if (d1 == NULL)
-                {
                     fprintf(stderr, "%s n'existe pas.\n", buffer1);
-                }
                 else if (!estMatrice(d1))
-                {
                     fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
-                }
                 else
                     m = multiplierScalaire(matriceDonnee(d1), buffer3);
+            }
+            /* L'utilisateur a donné deux variables. */
+            else if (sscanf(arguments, " %63[^,]%*[,]%31s", buffer1, buffer2) == 2)
+            {
+                const Donnee * d1 = obtenirDonnee(v, buffer1);
+                const Donnee * d2 = obtenirDonnee(v, buffer2);
+                if (d1 == NULL || d2 == NULL)
+                {
+                    if (d1 == NULL)
+                        fprintf(stderr, "%s n'existe pas.\n", buffer1);
+                    if (d2 == NULL)
+                        fprintf(stderr, "%s n'existe pas.\n", buffer2);
+                }
+                else if (!estMatrice(d1) || !estE(d2))
+                {
+                    if (!estMatrice(d1))
+                        fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
+                    if (!estE(d2))
+                        fprintf(stderr, "%s n'est pas un flottant.\n", buffer2);
+                }
+                else
+                    m = multiplierScalaire(matriceDonnee(d1), eDonnee(d2));
             }
             else
                 printf("???\n");
@@ -414,6 +435,32 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                     fprintf(stderr, "La matrice n'est pas carrée.\n");
                 else
                     m = exponentiation(matriceDonnee(d1), buffer4);
+            }
+            else if (sscanf(arguments, " %63[^,]%*[,]%31s", buffer1, buffer2) == 2)
+            {
+                const Donnee * d1 = obtenirDonnee(v, buffer1);
+                const Donnee * d2 = obtenirDonnee(v, buffer2);
+
+                if (d1 == NULL || d2 == NULL)
+                {
+                    if (d1 == NULL)
+                        fprintf(stderr, "%s n'existe pas.\n", buffer1);
+                    if (d2 == NULL)
+                        fprintf(stderr, "%s n'existe pas.\n", buffer2);
+                }
+                else if (!estMatrice(d1) || !estE(d2))
+                {
+                    if (!estMatrice(d1))
+                        fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
+                    if (!estE(d2))
+                        fprintf(stderr, "%s n'est pas une matrice.\n", buffer2);
+                }
+                else if (eDonnee(d2) < 0)
+                    fprintf(stderr, "L'exposant doit être positif.\n");
+                else if (nbLignes(matriceDonnee(d1)) != nbColonnes(matriceDonnee(d1)))
+                    fprintf(stderr, "La matrice n'est pas carrée.\n");
+                else
+                    m = exponentiation(matriceDonnee(d1), eDonnee(d2));
             }
             break;
 
@@ -593,12 +640,17 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
                 /* Calcul du déterminant. */
                 else if (c == CM_DET)
                 {
-                    Matrix * m0 = copieMatrice(matriceDonnee(d1));
-                    E det = determinant_opt(m0);
-                    m0 = deleteMatrix(m0);
+                    if (nbLignes(matriceDonnee(d1)) == nbColonnes(matriceDonnee(d1)))
+                    {
+                        Matrix * m0 = copieMatrice(matriceDonnee(d1));
+                        E det = determinant_opt(m0);
+                        m0 = deleteMatrix(m0);
 
-                    v = ajouterE(v, parties[0], det);
-                    printf("\t%f\n", det);
+                        v = ajouterE(v, parties[0], det);
+                        printf("\t%f\n", det);
+                    }
+                    else
+                        fprintf(stderr, "La matrice n'est pas carrée.\n");
                 }
                 /* Calcul du rang. */
                 else if (c == CM_RK)
@@ -764,8 +816,10 @@ void speedtest(Commande c, int min, int max, int pas)
     static const char * fichier = "/tmp/minicas";
     Bool erreur = FAUX;
 
+    /* Pointeur sur fonction. */
     Matrix * (*fun) (const Matrix *, const Matrix *);
 
+    /* Choix de la comande. */
     switch (c)
     {
         case CM_ADD :
