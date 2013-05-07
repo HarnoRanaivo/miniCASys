@@ -24,7 +24,7 @@
 #include "resol.h"
 #include "prompt.h"
 
-#define VERSION "1.1"
+#define VERSION "1.1.2"
 
 /**
  * \brief Main.
