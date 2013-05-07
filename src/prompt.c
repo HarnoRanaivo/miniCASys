@@ -308,7 +308,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
             if (contientMatriceValide(arguments))
                 m = recupererMatrice(arguments, v);
             else
-                printf("%s : matrice non valide.\n", arguments);
+                fprintf(stderr, "%s : matrice non valide.\n", arguments);
             break;
 
         case CM_ADD :
@@ -328,16 +328,16 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 if (d1 == NULL || d2 == NULL)
                 {
                     if (d1 == NULL)
-                        printf("%s n'existe pas.\n", buffer1);
+                        fprintf(stderr, "%s n'existe pas.\n", buffer1);
                     if (d2 == NULL)
-                        printf("%s n'existe pas.\n", buffer2);
+                        fprintf(stderr, "%s n'existe pas.\n", buffer2);
                 }
                 else if (!estMatrice(d1) || !estMatrice(d2))
                 {
                     if (!estMatrice(d1))
-                        printf("%s n'est pas une matrice.\n", buffer1);
+                        fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
                     if (!estMatrice(d2))
-                        printf("%s, n'est pas une matrice.\n", buffer2);
+                        fprintf(stderr, "%s, n'est pas une matrice.\n", buffer2);
                 }
                 else
                 {
@@ -350,14 +350,14 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                         if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m1) == nbColonnes(m2))
                             m = c == CM_ADD ? addition(m1, m2) : soustraction(m1, m2);
                         else
-                            printf("Les matrices n'ont pas la même taille.\n");
+                            fprintf(stderr, "Les matrices n'ont pas la même taille.\n");
                     }
                     else if (c == CM_MULM)
                     {
                         if (nbColonnes(m1) == nbLignes(m2))
                             m = multiplication(m1, m2);
                         else
-                            printf("Les matrices n'ont pas les bonnes tailles.\n");
+                            fprintf(stderr, "Les matrices n'ont pas les bonnes tailles.\n");
                     }
                     else
                     {
@@ -374,7 +374,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                             m = solution;
                         }
                         else
-                            printf("Les matrices n'ont pas les bonnes tailles.\n");
+                            fprintf(stderr, "Les matrices n'ont pas les bonnes tailles.\n");
                     }
                 }
             }
@@ -386,11 +386,11 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 if (d1 == NULL)
                 {
-                    printf("%s n'existe pas.\n", buffer1);
+                    fprintf(stderr, "%s n'existe pas.\n", buffer1);
                 }
                 else if (!estMatrice(d1))
                 {
-                    printf("%s n'est pas une matrice.\n", buffer1);
+                    fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
                 }
                 else
                     m = multiplierScalaire(matriceDonnee(d1), buffer3);
@@ -405,13 +405,13 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
 
                 if (d1 == NULL)
-                        printf("%s n'existe pas.\n", buffer1);
+                    fprintf(stderr, "%s n'existe pas.\n", buffer1);
                 else if (!estMatrice(d1))
-                        printf("%s n'est pas une matrice.\n", buffer1);
+                    fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
                 else if (buffer4 < 0)
-                    printf("L'exposant doit être positif.\n");
+                    fprintf(stderr, "L'exposant doit être positif.\n");
                 else if (nbLignes(matriceDonnee(d1)) != nbColonnes(matriceDonnee(d1)))
-                    printf("La matrice n'est pas carrée.\n");
+                    fprintf(stderr, "La matrice n'est pas carrée.\n");
                 else
                     m = exponentiation(matriceDonnee(d1), buffer4);
             }
@@ -425,9 +425,9 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
 
                 if (d1 == NULL)
-                    printf("%s n'existe pas.\n", buffer1);
+                    fprintf(stderr, "%s n'existe pas.\n", buffer1);
                 else if (!estMatrice(d1))
-                    printf("%s n'est pas une matrice.\n", buffer1);
+                    fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
                 else
                     m = c == CM_TSP ? transpose(matriceDonnee(d1)) : inverseM(matriceDonnee(d1));
             }
@@ -463,9 +463,9 @@ static Variables * lancerDecomposition(Variables * v, char * copie, char * morce
         }
     }
     else if (c != CM_INCONNU)
-        printf("%s : Mauvaise utilisation.\n", copie);
+        fprintf(stderr, "%s : Mauvaise utilisation.\n", copie);
     else
-        printf("%s : Commande inconnue.\n", copie);
+        fprintf(stderr, "%s : Commande inconnue.\n", copie);
 
     return v;
 }
@@ -504,7 +504,7 @@ static Bool lancerSpeedtest(const char * buffer, const char * commande)
             speedtest(c, min, max, pas);
     }
     else
-        printf("%s : Arguments invalides.\n", commande);
+        fprintf(stderr, "%s : Arguments invalides.\n", commande);
 
     return continuer;
 }
@@ -515,7 +515,7 @@ static Variables * ligneDeuxParties(Variables * v, char * parties[4], Commande c
     c = rechercherCommande(parties[0]);
 
     if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
-        printf("%s : Mot-clé réservé.\n", parties[0]);
+        fprintf(stderr, "%s : Mot-clé réservé.\n", parties[0]);
     else
     {
         char variable_1[32];
@@ -556,7 +556,7 @@ static Variables * ligneDeuxParties(Variables * v, char * parties[4], Commande c
             }
         }
         else
-            printf("%s : Variable non affectée.\n", parties[1]);
+            fprintf(stderr, "%s : Variable non affectée.\n", parties[1]);
     }
 
     return v;
@@ -569,14 +569,14 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
 
     /* Utilisation d'un mot-clé comme nom de variable ? */
     if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
-        printf("%s : mot-clé réservé.\n", parties[0]);
+        fprintf(stderr, "%s : mot-clé réservé.\n", parties[0]);
     else
     {
         c = rechercherCommande(parties[1]);
 
         /* Commandes non valides sous cette forme. */
         if (c == CM_SPD || c == CM_QUIT || c == CM_AIDE)
-            printf("Incorrect.\n");
+            fprintf(stderr, "Incorrect.\n");
         /* Cas particuliers, commandes prenant une seule matrice en argument. */
         else if (c == CM_DET || c == CM_RK)
         {
@@ -587,9 +587,9 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
                 const Donnee * d1 = obtenirDonnee(v, buffer);
 
                 if (d1 == NULL)
-                    printf("%s n'existe pas.\n", buffer);
+                    fprintf(stderr, "%s n'existe pas.\n", buffer);
                 else if (!estMatrice(d1))
-                    printf("%s n'est pas une matrice.\n", buffer);
+                    fprintf(stderr, "%s n'est pas une matrice.\n", buffer);
                 /* Calcul du déterminant. */
                 else if (c == CM_DET)
                 {
@@ -615,7 +615,7 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
             }
         }
         else if (c == CM_INCONNU)
-            printf("%s : Commande inconnue.\n", parties[1]);
+            fprintf(stderr, "%s : Commande inconnue.\n", parties[1]);
         /* Autres commandes. */
         else
         {
@@ -716,11 +716,11 @@ void prompt(FILE * fichier)
                         {
                             c = rechercherCommande(parties[0]);
                             if (c == CM_INCONNU)
-                                printf("Commande inconnue ou variable non affectée.\n");
+                                fprintf(stderr, "Commande inconnue ou variable non affectée.\n");
                             else if (c == CM_AIDE)
                                 afficherPromptAide();
                             else if (c != CM_QUIT)
-                                printf("Mauvaise utilisation de %s.\n", parties[0]);
+                                fprintf(stderr, "Mauvaise utilisation de %s.\n", parties[0]);
                         }
                         break;
 
@@ -737,7 +737,7 @@ void prompt(FILE * fichier)
                     case 4 :
 
                     default :
-                        printf("Syntaxe non valide.\n");
+                        fprintf(stderr, "Syntaxe non valide.\n");
                 }
 
                 if ((c == CM_QUIT && terminal
