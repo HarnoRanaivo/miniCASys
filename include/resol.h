@@ -144,6 +144,7 @@ Matrix * addMultLigne(Matrix * m, int i, int j, E k);
 
 /**
  * \brief Calcul du rang d'une matrice.
+ * \relatesalso Matrix
  * \param m Matrice.
  * \return Rang de m.
  */
