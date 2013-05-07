@@ -10,6 +10,20 @@
  */
 #include "prompt.h"
 
+static const char * INTROAIDE =
+"Aide :\n\n"
+"L'affectation d'une valeur à une variable se fait comme suit :\n"
+"\t<nomvariable> : <valeur>\n"
+"Les valeurs que l'on peut affecter à une variable sont :\n"
+"- un flottant.\n"
+"\ta : 4\n"
+"- une autre variable, si elle existe (son contenu sera copié).\n"
+"\tb : a\n"
+"- le résultat d'une commande retournant une matrice ou un flottant.\n"
+"\tm : matrix([1, 2], [3, 4])\n"
+"\td : determinant(m)\n\n"
+"Les commandes disponibles sont :\n\n";
+
 static const struct
 {
     Commande commande;
@@ -18,98 +32,174 @@ static const struct
 }
 LCM[] =
 {
-    [CM_ADD] =
-    {
-        CM_ADD,
-        "\tadd, addition\n" "\t\tAddition de matrices\n\n",
-        { "add", "addition", NULL, },
-    },
-
     [CM_NEW] =
     {
         CM_NEW,
         "\tmatrix, new\n"
-        "\t\tCréation d'une nouvelle matrice.\n\n",
+        "\t\tmatrix(<déclaration>)\n\n"
+        "\t\tCréation d'une nouvelle matrice.\n"
+        "\t\tChaque ligne doit contenir le même nombre de colonnes. Le résultat\n"
+        "\t\tde cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemples :\n"
+        "\t\t\tm1 : matrix([1])\n"
+        "\t\t\tm2 : matrix([1, 2], [3, 4], [5, 6])\n"
+        "\t\t\tm3 : matrix([1, 2, 3], [4, 5, 6])\n\n",
         { "matrix", "new", NULL, },
+    },
+
+    [CM_ADD] =
+    {
+        CM_ADD,
+        "\tadd, addition\n"
+        "\t\taddition(<matrice>,<matrice>)\n\n"
+        "\t\tAddition de deux matrices.\n"
+        "\t\tLes deux matrices doivent avoir la même taille. Le résultat de\n"
+        "\t\tcette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : matrix([7, 8, 9], [10, 11, 12])\n"
+        "\t\t\tm3 : addition(m1, m2)\n\n",
+        { "add", "addition", NULL, },
     },
 
     [CM_SUB] =
     {
         CM_SUB,
-        "\tsub, soustraction\n"
-        "\t\tSoustraction de matrices.\n\n",
-        { "sub", "soustraction", "substraction", NULL, },
+        "\tsub, substraction, sous, soustraction\n"
+        "\t\tsub(<matrice>,<matrice>)\n\n"
+        "\t\tSoustraction de deux matrices.\n"
+        "\t\tLes deux matrices doivent avoir la même taille. Le résultat de\n"
+        "\t\tcette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : matrix([7, 8, 9], [10, 11, 12])\n"
+        "\t\t\tm3 : sub(m2, m1)\n\n",
+        { "sub", "sous", "soustraction", "substraction", NULL, },
     },
 
     [CM_MULM] =
     {
         CM_MULM,
-        "\tmult\n"
-        "\t\tMultiplication de matrices.\n\n",
-        { "mult", NULL, },
+        "\tmult, multmatrice\n"
+        "\t\tmult(<matrice>,<matrice>)\n"
+        "\t\tMultiplication de deux matrices.\n"
+        "\t\tLe nombre de colonnes de la première matrice doit être\n"
+        "\t\tégal au nombre de lignes de la seconde matrice.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : matrix([7, 8, 9], [10, 11, 12], [13, 14, 15])\n"
+        "\t\t\tm3 : mult(m1, m2)\n\n",
+        { "mult", "multmatrice", NULL, },
     },
 
     [CM_MULS] =
     {
         CM_MULS,
-        "\tmuls\n"
-        "\t\tMultiplication d'une matrice par un scalaire.\n\n",
-        { "muls", NULL, },
+        "\tmuls, mulscalaire\n"
+        "\t\tmuls(<matrice>,<flottant>)\n\n"
+        "\t\tMultiplication d'une matrice par un scalaire.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\ta : 4\n"
+        "\t\t\tm2 : muls(m1, a)\n"
+        "\t\t\tm3 : muls(m1, 3)\n\n",
+        { "muls", "mulscalaire", NULL, },
     },
 
     [CM_EXP] =
     {
         CM_EXP,
-        "\texpo\n"
-        "\t\tExponentiation d'une matrice.\n\n",
+        "\texpo, exponentiation\n"
+        "\t\texpo(<matrice>,<entier>)\n\n"
+        "\t\tExponentiation d'une matrice.\n"
+        "\t\tL'exposant doit être positif. Le résultat de\n"
+        "\t\tcette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : expo(m1, 2)\n\n",
         { "expo", NULL, },
     },
 
     [CM_TSP] =
     {
         CM_TSP,
-        "\ttranspose\n"
-        "\t\tTransposition d'une matrice.\n\n",
-        { "transpose", NULL, },
+        "\ttrans, transpose\n"
+        "\t\ttranspose(<matrice>)\n\n"
+        "\t\tTransposition d'une matrice.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6])\n"
+        "\t\t\tm2 : transpose(m1)\n\n",
+        { "transpose", "trans", NULL, },
     },
 
     [CM_DET] =
     {
         CM_DET,
-        "\tdeterminant\n"
-        "\t\tCalcul du déterminant.\n\n",
-        { "determinant", NULL, },
+        "\tdet, determinant\n"
+        "\t\tdeterminant(<matrice>)\n\n"
+        "\t\tCalcul du déterminant d'une matrice carrée.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2], [4, 5])\n"
+        "\t\t\td : determinant(m1)\n\n",
+        { "determinant", "det", NULL, },
     },
 
     [CM_INV] =
     {
         CM_INV,
-        "\tinvert\n"
-        "\t\tInversion d'une matrice.\n\n",
-        { "invert", NULL, },
+        "\tinvert, inversion\n"
+        "\t\tinvert(<matrice>)\n\n"
+        "\t\tInversion d'une matrice carrée.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2], [4, 5])\n"
+        "\t\t\tm2 : invert(m1)\n\n",
+        { "invert", "inversion", NULL, },
     },
 
     [CM_SOL] =
     {
         CM_SOL,
         "\tsolve\n"
-        "\t\tRésolution d'un système.\n\n",
-        { "solve", NULL, },
+        "\t\tsolve(<matrice>,<matrice>)\n\n"
+        "\t\tRésolution d'un système.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6], [7, 8, 9])\n"
+        "\t\t\tm2 : matrix([1], [2], [3])\n"
+        "\t\t\tm3 : solve(m1, m2)\n\n",
+        { "solve", "resolution", NULL, },
     },
 
     [CM_RK] =
     {
         CM_RK,
         "\trank\n"
-        "\t\tCalcul du rang d'une matrice.\n\n",
-        { "rank", NULL, },
+        "\t\trank(<matrice>)\n\n"
+        "\t\tCalcul du rang d'une matrice.\n"
+        "\t\tLe résultat de cette commande doit être affecté à une variable.\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6], [7, 8, 9])\n"
+        "\t\t\tr : rank(m1)\n\n",
+        { "rank", "rang", NULL, },
     },
 
     [CM_LU] =
     {
         CM_LU,
         "\tdecomposition\n"
-        "\t\tDécomposition LU d'une matrice.\n\n",
+        "\t\tdecomposition(<matrice>)\n\n"
+        "\t\tDécomposition LU d'une matrice.\n"
+        "\t\tLe résultat de cette commande ne doit pas être affecté à une\n"
+        "\t\tvariable. Les résultats seront disponibles dans les variables\n"
+        "\t\tspéciales \"L\" et \"U\".\n\n"
+        "\t\tExemple :\n"
+        "\t\t\tm1 : matrix([1, 2, 3], [4, 5, 6], [7, 8, 9])\n"
+        "\t\t\tdecomposition(m1)\n\n",
         { "decomposition", NULL, },
 
     },
@@ -117,23 +207,29 @@ LCM[] =
     [CM_SPD] =
     {
         CM_SPD,
-        "\tspeedtest\n"
-        "\t\tSpeedtest.\n\n",
+        "\tspeedtest <commande> <taille_min> <taille_max> <pas> [secondes]\n"
+        "\t\tLancement du speedtest d'une commande sur deux matrices.\n"
+        "\t\t- commande : add | sub | mult (commande sur deux matrices).\n"
+        "\t\t- taille_min : Taille de départ des matrices.\n"
+        "\t\t- taille_max : Taille maximale des matrices.\n"
+        "\t\t- pas : Incrément des tailles.\n"
+        "\t\t- secondes : (Optionnel) Le programme quitera si le test est trop long.\n\n",
         { "speedtest", NULL, },
     },
 
     [CM_AIDE] =
     {
         CM_AIDE,
-        "\taide\n"
-        "\t\tAide.\n\n",
+        "\taide [commande]\n"
+        "\t\tAfficher l'aide d'une commande, si donnée en argument, ou\n"
+        "\t\tafficher l'aide du programme.\n\n",
         { "aide", NULL, },
     },
 
     [CM_QUIT] =
     {
         CM_QUIT,
-        "\tquit\n"
+        "\tquit, quitter\n"
         "\t\tQuitter le programme.\n\n",
         { "quit", "quitter", "q", NULL, },
     },
@@ -153,7 +249,7 @@ void afficherAideCommande(Commande c)
 
 void afficherPromptAide(void)
 {
-    printf("Aide :\n\n");
+    printf("%s", INTROAIDE);
     for (int i = 0; i < CM_INCONNU; i++)
         printf("%s", LCM[i].aide);
 }
@@ -212,7 +308,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
             if (contientMatriceValide(arguments))
                 m = recupererMatrice(arguments, v);
             else
-                printf("%s : matrice non valide.\n", arguments);
+                fprintf(stderr, "%s : matrice non valide.\n", arguments);
             break;
 
         case CM_ADD :
@@ -232,16 +328,16 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 if (d1 == NULL || d2 == NULL)
                 {
                     if (d1 == NULL)
-                        printf("%s n'existe pas.\n", buffer1);
+                        fprintf(stderr, "%s n'existe pas.\n", buffer1);
                     if (d2 == NULL)
-                        printf("%s n'existe pas.\n", buffer2);
+                        fprintf(stderr, "%s n'existe pas.\n", buffer2);
                 }
                 else if (!estMatrice(d1) || !estMatrice(d2))
                 {
                     if (!estMatrice(d1))
-                        printf("%s n'est pas une matrice.\n", buffer1);
+                        fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
                     if (!estMatrice(d2))
-                        printf("%s, n'est pas une matrice.\n", buffer2);
+                        fprintf(stderr, "%s, n'est pas une matrice.\n", buffer2);
                 }
                 else
                 {
@@ -254,14 +350,14 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                         if (nbLignes(m1) == nbLignes(m2) && nbColonnes(m1) == nbColonnes(m2))
                             m = c == CM_ADD ? addition(m1, m2) : soustraction(m1, m2);
                         else
-                            printf("Les matrices n'ont pas la même taille.\n");
+                            fprintf(stderr, "Les matrices n'ont pas la même taille.\n");
                     }
                     else if (c == CM_MULM)
                     {
                         if (nbColonnes(m1) == nbLignes(m2))
                             m = multiplication(m1, m2);
                         else
-                            printf("Les matrices n'ont pas les bonnes tailles.\n");
+                            fprintf(stderr, "Les matrices n'ont pas les bonnes tailles.\n");
                     }
                     else
                     {
@@ -278,7 +374,7 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                             m = solution;
                         }
                         else
-                            printf("Les matrices n'ont pas les bonnes tailles.\n");
+                            fprintf(stderr, "Les matrices n'ont pas les bonnes tailles.\n");
                     }
                 }
             }
@@ -290,11 +386,11 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 if (d1 == NULL)
                 {
-                    printf("%s n'existe pas.\n", buffer1);
+                    fprintf(stderr, "%s n'existe pas.\n", buffer1);
                 }
                 else if (!estMatrice(d1))
                 {
-                    printf("%s n'est pas une matrice.\n", buffer1);
+                    fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
                 }
                 else
                     m = multiplierScalaire(matriceDonnee(d1), buffer3);
@@ -309,13 +405,13 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
 
                 if (d1 == NULL)
-                        printf("%s n'existe pas.\n", buffer1);
+                    fprintf(stderr, "%s n'existe pas.\n", buffer1);
                 else if (!estMatrice(d1))
-                        printf("%s n'est pas une matrice.\n", buffer1);
+                    fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
                 else if (buffer4 < 0)
-                    printf("L'exposant doit être positif.\n");
+                    fprintf(stderr, "L'exposant doit être positif.\n");
                 else if (nbLignes(matriceDonnee(d1)) != nbColonnes(matriceDonnee(d1)))
-                    printf("La matrice n'est pas carrée.\n");
+                    fprintf(stderr, "La matrice n'est pas carrée.\n");
                 else
                     m = exponentiation(matriceDonnee(d1), buffer4);
             }
@@ -329,9 +425,9 @@ Matrix * traiterCommande(Commande c, char * arguments, Variables * v)
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
 
                 if (d1 == NULL)
-                    printf("%s n'existe pas.\n", buffer1);
+                    fprintf(stderr, "%s n'existe pas.\n", buffer1);
                 else if (!estMatrice(d1))
-                    printf("%s n'est pas une matrice.\n", buffer1);
+                    fprintf(stderr, "%s n'est pas une matrice.\n", buffer1);
                 else
                     m = c == CM_TSP ? transpose(matriceDonnee(d1)) : inverseM(matriceDonnee(d1));
             }
@@ -367,9 +463,9 @@ static Variables * lancerDecomposition(Variables * v, char * copie, char * morce
         }
     }
     else if (c != CM_INCONNU)
-        printf("%s : Mauvaise utilisation.\n", copie);
+        fprintf(stderr, "%s : Mauvaise utilisation.\n", copie);
     else
-        printf("%s : Commande inconnue.\n", copie);
+        fprintf(stderr, "%s : Commande inconnue.\n", copie);
 
     return v;
 }
@@ -408,7 +504,7 @@ static Bool lancerSpeedtest(const char * buffer, const char * commande)
             speedtest(c, min, max, pas);
     }
     else
-        printf("%s : Arguments invalides.\n", commande);
+        fprintf(stderr, "%s : Arguments invalides.\n", commande);
 
     return continuer;
 }
@@ -419,7 +515,7 @@ static Variables * ligneDeuxParties(Variables * v, char * parties[4], Commande c
     c = rechercherCommande(parties[0]);
 
     if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
-        printf("%s : Mot-clé réservé.\n", parties[0]);
+        fprintf(stderr, "%s : Mot-clé réservé.\n", parties[0]);
     else
     {
         char variable_1[32];
@@ -460,7 +556,7 @@ static Variables * ligneDeuxParties(Variables * v, char * parties[4], Commande c
             }
         }
         else
-            printf("%s : Variable non affectée.\n", parties[1]);
+            fprintf(stderr, "%s : Variable non affectée.\n", parties[1]);
     }
 
     return v;
@@ -473,14 +569,14 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
 
     /* Utilisation d'un mot-clé comme nom de variable ? */
     if (c != CM_INCONNU || rechercherMot(parties[0], (const char * []) { "L", "U", NULL, }))
-        printf("%s : mot-clé réservé.\n", parties[0]);
+        fprintf(stderr, "%s : mot-clé réservé.\n", parties[0]);
     else
     {
         c = rechercherCommande(parties[1]);
 
         /* Commandes non valides sous cette forme. */
         if (c == CM_SPD || c == CM_QUIT || c == CM_AIDE)
-            printf("Incorrect.\n");
+            fprintf(stderr, "Incorrect.\n");
         /* Cas particuliers, commandes prenant une seule matrice en argument. */
         else if (c == CM_DET || c == CM_RK)
         {
@@ -491,9 +587,9 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
                 const Donnee * d1 = obtenirDonnee(v, buffer);
 
                 if (d1 == NULL)
-                    printf("%s n'existe pas.\n", buffer);
+                    fprintf(stderr, "%s n'existe pas.\n", buffer);
                 else if (!estMatrice(d1))
-                    printf("%s n'est pas une matrice.\n", buffer);
+                    fprintf(stderr, "%s n'est pas une matrice.\n", buffer);
                 /* Calcul du déterminant. */
                 else if (c == CM_DET)
                 {
@@ -519,7 +615,7 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
             }
         }
         else if (c == CM_INCONNU)
-            printf("%s : Commande inconnue.\n", parties[1]);
+            fprintf(stderr, "%s : Commande inconnue.\n", parties[1]);
         /* Autres commandes. */
         else
         {
@@ -620,11 +716,11 @@ void prompt(FILE * fichier)
                         {
                             c = rechercherCommande(parties[0]);
                             if (c == CM_INCONNU)
-                                printf("Commande inconnue ou variable non affectée.\n");
+                                fprintf(stderr, "Commande inconnue ou variable non affectée.\n");
                             else if (c == CM_AIDE)
                                 afficherPromptAide();
                             else if (c != CM_QUIT)
-                                printf("Mauvaise utilisation de %s.\n", parties[0]);
+                                fprintf(stderr, "Mauvaise utilisation de %s.\n", parties[0]);
                         }
                         break;
 
@@ -641,7 +737,7 @@ void prompt(FILE * fichier)
                     case 4 :
 
                     default :
-                        printf("Syntaxe non valide.\n");
+                        fprintf(stderr, "Syntaxe non valide.\n");
                 }
 
                 if ((c == CM_QUIT && terminal
