@@ -71,7 +71,7 @@ Un ```Doxyfile``` est déjà présent. Il suffit de lancer ```doxygen``` pour g�
 ````bash
 $ doxygen
 ````
-Sinon, nous avons déjà généré et publié la documentation [ici](http://remove.github.io/minicasys "Documentation").
+Sinon, nous avons déjà généré et publié la documentation [ici](http://remove.github.io/miniCASys "Documentation").
 
 Branches et versions
 --------------------
