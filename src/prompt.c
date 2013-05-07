@@ -322,7 +322,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
             /* Partie commune aux quatres commandes CM_ADD, CM_SUB, CM_MULM,
              * CM_SOL.
              */
-            if (sscanf(arguments, " %63[^,]%*[,]%63s", buffer1, buffer2) == 2)
+            if (sscanf(arguments, " %63[^, ]%*[,]%63s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 const Donnee * d2 = obtenirDonnee(v, buffer2);
@@ -385,7 +385,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
 
         case CM_MULS :
             /* L'utilisateur a donné une variable et un flottant. */
-            if (sscanf(arguments, " %63[^,]%*[,]%f", buffer1, &buffer3) == 2)
+            if (sscanf(arguments, " %63[^, ]%*[,]%f", buffer1, &buffer3) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 if (d1 == NULL)
@@ -396,7 +396,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
                     m = multiplierScalaire(matriceDonnee(d1), buffer3);
             }
             /* L'utilisateur a donné deux variables. */
-            else if (sscanf(arguments, " %63[^,]%*[,]%31s", buffer1, buffer2) == 2)
+            else if (sscanf(arguments, " %63[^, ]%*[,]%31s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 const Donnee * d2 = obtenirDonnee(v, buffer2);
@@ -422,7 +422,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
             break;
 
         case CM_EXP :
-            if (sscanf(arguments, " %63[^,]%*[,]%d", buffer1, &buffer4) == 2)
+            if (sscanf(arguments, " %63[^, ]%*[,]%d", buffer1, &buffer4) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
 
@@ -437,7 +437,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
                 else
                     m = exponentiation(matriceDonnee(d1), buffer4);
             }
-            else if (sscanf(arguments, " %63[^,]%*[,]%31s", buffer1, buffer2) == 2)
+            else if (sscanf(arguments, " %63[^, ]%*[,]%31s", buffer1, buffer2) == 2)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
                 const Donnee * d2 = obtenirDonnee(v, buffer2);
@@ -468,7 +468,7 @@ Matrix * traiterCommande(Commande c, char * arguments, const Variables * v)
         case CM_TSP :
 
         case CM_INV :
-            if (sscanf(arguments, " %63[^,]", buffer1) == 1)
+            if (sscanf(arguments, " %63[^, ]", buffer1) == 1)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer1);
 
@@ -630,7 +630,7 @@ static Variables * ligneTroisParties(Variables * v, char * parties[4], Commande 
         {
             char buffer[32];
 
-            if (sscanf(parties[2], " %63[^,]", buffer) == 1)
+            if (sscanf(parties[2], " %63[^, ]", buffer) == 1)
             {
                 const Donnee * d1 = obtenirDonnee(v, buffer);
 
