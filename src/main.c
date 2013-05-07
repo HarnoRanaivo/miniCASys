@@ -1,3 +1,8 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file main.c
  * \brief Main
@@ -7,14 +12,17 @@
 #include <stdlib.h>
 #include <sysexits.h>
 #include <time.h>
-#include <sys/time.h>
+#include <sysexits.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
+#include "base.h"
 #include "matrix.h"
 #include "operations.h"
+#include "decompo.h"
 #include "resol.h"
-
-#define MIN 0.
-#define MAX 100.
+#include "prompt.h"
 
 /**
  * \brief Main.
@@ -23,66 +31,35 @@
  */
 int main(int argc, char ** argv)
 {
-    if (argc != 5)
+    if (argc == 1)
+        prompt(NULL);
+    else if (argc == 2)
     {
-        fprintf(stderr, "Usage : %s <taille_min> <inc> <nb_matrices> <output>\n", argv[0]);
+        struct stat buffer;
+
+        if (stat(argv[1], &buffer) == 0)
+        {
+            FILE * fichier = fopen(argv[1], "r");
+            if (fichier != NULL)
+                prompt(fichier);
+            else
+            {
+                perror("fopen");
+                exit(EX_OSERR);
+            }
+        }
+        else
+        {
+            fprintf(stderr, "Le fichier %s n'existe pas.\n", argv[1]);
+            exit(EX_NOINPUT);
+        }
+
+    }
+    else
+    {
+        fprintf(stderr, "Usage : %s [fichier]\n", argv[0]);
         exit(EX_USAGE);
     }
 
-    FILE * const output = fopen(argv[4], "w");
-    if (output == NULL)
-    {
-        perror("fopen");
-        exit(EX_IOERR);
-    }
-
-    srand48(time(NULL));
-
-    int increment = atoi(argv[2]);
-    int tailleMaj = atoi(argv[1]) + increment * atoi(argv[3]);
-
-    for (int taille = atoi(argv[1]); taille < tailleMaj; taille += increment)
-    {
-        struct timeval tv1, tv2;
-        unsigned long tempsNaif, tempsOpt;
-        Matrix m = newMatrix(taille, taille);
-
-        m = aleatoire(m, MIN, MAX);
-
-        gettimeofday(&tv1, NULL);
-        determinant_naif(m);
-        gettimeofday(&tv2, NULL);
-        tempsNaif = (tv2.tv_usec - tv1.tv_usec) / 10UL;
-
-        gettimeofday(&tv1, NULL);
-        determinant_opt(m);
-        gettimeofday(&tv2, NULL);
-        tempsOpt = (tv2.tv_usec - tv1.tv_usec) / 10UL;
-
-        fprintf(output, "%d %lu %lu\n", taille, tempsNaif, tempsOpt);
-        fflush(output);
-
-        deleteMatrix(m);
-    }
-
-    fclose(output);
-
-    FILE * const gnuplot = popen("gnuplot -persistent", "w");
-    if (gnuplot == NULL || gnuplot == (FILE *)-1)
-    {
-        perror("popen");
-        exit(EX_OSERR);
-    }
-
-    fprintf(gnuplot,
-            "set style data histogram\n"
-            "set style fill solid border\n"
-            "set xlabel \"Taille\"\n"
-            "set ylabel \"Temps\"\n"
-            "plot '%s' u 2:xtic(1) ti \"Déterminant naïf\", '' u 3 ti \"Déterminant optimal\"\n",
-            argv[4]);
-    fflush(gnuplot);
-    fclose(gnuplot);
-    
     return 0;
 }

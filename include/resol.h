@@ -1,3 +1,8 @@
+/* This program is free software. It comes WITHOUT ANY WARRANTY, to
+* the extent permitted by applicable law. You can redistribute it
+* and/or modify it under the terms of the Do What The Fuck You Want
+* To Public License, Version 2, as published by Sam Hocevar. See
+* http://wtfpl.net for more details. */
 /**
  * \file resol.h
  * \brief Résolution (header)
@@ -20,7 +25,7 @@
  * \pre nbLignes(m) == nbColonnes(m).
  * \return Sous-matrice.
  */
-Matrix sousMatrice(Matrix m, int i, int j);
+Matrix * sousMatrice(const Matrix * m, int i, int j);
 
 /**
  * \brief Déterminant d'une matrice (calcul récursif).
@@ -28,16 +33,16 @@ Matrix sousMatrice(Matrix m, int i, int j);
  * \pre nbLignes(m) == nbColonnes(m).
  * \return det(m).
  */
-E determinant_naif(Matrix m);
+E determinant_naif(const Matrix * m);
 
 /**
- * \brief Permuter les lignes i et j d'un système.
+ * \brief Permuter les lignes i et j d'une matrice.
  * \param m Matrice.
  * \param i Indice de la première ligne.
  * \param j Indice de la deuxième ligne.
  * \pre nbLignes(m) == nbLignes(b) && nbColonnes(m) == 1.
  */
-void permutLigne(Matrix m, int i, int j);
+Matrix * permutLigne(Matrix * m, int i, int j);
 
 /**
  * \brief Permuter les lignes i et j d'un système.
@@ -47,7 +52,7 @@ void permutLigne(Matrix m, int i, int j);
  * \param j Indice de la deuxième ligne.
  * \pre nbLignes(m) == nbLignes(b) && nbColonnes(m) == 1.
  */
-void permutLigneSysteme(Matrix m, Matrix b, int i, int j);
+void permutLigneSysteme(Matrix * m, Matrix * b, int i, int j);
 
 /**
  * \brief Additionner à la ligne i la ligne j multipliée par k.
@@ -58,7 +63,7 @@ void permutLigneSysteme(Matrix m, Matrix b, int i, int j);
  * \param k Facteur.
  * \pre nbLignes(m) == nbLignes(b) && nbColonnes(m) == 1.
  */
-void addMultLigneSysteme(Matrix m, Matrix b, int i, int j, E k);
+void addMultLigneSysteme(Matrix * m, Matrix * b, int i, int j, E k);
 
 /**
  * \brief Valeur absolue d'un élément E.
@@ -76,7 +81,7 @@ static inline E valeurAbsolueE(E x)
  * \param i Indice de la colonne.
  * \pre nbLignes(m) == nbLignes(b).
  */
-int choixPivotPartiel(Matrix m, int i);
+int choixPivotPartiel(const Matrix * m, int i);
 
 /**
  * \brief Met le système sous forme triangulaire.
@@ -84,21 +89,21 @@ int choixPivotPartiel(Matrix m, int i);
  * \param b Matrice colonne.
  * \pre nbLignes(m) == nbLignes(b) && nbColonnes(m) == 1.
  */
-void triangulaire(Matrix m, Matrix b);
+void triangulaireSysteme(Matrix * m, Matrix * b);
 
 /**
  * \brief Mise sous forme triangulaire d'une matrice.
  * \param m Matrice
  * \return permutations.
  */
-int triangulaireDet(Matrix m);
+int triangulaireDet(Matrix * m);
 
 /**
  * \brief Calcul efficace du déterminant d'une matrice.
  * \param m Matrice
  * \return déterminant de m.
  */
-E determinant_opt(Matrix m);
+E determinant_opt(Matrix * m);
 
 /**
  * \brief Remontée d'un système.
@@ -107,7 +112,7 @@ E determinant_opt(Matrix m);
  * \param x Inconnues.
  * \pre nbLignes(m) == nbLignes(b) == nbLignes(x) && nbColonnes(b) == nbColonnes(x) == 1
  */
-void remontee(Matrix m, Matrix b, Matrix x);
+void remontee(Matrix * m, Matrix * b, Matrix * x);
 
 /**
  * \brief Pivot de Gauss.
@@ -116,7 +121,7 @@ void remontee(Matrix m, Matrix b, Matrix x);
  * \param x Inconnues.
  * \pre nbLignes(m) == nbLignes(b) == nbLignes(x) && nbColonnes(b) == nbColonnes(x) == 1
  */
-void gauss(Matrix m, Matrix b, Matrix x);
+void gauss(Matrix * m, Matrix * b, Matrix * x);
 
 /**
  * \brief Multiplier la ligne i d'un système par un facteur k.
@@ -126,7 +131,7 @@ void gauss(Matrix m, Matrix b, Matrix x);
  * \param k Facteur.
  * \pre nbLignes(m) == nbLignes(b) && nbColonnes(m) == 1.
  */
-void multLigne(Matrix m, Matrix b, int i, E k);
+void multLigne(Matrix * m, Matrix * b, int i, E k);
 
 /**
  * \brief Additionner à la ligne i la ligne j multipliée par k.
@@ -135,6 +140,8 @@ void multLigne(Matrix m, Matrix b, int i, E k);
  * \param j Indice de la deuxième ligne.
  * \param k Facteur.
  */
-void addMultLigne(Matrix m, int i, int j, E k);
+Matrix * addMultLigne(Matrix * m, int i, int j, E k);
+
+int rang(const Matrix * m);
 
 #endif /* __RESOL_H */
