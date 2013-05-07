@@ -78,15 +78,11 @@ void afficherPromptAide(void);
  */
 Commande rechercherCommande(const char * ligne);
 
-/**
- * \brief Traiter la ligne de commande entrée par l'utilisateur.
- * \relatesalso Commande
- * \param ligne Ligne de commande entrée par l'utilisateur.
- * \param c Commande entrée par l'utilisateur.
- * \param d Données du programme.
- * \return Nouvelles données du programme, si elles ont été modifiées.
- */
-Variables * traiterLigneCommande(const char * ligne, Commande c, Variables * v);
+Bool verifier(const char * chaine);
+
+void afficherDonnee(const Donnee * d);
+
+Matrix * traiterCommande(Commande c, char * arguments, const Variables * v);
 
 /**
  * \brief Vérifier l'intention de l'utilisateur.
