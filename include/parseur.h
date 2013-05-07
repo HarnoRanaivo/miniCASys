@@ -71,6 +71,17 @@ Matrix * recupererMatrice(char * chaine, const Variables * v);
  */
 int preparerLigneCommmande(char * chaine, char * decomposition[4]);
 
+/**
+ * \brief Préparer la commande entrée par l'utilisateur.
+ * \param chaine Ligne de commande utilisateur.
+ * \param decomposition Tableau destiné aux pointeurs vers les sous-chaînes.
+ * \return Nombre de parties.
+ *
+ * Les parties délimitées par cette fonction sont de la forme :
+ * <partie 2> ( <partie 3> )
+ *
+ * Les parties 1 et 2 ne doivent contenir qu'un seul mot.
+ */
 int preparerCommande(char * chaine, char * decomposition[2]);
 
 #endif /* __PARSEUR_H */

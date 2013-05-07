@@ -192,7 +192,7 @@ int preparerLigneCommmande(char * chaine, char * decomposition[4])
     for (int i = 0; i < 2; i ++)
     {
         char buffer[64];
-        
+
         if (decomposition[i] != NULL
             && sscanf(decomposition[i], "%s %s", buffer, buffer) == 2
            )

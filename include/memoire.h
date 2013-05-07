@@ -24,8 +24,8 @@
  */
 typedef enum donnee_t
 {
-    VAR_FLOTTANT,
-    VAR_MATRICE,
+    VAR_FLOTTANT,   /**<- La donnée est un flottant. */
+    VAR_MATRICE,    /**<- La donnée est une matrice. */
 } donnee_t;
 
 /**

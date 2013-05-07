@@ -29,8 +29,9 @@ typedef struct Matrix
 
 /**
  * \brief Nombre de lignes d'une matrice
- * \relatesalso matrix
- * \param m matrice * \return nombre de lignes
+ * \relatesalso Matrix
+ * \param m matrice
+ * \return nombre de lignes
  */
 static inline int nbLignes(const Matrix * m)
 {
@@ -39,7 +40,7 @@ static inline int nbLignes(const Matrix * m)
 
 /**
  * \brief Nombre de colonnes d'une matrice
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m matrice
  * \return nombre de colonnes
  */
@@ -50,7 +51,7 @@ static inline int nbColonnes(const Matrix * m)
 
 /**
  * \brief Nouvelle matrice
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param nb_rows nombre de lignes
  * \param nb_columns nombre de colonnes
  * \return pointeur vers une nouvelle matrice
@@ -58,8 +59,8 @@ static inline int nbColonnes(const Matrix * m)
 Matrix * newMatrix(int nb_rows, int nb_columns);
 
 /**
- * \brief Élément à la ligne row et colonne column (row et column commencent à 0.)
- * \relatesalso matrix
+ * \brief Élément à la ligne row et colonne column
+ * \relatesalso Matrix
  * \param row ligne
  * \param column colonne
  * \return E
@@ -67,8 +68,8 @@ Matrix * newMatrix(int nb_rows, int nb_columns);
 E getElt(const Matrix * m, int row, int column);
 
 /**
- * \brief Changer la valeur de l'élément aux ligne row et colonne column (row et column commencent à 0.)
- * \relatesalso matrix
+ * \brief Changer la valeur de l'élément ligne \a row et colonne \a column
+ * \relatesalso Matrix
  * \param m matrice à modifier
  * \param row ligne
  * \param column colonne
@@ -78,28 +79,28 @@ void setElt(Matrix * m, int row, int column, E val);
 
 /**
  * \brief Effacer une matrice
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m matrice à effacer
  */
 Matrix * deleteMatrix(Matrix * m);
 
 /**
  * \brief Afficher une matrice
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m matrice à afficher
  */
 void displayMatrix(const Matrix * m);
 
 /**
  * \brief Créer une matrice identité
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param size taille
  */
 Matrix * identite(int size);
 
 /**
  * \brief Remplir une matrice aléatoirement
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m matrice à remplir
  * \param min minimum
  * \param max maximum
@@ -109,7 +110,7 @@ Matrix * aleatoire(Matrix * m, float min, float max);
 
 /**
  * \brief Copier une matrice.
- * \relatesalso matrix
+ * \relatesalso Matrix
  * \param m Matrice à copier.
  * \return Copie.
  */
